@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Lime Signalworks — Loss-prevention-first AI trading assistance</title>
+<meta name="description" content="Lime Signalworks: AI trading assistance that leans first toward protecting capital, then toward profit. Clear teaching, honest tools, a system built to serve.">
+  <link rel="canonical" href="https://limesignalworks.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://limesignalworks.com/">
+  <meta property="og:title" content="Lime Signalworks — Loss-prevention-first AI trading assistance">
+  <meta property="og:description" content="AI trading assistance that leans first toward protecting capital, then toward profit. Clear teaching, honest tools, a system built to serve — not a guru to follow.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:site_name" content="Lime Signalworks">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lime Signalworks — Loss-prevention-first AI trading assistance">
+  <meta name="twitter:description" content="AI trading assistance that leans first toward protecting capital, then toward profit.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Lime Signalworks LLC","url":"https://limesignalworks.com/","description":"Loss-prevention-first AI trading assistance for real households and real companies.","email":"contact@limesignalworks.com","telephone":"+1-380-200-0288","address":{"@type":"PostalAddress","streetAddress":"2722 Erie Ave, Suite 219","addressLocality":"Cincinnati","addressRegion":"OH","postalCode":"45208","addressCountry":"US"}}
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+    --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+    --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+    --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.25rem);
+    --text-3xl: clamp(2.5rem, 1rem + 5vw, 5.25rem);
+    --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+    --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
+    --space-12: 3rem; --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
+    --radius-sm: 0.375rem; --radius-md: 0.5rem; --radius-lg: 0.75rem; --radius-xl: 1rem;
+    --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    --font-display: 'Instrument Serif', Georgia, serif;
+    --font-body: 'General Sans', 'Helvetica Neue', sans-serif;
+  }
+  :root, [data-theme="dark"] {
+    --color-bg: #0a131c; --color-surface: #0f1c28; --color-surface-2: #142433; --color-surface-offset: #16273a;
+    --color-border: #1f3346; --color-divider: #1a2c3c;
+    --color-text: #e7e3dd; --color-text-muted: #a89f96; --color-text-faint: #7a6f66;
+    --color-primary: #9ad14a; --color-primary-hover: #b4e06a; --color-primary-soft: rgba(154,209,74,0.12);
+    --color-glow-blue: #2f9bff;
+    --color-beam: #e8b659; --color-beam-soft: rgba(232,182,89,0.14);
+    --shadow-md: 0 4px 24px rgba(0,0,0,0.35); --shadow-lg: 0 18px 50px rgba(0,0,0,0.45);
+  }
+  [data-theme="light"] {
+    --color-bg: #e7e3dd; --color-surface: #ffffff; --color-surface-2: #f7faf8; --color-surface-offset: #eef3ef;
+    --color-border: #dbe4dd; --color-divider: #e4ece6;
+    /* Light-mode text = dark-mode background (#0a131c), and dark-mode text (#e7e3dd) already
+       equals light-mode background. Symmetric swap per Noal 2026-07-25. */
+    --color-text: #0a131c; --color-text-muted: #56685e; --color-text-faint: #8a9c92;
+    --color-primary: #4f7a1f; --color-primary-hover: #3d6017; --color-primary-soft: rgba(79,122,31,0.10);
+    --color-glow-blue: #2f9bff;
+    --color-beam: #b07d1f; --color-beam-soft: rgba(176,125,31,0.12);
+    --shadow-md: 0 4px 24px rgba(20,40,28,0.08); --shadow-lg: 0 18px 50px rgba(20,40,28,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; scroll-behavior: smooth; }
+  body { min-height: 100dvh; line-height: 1.6; font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); background-color: var(--color-bg); }
+  img, svg { display: block; max-width: 100%; height: auto; }
+  a, button { transition: color var(--transition-interactive), background var(--transition-interactive), border-color var(--transition-interactive), box-shadow var(--transition-interactive); }
+  h1, h2, h3 { text-wrap: balance; line-height: 1.12; font-family: var(--font-display); font-weight: 400; letter-spacing: -0.01em; }
+  p, li { text-wrap: pretty; max-width: 70ch; }
+  ::selection { background: var(--color-primary-soft); }
+  :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 var(--space-6); }
+
+  header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px); background: color-mix(in oklab, var(--color-bg) 82%, transparent); border-bottom: 1px solid var(--color-divider); }
+  /* Header spacing: single consistent gap between brand / CTA / tools — no space-between stretching.
+     Per Noal 2026-07-23. DO NOT change without Noal confirming directly. */
+  .hdr { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; padding: var(--space-4) 0; gap: var(--space-4); }
+  /* CTA + tools are grouped in a single non-wrapping flex child so they can never land on separate
+     flex lines. The outer .hdr may keep brand + actions on one row (when they fit) or wrap actions to
+     its own row, but the CTA and controls always share a row and vertical center. Per Noal 2026-07-23. */
+  .hdr-actions { display: flex; flex-wrap: nowrap; align-items: center; gap: var(--space-4); }
+  .brand { display: flex; align-items: center; gap: var(--space-3); text-decoration: none; color: var(--color-text); }
+  .brand svg { width: 30px; height: 30px; }
+  /* Rotating lighthouse mark — animated video loop. Sized 3x (114px, 60px on mobile
+     under 560px) per Noal 2026-07-23. This is the approved header mark going forward.
+     DO NOT swap back to a static SVG icon, resize, or restyle without Noal confirming
+     directly in a session that can see this comment. */
+  .brand-mark { height: 114px; width: 114px; object-fit: cover; border-radius: 50%; flex-shrink: 0; border: 1px solid var(--color-border); }
+  @media (max-width: 560px) { .brand-mark { height: 60px; width: 60px; } }
+  /* Wordmark size set to --text-lg (reduced one more type step from --text-xl) per Noal 2026-07-23. DO NOT change without Noal confirming directly. */
+  .brand .word { font-family: var(--font-body); font-weight: 600; font-size: var(--text-lg); letter-spacing: 0.01em; }
+  .brand .word b { font-weight: 700; color: var(--color-primary); }
+  .brand:hover { color: var(--color-primary); text-decoration: underline; text-underline-offset: 2px; }
+  .hdr-tools { display: flex; align-items: center; gap: 0; }
+  .icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: var(--radius-full); border: 1px solid var(--color-border); color: var(--color-text-muted); background: var(--color-surface); cursor: pointer; }
+  .icon-btn:hover { color: var(--color-text); border-color: var(--color-primary); }
+  /* Breathing room around the wordmark (~2 characters, 2ch each side) and before the tools cluster.
+     Gated to >=768px, where the header is a single row with headroom, so the centered header/body
+     axis and the baseline responsive wrapping (single-row at 360/390/430/520/560/600/700) are preserved. */
+  @media (min-width: 768px) { .brand .word { margin-inline: 2ch; } .hdr-tools { margin-left: 2ch; } }
+
+  .hero { padding: clamp(var(--space-16), 8vw, var(--space-24)) 0 var(--space-6); text-align: center; position: relative; overflow: hidden; }
+  .rosy-way-img { width: 100%; max-width: 720px; display: block; margin: 0 auto; border-radius: 8px; }
+  /* Rosy Way wrap-up caption cell: same width/edges as .rosy-way-img (width:100%,
+     max-width:720px, centered) so it sits flush under the image. Text treatment
+     restored from the historical .bridge-scene-caption (8963fed). Locked per
+     Noal 2026-07-23 — do not remove without confirming directly. */
+  .rosy-way-caption { width: 100%; max-width: 720px; margin: var(--space-3) auto 0; text-align: center; font-family: var(--font-display); font-style: italic; color: var(--color-text-muted); font-size: var(--text-lg); }
+  .beacon { width: clamp(120px, 22vw, 180px); margin: 0 auto var(--space-8); }
+  .beacon svg { width: 100%; }
+  .beam-sweep { transform-origin: 90px 70px; animation: sweep 9s ease-in-out infinite; }
+  @keyframes sweep { 0%,100% { transform: rotate(-14deg); opacity: 0.55; } 50% { transform: rotate(14deg); opacity: 0.9; } }
+  @media (prefers-reduced-motion: reduce) { .beam-sweep { animation: none; opacity: 0.7; } }
+  .kicker { font-size: var(--text-xs); letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-primary); font-weight: 600; margin-bottom: var(--space-5); }
+  .hero h1 { font-size: var(--text-3xl); margin: 0 auto var(--space-6); max-width: 16ch; }
+  .hero .lede { font-size: var(--text-lg); color: var(--color-text-muted); max-width: 58ch; margin: 0 auto; }
+  .hero .lede strong { color: var(--color-primary); font-weight: 600; }
+  .hero-cta { margin-top: var(--space-8); display: flex; justify-content: center; }
+  .btn { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-body); font-weight: 600; font-size: var(--text-base); text-decoration: none; color: var(--color-bg); background: var(--color-primary); padding: var(--space-3) var(--space-6); border-radius: var(--radius-full); border: 1px solid var(--color-primary); box-shadow: var(--shadow-md); }
+  .btn:hover { background: var(--color-primary-hover); border-color: var(--color-primary-hover); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .btn .arr { transition: transform var(--transition-interactive); }
+  .btn:hover .arr { transform: translateX(3px); }
+
+  /* Keeper hero card */
+  .keeper-hero { padding: var(--space-10) 0 var(--space-4); }
+  .keeper-hero-inner { display: flex; gap: var(--space-8); align-items: flex-start; }
+  .keeper-hero-col { display: flex; flex-direction: column; align-items: center; flex: 0 0 180px; width: 180px; }
+  .keeper-hero-portrait { width: 180px; height: 220px; border-radius: var(--radius-lg); background-size: cover; background-position: center top; background-color: var(--color-surface); border: 1px solid var(--color-border); transition: opacity 0.4s ease; }
+  .keeper-hero-trait { text-align: center; font-size: var(--text-xs); letter-spacing: 0.04em; color: var(--color-text-muted); margin-top: var(--space-3); line-height: 1.4; font-style: italic; min-height: 2.4em; transition: opacity 0.3s; }
+  .keeper-hero-text { flex: 1; }
+  /* Fire Protocol 3-cell grid — always visible */
+  .intro-cells-section { padding: var(--space-6) 0 var(--space-10); }
+  .intro-cells { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+  .intro-cell { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); min-height: 90px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; text-align: left; font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.5; }
+  .intro-cell strong { color: var(--color-text); font-size: var(--text-xs); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: var(--space-2); display: block; }
+  @media (max-width: 640px) { .intro-cells { grid-template-columns: 1fr; } }
+  .rosie-cta-wrap { padding: var(--space-6) 0 var(--space-10); margin-top: var(--space-4); text-align: center; }
+  .rosie-cta-btn { display: inline-block; background: linear-gradient(135deg, var(--color-primary), var(--color-beam, #a0e080)); color: #04140c; font-weight: 700; font-size: var(--text-sm); letter-spacing: 0.04em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 999px; text-decoration: none; box-shadow: 0 0 16px color-mix(in oklab, var(--color-primary) 40%, transparent); transition: filter 0.2s, box-shadow 0.2s; }
+  .rosie-cta-btn:hover { filter: brightness(1.1); box-shadow: 0 0 24px color-mix(in oklab, var(--color-primary) 60%, transparent); }
+  /* CTA text stepped down one type step to --text-sm; each word's leading letter is bumped
+     back up one step (--text-base) via .cta-cap for an uppercase small-caps look, per Noal 2026-07-23. */
+  .hdr-cta { font-size: var(--text-sm); padding: 0.45rem 1.1rem; white-space: nowrap; background: var(--color-beam); color: #0a1a08 !important; font-weight: 600; border-radius: 999px; text-decoration: none; letter-spacing: 0.02em; box-shadow: none; background-image: none; }
+  .hdr-cta .cta-cap { font-size: var(--text-base); }
+  .hdr-cta:hover { filter: brightness(1.08); }
+  @media (max-width: 480px) { .hdr-cta { display: none; } }
+  @media (max-width: 540px) { .keeper-hero-inner { flex-direction: column; } .keeper-hero-portrait { width: 100%; height: 220px; flex: none; } }
+  .promise { padding: var(--space-2) 0 var(--space-16); }
+  .promise-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: clamp(var(--space-8), 5vw, var(--space-12)); box-shadow: var(--shadow-md); position: relative; overflow: hidden; }
+  .promise-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: linear-gradient(in oklab, var(--color-primary), var(--color-beam)); }
+  .promise h2 { font-size: var(--text-xl); margin-bottom: var(--space-6); color: var(--color-text); }
+  .promise p { font-size: var(--text-lg); color: var(--color-text); margin-bottom: var(--space-5); }
+  .promise p:last-child { margin-bottom: 0; }
+  .promise .muted { color: var(--color-text-muted); }
+  .promise strong { color: var(--color-primary); font-weight: 600; }
+
+  .harbor { padding: var(--space-8) 0 var(--space-10); }
+  .harbor-head { text-align: center; margin-bottom: var(--space-12); }
+  .harbor-head h2 { font-size: var(--text-2xl); margin-bottom: var(--space-3); }
+  .harbor-head p { color: var(--color-text-muted); margin: 0 auto; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
+  @media (max-width: 860px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+  .card { display: block; text-decoration: none; color: var(--color-text); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); position: relative; transition: transform var(--transition-interactive), border-color var(--transition-interactive), box-shadow var(--transition-interactive); }
+  .keeper-name { text-align: center; font-size: var(--text-sm); color: var(--color-text-muted); margin: -2px 0 var(--space-3); letter-spacing: 0.02em; transition: opacity 0.3s; }
+  .sage-library-link { display: inline-block; margin-top: var(--space-5); font-size: var(--text-sm); color: var(--color-primary); text-decoration: none; }
+  .sage-library-link:hover { text-decoration: underline; }
+  .fp-sub { color: var(--color-text-muted); margin-bottom: var(--space-6); }
+  .fp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); align-items: start; }
+  @media (max-width: 860px) { .fp-grid { grid-template-columns: 1fr; } }
+  .fp-cell { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; }
+  .fp-cell summary { list-style: none; cursor: pointer; padding: var(--space-5); display: flex; align-items: center; gap: var(--space-3); }
+  .fp-cell summary::-webkit-details-marker { display: none; }
+  .fp-cell .chev { margin-left: auto; flex-shrink: 0; color: var(--color-text-faint); transition: transform var(--transition-interactive); }
+  .fp-cell[open] summary .chev { transform: rotate(180deg); }
+  .fp-num { font-family: var(--font-display); color: var(--color-primary); font-size: var(--text-lg); line-height: 1; flex-shrink: 0; }
+  .fp-title { font-weight: 600; }
+  .fp-teaser { padding: 0 var(--space-5) var(--space-4); margin: 0; color: var(--color-text-muted); font-size: var(--text-sm); }
+  .fp-cell[open] .fp-teaser { display: none; }
+  .fp-body { padding: 0 var(--space-5) var(--space-5); margin: 0; color: var(--color-text); font-size: var(--text-sm); line-height: 1.6; display: none; }
+  .fp-cell[open] .fp-body { display: block; }
+  .card:hover { transform: translateY(-3px); border-color: var(--color-primary); box-shadow: var(--shadow-md); }
+  .card .num { font-family: var(--font-display); font-size: var(--text-lg); color: var(--color-primary); line-height: 1; margin-bottom: var(--space-4); }
+  .card-fire { font-size: 0.75rem; color: var(--color-beam); line-height: 1.55; margin-top: var(--space-3); font-style: italic; opacity: 0.88; }
+  .card h3 { font-size: var(--text-xl); margin-bottom: var(--space-2); }
+  .card p { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: 0; }
+  .card .arrow { position: absolute; top: var(--space-6); right: var(--space-6); color: var(--color-text-faint); transition: color var(--transition-interactive), transform var(--transition-interactive); }
+  .keeper-portrait { aspect-ratio: 1 / 1; border-radius: var(--radius-md); border: 1px solid var(--color-border); background-color: var(--color-surface-2); background-size: cover; background-position: center; background-repeat: no-repeat; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; color: var(--color-text-faint); transition: opacity .3s ease; }
+  .keeper-portrait svg { width: 32%; height: 32%; }
+  .card:hover .arrow { color: var(--color-primary); transform: translateX(3px); }
+
+  /* Flame / Ember companion */
+  @keyframes flicker{0%,100%{transform:scaleY(1) scaleX(1) rotate(-1deg)}25%{transform:scaleY(1.08) scaleX(0.96) rotate(1.5deg)}50%{transform:scaleY(0.94) scaleX(1.04) rotate(-0.5deg)}75%{transform:scaleY(1.05) scaleX(0.98) rotate(1deg)}}
+  @keyframes flickerGlow{0%,100%{opacity:0.5;transform:scale(1)}50%{opacity:0.8;transform:scale(1.15)}}
+  @keyframes wink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(0.1)}}
+  @keyframes emberFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  /* Flame rail — fixed column aligned to right edge of content area */
+  .flame-rail { position:fixed; right:max(8px, calc(50vw - 580px)); top:0; bottom:0; width:52px; z-index:60; pointer-events:none; display:flex; flex-direction:column; align-items:center; }
+  .flame-rail-line { display:none; }
+  .ember { position:absolute; right:4px; width:44px; height:60px; cursor:pointer; opacity:0; pointer-events:none; transition:opacity 600ms ease, top 420ms cubic-bezier(0.34,1.56,0.64,1); }
+  .ember.shown{opacity:1;pointer-events:auto;}
+  .ember.shown svg{animation:emberFadeIn 1.2s ease forwards}
+  .ember.docked{opacity:0!important;pointer-events:none;}
+  .ember svg{width:100%;height:100%;filter:drop-shadow(0 0 10px rgba(255,120,0,0.55))}
+  .ember .flame-body{transform-origin:center bottom;animation:flicker 2.4s ease-in-out infinite}
+  .ember .flame-glow{transform-origin:center bottom;animation:flickerGlow 3.1s ease-in-out infinite}
+  .ember .eye{animation:wink 5s ease-in-out infinite}
+  .ember-bubble{position:fixed;right:68px;bottom:120px;width:220px;min-width:180px;max-width:220px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;padding:0.7rem 0.9rem;font-size:0.82rem;line-height:1.45;color:var(--color-text);box-shadow:0 8px 24px rgba(0,0,0,0.18);opacity:0;transform:translateX(8px) scale(0.9);pointer-events:none;transition:all 280ms cubic-bezier(0.16,1,0.3,1);z-index:59}
+  .ember.show .ember-bubble{opacity:1;transform:translateX(0) scale(1)}
+  .ember-bubble::after{content:"";position:absolute;right:-6px;bottom:16px;width:12px;height:12px;background:var(--color-surface);border-right:1px solid var(--color-border);border-top:1px solid var(--color-border);transform:rotate(45deg)}
+  @media(max-width:560px){.flame-rail{width:38px}.ember{width:32px;height:44px;right:3px}.ember-bubble{right:44px;bottom:80px;width:160px;min-width:140px}}
+  .harbor-now { padding: var(--space-16) 0 var(--space-20); }
+  .harbor-now .kicker { text-align: center; margin-bottom: var(--space-4); }
+  .harbor-now h2 { text-align: center; font-size: var(--text-2xl); margin-bottom: var(--space-10); }
+  .hn-report { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: clamp(var(--space-6),4vw,var(--space-10)); box-shadow: var(--shadow-md); max-width: 640px; margin: 0 auto var(--space-12); position: relative; overflow: hidden; }
+  .hn-report::before { content:""; position:absolute; inset:0 auto 0 0; width:3px; background:linear-gradient(in oklab,var(--color-primary),var(--color-beam,#e8b659)); }
+  .hn-weather { font-size: var(--text-lg); color: var(--color-text); margin-bottom: var(--space-4); }
+  .hn-weather strong { color: var(--color-primary); font-weight: 600; }
+  .hn-report p:last-child { color: var(--color-text-muted); margin-bottom: 0; }
+  .hn-asof { font-size: var(--text-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); font-weight: 600; margin-bottom: var(--space-4); }
+  .hn-asof time { text-transform: none; letter-spacing: normal; }
+  .hn-stale-note { font-size: var(--text-sm); color: var(--color-text-muted); font-style: italic; margin-bottom: var(--space-3); }
+  .hn-stale-note[hidden] { display: none; }
+  .hn-body p { font-size: var(--text-base); color: var(--color-text); margin-bottom: var(--space-4); }
+  .hn-body p:last-child { color: var(--color-text-muted); margin-bottom: 0; }
+  .hn-body strong { color: var(--color-primary); font-weight: 600; }
+  .hn-archive { max-width: 640px; margin: 0 auto; text-align: center; }
+  .hn-archive h3 { font-size: var(--text-lg); margin-bottom: var(--space-5); color: var(--color-text); }
+  .hn-list { list-style: none; padding: 0; margin: 0 auto var(--space-6); max-width: 640px; text-align: left; }
+  .hn-list li { border-bottom: 1px solid var(--color-divider); }
+  .hn-list a { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-2); text-decoration: none; color: var(--color-text); }
+  .hn-list a:hover { color: var(--color-primary); }
+  .hn-list .date { font-family: var(--font-display); color: var(--color-text-muted); font-size: var(--text-sm); flex: 0 0 auto; width: 7.5rem; }
+  .hn-list .title { flex: 1; font-size: var(--text-base); }
+  .hn-list .arr { color: var(--color-text-faint); transition: transform var(--transition-interactive), color var(--transition-interactive); }
+  .hn-list a:hover .arr { color: var(--color-primary); transform: translateX(3px); }
+  .hn-all { display: inline-block; font-size: var(--text-sm); font-weight: 600; color: var(--color-primary); text-decoration: none; }
+  .hn-all:hover { color: var(--color-primary-hover); }
+  details.collapsible > summary { list-style: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: var(--space-4); padding: var(--space-4) 0; margin-bottom: 0; }
+  details.collapsible > summary::-webkit-details-marker { display: none; }
+  /* Uniform heading size across every homepage section header bar — locked per Noal 2026-07-23.
+     All .sec-bar h2/h3 render at the same size regardless of tag. Do not vary without Noal
+     confirming directly in a session that can see this comment. */
+  details.collapsible > summary h2, details.collapsible > summary h3,
+  .sec-bar h2, .sec-bar h3 { font-size: var(--text-xl); margin: 0; text-align: center; font-family: var(--font-display); font-weight: 400; letter-spacing: -0.01em; text-transform: none; color: var(--color-text); }
+  /* Scoped to the homepage top heading only — does not affect .sec-bar globally. Added per Noal 2026-07-25. */
+  @property --lime-glow-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+  .sec-bar h2.heading-box-glow { position: relative; display: inline-block; padding: var(--space-1) var(--space-4); border-radius: var(--radius-md); background: var(--color-bg); }
+  .sec-bar h2.heading-box-glow::before { content: ""; position: absolute; z-index: -1; inset: -2px; padding: 2px; border-radius: inherit; background: conic-gradient(from var(--lime-glow-angle), var(--color-glow-blue), transparent 25%, transparent 75%, var(--color-glow-blue)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; animation: heading-glow-spin 3.5s linear infinite; }
+  @keyframes heading-glow-spin { to { --lime-glow-angle: 360deg; } }
+  @media (prefers-reduced-motion: reduce) { .sec-bar h2.heading-box-glow::before { animation: none; } }
+  /* Reusable rotating-glow cell wrapper for grouped content blocks — mockup per Noal 2026-07-25.
+     Reuses the --lime-glow-angle property and heading-glow-spin keyframes defined above. */
+  .lime-glow-cell { position: relative; border-radius: var(--radius-lg); padding: var(--space-6); background: var(--color-bg); }
+  .lime-glow-cell::before { content: ""; position: absolute; z-index: -1; inset: -2px; padding: 2px; border-radius: inherit; background: conic-gradient(from var(--lime-glow-angle), var(--color-glow-blue), transparent 25%, transparent 75%, var(--color-glow-blue)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; animation: heading-glow-spin 3.5s linear infinite; }
+  @media (prefers-reduced-motion: reduce) { .lime-glow-cell::before { animation: none; } }
+  /* Gap between cells so they read as distinct boxes, not one merged shape. Safe on all
+     instances now: the CTA cells and Rosy Way image that used to need a zero-gap bottom
+     are physically inside the .keeper-hero cell itself, not sitting after it. */
+  .lime-glow-cell { margin-bottom: var(--space-10); }
+  details.collapsible > summary .chev { color: var(--color-text-muted); transition: transform var(--transition-interactive); flex: 0 0 auto; }
+  details.collapsible[open] > summary .chev { transform: rotate(180deg); }
+  details.collapsible > summary:hover h2, details.collapsible > summary:hover h3, details.collapsible > summary:hover .chev { color: var(--color-primary); }
+  details.collapsible > .sec-body { padding-top: var(--space-8); animation: secOpen .25s ease; }
+  @keyframes secOpen { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { details.collapsible > .sec-body { animation: none; } details.collapsible > summary .chev { transition: none; } }
+  footer { padding: 0; background: var(--color-surface); }
+  .foot { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-12); align-items: start; }
+  @media (max-width: 700px) { .foot { grid-template-columns: 1fr; gap: var(--space-8); } }
+  .foot-collapsible { border-top: 1px solid var(--color-divider); }
+  .foot-bar { padding: var(--space-4) 0; }
+  .foot-heading { font-size: var(--text-sm); letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-muted); font-weight: 600; margin: 0; }
+  .foot .creed { font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-text); line-height: 1.35; margin-bottom: var(--space-5); }
+  .foot .meta { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; }
+  .foot .meta a { color: var(--color-text-muted); text-decoration: none; border-bottom: 1px solid var(--color-border); }
+  .foot .meta a:hover { color: var(--color-primary); border-color: var(--color-primary); }
+  .foot .copy { font-size: var(--text-xs); color: var(--color-text-faint); margin-top: var(--space-6); }
+  /* Canonical content width (720px) — matches .rosy-way-img. Applied to the new Fire
+     Protocol message cell, the Rosy Way text cell, and the top info block so their
+     left/right edges align across desktop and mobile. Per Noal 2026-07-24. */
+  .fp-message { max-width: 720px; margin: var(--space-8) auto 0; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: clamp(var(--space-6), 4vw, var(--space-10)); box-shadow: var(--shadow-md); position: relative; overflow: hidden; }
+  .fp-message::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: linear-gradient(in oklab, var(--color-primary), var(--color-beam)); }
+  .fp-message h2 { font-size: var(--text-xl); margin-bottom: var(--space-5); color: var(--color-text); font-family: var(--font-display); font-weight: 400; letter-spacing: -0.01em; text-align: left; }
+  .fp-message p { font-size: var(--text-base); color: var(--color-text); line-height: 1.7; margin-bottom: var(--space-5); max-width: none; }
+  .fp-message p:last-child { margin-bottom: 0; }
+  .fp-message strong { color: var(--color-primary); font-weight: 600; }
+  #hero-details > .sec-body { max-width: 720px; margin-left: auto; margin-right: auto; }
+  /* Top info block: single column at every width so its visible content/paragraph
+     region spans the full 720px canonical edges (not the 1.4fr first column, which
+     ended at ~392px). Base .foot 2-col grid is overridden here only. Per Noal 2026-07-24. */
+  .lime-info .foot { max-width: 720px; margin-left: auto; margin-right: auto; grid-template-columns: 1fr; }
+  /* Zero inter-section gaps */
+  section { margin-top: 0 !important; padding-top: 0 !important; }
+  .sec-bar { margin-top: 0 !important; }
+  /* Continuous stack: One Promise -> Rosy Way image -> Rosy Way -> Wicket Gate.
+     Remove the residual blank band (section bottom padding + summary margin)
+     between these components while keeping each summary's own click padding. */
+  .keeper-hero, .hero, .harbor-now { padding-bottom: 0 !important; }
+  .keeper-hero > .wrap > .lime-glow-cell > details.collapsible:first-child > summary,
+  #hero-details > summary { margin-bottom: 0; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap hdr">
+    <a class="brand" href="index.html" aria-label="Lime Signalworks home">
+      <!-- Rotating lighthouse mark (assets/brand/lighthouse-loop.mp4) — per Noal 2026-07-23.
+           Replaces the static SVG icon. Do not revert without Noal confirming directly. -->
+      <video class="brand-mark" src="assets/brand/lighthouse-loop.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
+      <span class="word">Lime&nbsp;<b>Signalworks</b> LLC</span>
+    </a>
+    <div class="hdr-actions">
+    <a class="rosie-cta-btn hdr-cta" href="https://limesignalworks.pplx.app" target="_blank" rel="noopener"><span class="cta-cap">R</span>osie <span class="cta-cap">I</span>nteractive <span class="cta-cap">N</span>ow →</a>
+    <div class="hdr-tools">
+      <button class="icon-btn" data-translate aria-label="Translate this page">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </button>
+      <button class="icon-btn" data-theme-toggle aria-label="Switch theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+    </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="lime-info">
+    <div class="wrap">
+      <details class="collapsible" open>
+    <!-- Mockup: entire .foot block boxed as one cell, since it is the single body of
+         text/content running from "Different worlds" to "...stays behind it." Added
+         per Noal 2026-07-25, mockup pass — not final until confirmed. -->
+    <!-- Homepage top heading — locked wording per Noal 2026-07-25. Must read exactly
+         "Lime Signalworks: A Financial Lighthouse". Noal directly confirmed this wording
+         on 2026-07-25, superseding the prior "Lime Signalworks Financial Technologies"
+         line (itself locked 2026-07-24). Do NOT revert or rewrite without Noal confirming directly. -->
+    <summary class="sec-bar"><h2 class="heading-box-glow">Lime Signalworks: A Financial Lighthouse</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+    <div class="foot lime-glow-cell">
+      <div>
+        <p class="creed" data-i18n="creed">Different worlds, same problem: how to face market chaos without handing your life to a guru.</p>
+        <p class="meta">
+          <a href="tel:+13802000288">+1 380-200-0288</a> &nbsp;·&nbsp;
+          <a href="mailto:contact@limesignalworks.com">contact@limesignalworks.com</a><br>
+          2722 Erie Ave, Suite 219, Cincinnati, OH 45208<br>
+          <span data-i18n="by_appt">By appointment.</span>
+        </p>
+        <p class="copy" data-i18n="copy">© 2026 Lime Signalworks LLC. Loss prevention first. Always.</p>
+      </div>
+      <div>
+        <p class="meta">
+          <strong style="color:var(--color-text);" data-i18n="rails_h">The harbor before the rails.</strong><br><br>
+          <span data-i18n="rails_p">The homepage routes to the Gate; the Gate is where system access happens. The high-voltage work stays behind it.</span>
+        </p>
+      </div>
+    </div>
+  </details>
+    </div>
+  </section>
+
+
+  <!-- Single rotating Keeper portrait + promise text — collapses as one card -->
+  <section id="harbor-now" class="harbor-now" data-harbor-asof="2026-07-23">
+    <div class="wrap">
+      <!-- Mockup: Today's harbor + Past Harbor Nows grouped into one cell. Added per
+           Noal 2026-07-25, mockup pass — not final until confirmed. -->
+      <div class="lime-glow-cell">
+      <details class="collapsible" id="hn-details">
+        <summary class="sec-bar"><h2 data-i18n="hn_h" class="hn-heading"><span class="hn-heading-label">Most recent harbor read</span> — <time class="hn-heading-date" datetime="2026-07-23">Thursday, July 23, 2026</time></h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="sec-body">
+          <div class="hn-report">
+            <p class="hn-stale-note" data-i18n="hn_stale" hidden>Showing the most recent completed harbor read — live market data may be newer.</p>
+            <p class="hn-asof" data-i18n="hn_asof">As of close · <time datetime="2026-07-23">Thursday, July 23, 2026</time></p>
+            <p class="hn-weather" data-i18n="hn_weather">Market weather: <strong>bearish</strong>. Posture: <strong>protect-first</strong>.</p>
+            <div class="hn-body" data-i18n="hn_body"><p>QQQ led the downside (-1.90%) while SPY (-1.23%), DIA (-1.00%), and IWM (-0.58%) also fell in a broad risk-off close during one of the busiest earnings sessions of the quarter. Volatility spiked; the VIX sits at 18.70, up 12.38% on the day.</p><p><a href="harbor-now/archive/2026-07-23.html">Read the full Harbor Now →</a></p></div>
+          </div>
+        </div>
+      </details>
+      <details class="collapsible">
+        <summary class="sec-bar"><h3 data-i18n="hn_archive_h">Past Harbor Nows</h3><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="sec-body">
+          <ul class="hn-list">
+            <li><a href="harbor-now/archive/2026-07-23.html"><span class="date">Jul 23, 2026</span><span class="title">Broad risk-off close — QQQ leads lower as VIX spikes into heavy earnings</span><span class="arr">&rarr;</span></a></li>
+            <li><a href="harbor-now/archive/2026-07-17.html"><span class="date">Jul 17, 2026</span><span class="title">Risk-off tape — tech led lower, VIX pops</span><span class="arr">→</span></a></li>
+            <li><a href="harbor-now/archive/2026-07-16.html"><span class="date">Jul 16, 2026</span><span class="title">Tech hit, volatility pops — breadth uncertain into earnings</span><span class="arr">→</span></a></li>
+            <li><a href="harbor-now/archive/2026-07-15.html"><span class="date">Jul 15, 2026</span><span class="title">Breadth broad, tech lags — a quiet day near highs</span><span class="arr">→</span></a></li>
+            <li><a href="harbor-now/archive/2026-07-12.html"><span class="date">Jul 12, 2026</span><span class="title">Exhaustion holding, posture reduce</span><span class="arr">→</span></a></li>
+            <li><a href="harbor-now/archive/2026-07-11.html"><span class="date">Jul 11, 2026</span><span class="title">Trend up, clean and aligned</span><span class="arr">→</span></a></li>
+          </ul>
+          <a class="hn-all" href="harbor-now/index.html" data-i18n="hn_all">View all Harbor Nows →</a>
+        </div>
+      </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="keeper-hero">
+    <div class="wrap">
+      <!-- Box extended per Noal 2026-07-25: The one promise + CTA cells + Rosy Way image +
+           caption, one cell, ending at "You've reached the end of the harbor — for now."
+           rosy-way-img/caption physically relocated here from .hero, not duplicated. -->
+      <div class="lime-glow-cell">
+      <details class="collapsible" id="keeper-hero-card">
+        <summary class="sec-bar"><h2 data-i18n="promise_h">The one promise</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="sec-body">
+          <div class="keeper-hero-inner">
+            <div class="keeper-hero-text">
+              <div class="promise-card">
+                <p data-i18n="promise_p1">We cannot and do not guarantee profits or eliminate risk — <strong>no honest system can</strong>. Markets go up, down, and sideways, and your decisions and results are your own.</p>
+                <p class="muted" data-i18n="promise_p2">What we do promise is our best work: clear teaching, honest tools, and a solid system built to serve real families and real companies by leaning first toward loss prevention, then toward profit. If that does not feel true in your experience after ninety days, you do not pay for it.</p>
+              </div>
+            </div>
+            <div class="keeper-hero-col">
+              <div class="keeper-hero-portrait" id="kh-portrait" role="img" aria-label="Keeper portrait"></div>
+              <div class="keeper-hero-trait" id="kh-trait"></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <!-- CTA + Fire Protocol cells — inside promise section -->
+      <div class="rosie-cta-wrap" id="rosie-cta-wrap">
+        <div class="intro-cells">
+          <div class="intro-cell" id="intro-cell-1"><strong>The Setup</strong><br>The burdens you have actually been carrying — and the 33-day protocol designed to hand them over.</div>
+          <div class="intro-cell" id="intro-cell-2"><strong>The Mitigation</strong><br>Three returns in the morning. Six at midday. Nine at close. One word a day. This is the practice.</div>
+          <div class="intro-cell" id="intro-cell-3"><strong>The Conclusion</strong><br>Everything you have ever wanted is looking for a place to land. You are no longer the ship. You have become the shore.</div>
+        </div>
+      </div>
+      <img class="rosy-way-img" src="assets/bridge/rosy-way-bloom.webp" alt="A man and a woman beside a flowering rose tree, arms raised, gold dust around them, a path curving into the light">
+      <!-- Wrap-up cell restored verbatim from 8963fed (removed by a6d307f
+           "Reorder sections"); line breaks per Noal's 2026-07-19 dictation.
+           Re-restored 2026-07-23 after an unrelated baseline revert dropped it —
+           do not remove without Noal confirming directly. -->
+      <p class="rosy-way-caption">This is what happens along the Rosy Way. Life changes.<br>
+      Your true purpose finds you &mdash; and it amplifies you.<br>
+      You've reached the end of the harbor &mdash; for now.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="wrap">
+      <!-- Box added per Noal 2026-07-25: The Rosy Way heading + h1 + lede, extended through
+           the Introduction to the 33-Day Fire Protocol and the Fire Protocol message cell,
+           ending at "...disciplined path worth walking." Fire-protocol and
+           fire-protocol-message section content physically relocated here; the .fire-protocol
+           and .fire-protocol-message <section> wrappers are removed, not the content itself.
+           #hero-details replaces the old .hero > .wrap > details.collapsible selector target
+           so this cell's spacing rules keep working after the nesting change below. -->
+      <div class="lime-glow-cell">
+      <details class="collapsible" id="hero-details">
+        <summary class="sec-bar"><h2 data-i18n="kicker">The Rosy Way</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="sec-body">
+          <div class="beacon" aria-hidden="true">
+            <svg viewBox="0 0 180 120" fill="none">
+              <g class="beam-sweep"><path d="M90 50 L178 14 L178 86 L90 66 Z" fill="var(--color-primary)" opacity="0.18"/><path d="M90 50 L2 14 L2 86 L90 66 Z" fill="var(--color-beam)" opacity="0.14"/></g>
+              <path d="M90 16 L104 34 L104 42 L95 42 L95 58 L102 58 L102 112 L78 112 L78 58 L85 58 L85 42 L76 42 L76 34 Z" fill="var(--color-text)"/>
+              <rect x="72" y="108" width="36" height="8" rx="3" fill="var(--color-text)"/>
+              <circle cx="90" cy="44" r="9" fill="var(--color-primary)"/><circle cx="90" cy="44" r="4" fill="var(--color-bg)"/>
+            </svg>
+          </div>
+          <h1 data-i18n="h1">Where inner posture meets disciplined action.</h1>
+          <p class="lede" data-i18n="lede"><strong>A safety suit — not a cape.</strong> Loss-prevention-first AI trading assistance for real households and real companies — a clear environment for clarity, discipline, and wise decisions in markets and in life. Not a guru to follow.</p>
+        </div>
+      </details>
+      <details class="collapsible">
+        <summary class="sec-bar"><h2>Introduction to the 33-Day Fire Protocol</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="sec-body">
+          <p class="fp-sub">The Fire Spirit speaks one word a day for 33 days. Here is the shape of the whole arc, in three parts — open any of them now, or simply know they are here and come back to them.</p>
+          <div class="fp-grid">
+            <details class="fp-cell">
+              <summary><span class="fp-num">1</span><span class="fp-title">The Setup</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+              <p class="fp-teaser">The Setup — the burdens you have actually been carrying.</p>
+              <p class="fp-body"><strong>The Problem</strong> — the burdens you have actually been carrying.<br><strong>The Solution</strong> — the 33-Day Fire Protocol.<br><br>Real alignment — heart, mind, and soul, coherence drawn to a point — steady enough to use Rosie's capabilities well — does not arrive instantly. It needs only two things: the learning to use the software, and the Fire Protocol. Thirty-three days is the window that matters, where everything draws to a very fine point.<br><br>This is where the weight of struggle gets named honestly: the hustle, the force, tension and stress, the exhaustion mistaken for progress. The habit of hunting for survival, when you were built to be the destination. The years of hard work that built a wall between you and the results that should have arrived a decade ago.<br><br>Not a trick. Not a guru. Just the starting point — a container, set down clearly before anything else begins. You have been carrying the weight of your future as if it were a burden. This 33-day protocol hands that weight over to a system designed to carry it — so you can operate from clarity and calm instead of effort and exhaustion.<br><br>The Zero Point is 33 days from now — it is both beginning and end. Before the market opens. Before the news. Before the feed. Silence and awareness first. Center your alignment and coherence to a fine point. Signal second. Everything else follows.</p>
+            </details>
+            <details class="fp-cell">
+              <summary><span class="fp-num">2</span><span class="fp-title">The Mitigation</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+              <p class="fp-teaser">The Mitigation — three returns in the morning. Six at midday. Nine at close. One word a day.</p>
+              <p class="fp-body">The session clears the hidden resistance — not by force, but by stopping the fight. The biology of pursuit is expensive. Jaw clenched. Shoulders up. Nervous system locked in a permanent state of hunting. This protocol does one thing: it teaches the body to switch from pursuit to arrival.<br><br>The structure is the 3-6-9 rhythm.<br><br><strong>3 — Morning.</strong> The spark. Harbor Now opens the day before the market does. Before the news. Before the feed. Three morning acknowledgments: direction is set, the new signal is lit, the intention is already registered. You are not asking for a miracle. You are witnessing the blueprint being drawn.<br><br><strong>6 — Midday.</strong> The anchor. Most people lose the signal halfway through the day — the world's noise colonizes the frequency. Six midday returns stabilize it. The thesis is checked. The sea state is read. The amber light holds the center. You are not bracing for a struggle. You are leaning back into a mathematical law. Just as the planets do not try to stay in orbit, you do not try to be worthy of what is already yours.<br><br><strong>9 — Evening.</strong> Completion. Nine returns before sleep. Not a debrief of what went wrong — a rest in what held. Journal close. The seeker goes quiet. The architect takes over. You have moved from the friction of wanting into the silent gravity of having.<br><br>Thirty-three days. Three returns in the morning, six at midday, nine at close. This is not a technique you practice. It is a law you inhabit — one day at a time, until the architecture is locked. The code is active. The blueprint is signed.</p>
+            </details>
+            <details class="fp-cell">
+              <summary><span class="fp-num">3</span><span class="fp-title">The Conclusion and Renaissance</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+              <p class="fp-teaser">The Conclusion — everything you have ever wanted is looking for a place to land. You are no longer the ship. You have become the shore.</p>
+              <p class="fp-body">Everything you have ever wanted is currently looking for a place to land. It cannot find you — not yet — because you are still standing behind the wall of effort you built to protect yourself. That wall is the problem. This protocol is the demolition.<br><br>Before we open the gates, name this honestly: if you knew beyond any doubt that your biggest financial burden was paid in full by next Friday — what would the muscles in your stomach do right now? That specific release — that is the feeling of after. We need to name it before we can step into it.<br><br>You do not need to attract anything. You need to stop repelling it with anxiety. Take a breath wider than it is deep. As you let it out, realize you are not sitting in a room — you are sitting in an ocean of resources that is constantly trying to fill the vacuum you create when you finally relax.<br><br>You are moving out of the state of the beggar and into the state of the source. The earth does not need reminding to hold you. The universe does not need reminding to fund you. It is an automated system of support you have been accidentally fighting.<br><br>You are no longer the ship battling the waves trying to find the shore. You have become the shore. Where everything eventually arrives.<br><br>This is the Harbor. Stop looking for signs of success. Become the signal that success is looking for. Your presence is the command. Your field is clear. The war is over.<br><br>Rest in the result.</p>
+            </details>
+          </div>
+        </div>
+      </details>
+      <!-- Fire Protocol message cell — always-visible text card. Copy from Noal's 2026-07-24
+           dictation. Canonical 720px width (.fp-message) matches .rosy-way-img. -->
+      <div class="fp-message">
+        <h2>If you have lost hope for your trading and investing future</h2>
+        <p>If you have lost hope for your trading and investing future, you are exactly who this is for. We invite you to explore the <strong>33-Day Fire Protocol</strong>. It may not look like financial intelligence at first — and that is on purpose. Its guidance runs deeper than the usual market commentary, because inner posture and clarity come before any signal.</p>
+        <p>What you learn to apprehend here can help you shape the future you actually want and draw it into the present, one disciplined day at a time. Rosie sets a new bar for what an honest trading companion can be, and makes disciplined trading and investing far more accessible than it has ever been.</p>
+        <p>The common opportunities in these markets are too often obscured — dressed up by institutions in language meant to keep them just out of reach. Here we explain, plainly, how they actually work. Rosie also moves beyond candlestick reading, an antique method, toward something steadier and more coherent.</p>
+        <p>Together, Rosie and the 33-Day Protocol can support a genuine renaissance in your financial life. The Protocol is built to develop significance, posture, and discipline — not only for you, but for your mate, your family, and your community.</p>
+        <p>The historical figures you meet along the way are not trading heroes. They are heroes of posture and disciplined guidance — reminders of how to stand before you act. Rosie herself emerged through serendipity, and she carries that same spirit forward.</p>
+        <p>Think of the Wright brothers' first airplane set beside a modern F-22 — the same principle of flight, a different world of capability. That is the leap we are inviting you into. Try Rosie for 33 days. <strong>We cannot and do not promise profits or guaranteed returns — no honest system can</strong> — but we can offer clear teaching, honest tools, and a disciplined path worth walking.</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="harbor">
+    <div class="wrap">
+      <details class="collapsible">
+        <summary class="sec-bar"><h2 data-i18n="doors_h" class="heading-box-glow">The Wicket Gate</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="sec-body">
+          <p class="doors-sub" data-i18n="doors_sub">Nine doors. Start wherever fits you today.</p>
+          <div class="grid">
+        <a class="card" href="https://limesignalworks.pplx.app" target="_blank" rel="noopener"><div class="num">01</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Peter" style="background-image:url('assets/keepers/01_peter.webp')"></div><div class="keeper-name" data-slot="0">Peter</div><h3 data-i18n="d_gate_t">System Access</h3><p data-i18n="d_gate_d">Authorized? Unlock your personalized Rosie sandbox and Fire Spirit materials here.</p><p class="card-fire">Stood at the gate. Denied. Returned. Held the position anyway.</p></a>
+        <a class="card" href="seed/index.html"><div class="num">02</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Solomon" style="background-image:url('assets/keepers/02_solomon.webp')"></div><div class="keeper-name" data-slot="1">Solomon</div><h3 data-i18n="d_seed_t">What LIME Is</h3><p data-i18n="d_seed_d">LIME in plain language — the problem it solves and how it works.</p><p class="card-fire">Asked for wisdom when he could have asked for anything else.</p></a>
+        <a class="card" href="invite/index.html"><div class="num">03</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Mary Magdalene" style="background-image:url('assets/keepers/03_mary_magdalene.webp')"></div><div class="keeper-name" data-slot="2">Mary Magdalene</div><h3 data-i18n="d_invite_t">Bring Someone</h3><p data-i18n="d_invite_d">Bring someone you care about to the harbor. A personal welcome.</p><p class="card-fire">First to the tomb. First to carry the news. Carried the signal when no one else did.</p></a>
+        <a class="card" href="fire-spirit/index.html"><div class="num">04</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Mary of Bethany" style="background-image:url('assets/keepers/04_mary_of_bethany.webp')"></div><div class="keeper-name" data-slot="3">Mary of Bethany</div><h3 data-i18n="d_fire_t">Inner Rail</h3><p data-i18n="d_fire_d">The Fire Spirit — inner work that turns posture into disciplined action.</p><p class="card-fire">Chose the one thing. Sat at the feet when the room said get up and work.</p></a>
+        <div class="card"><div class="num">05</div><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Daniel" style="background-image:url('assets/keepers/05_daniel.webp')"></div><div class="keeper-name" data-slot="4">Daniel</div><h3 data-i18n="d_dash_t">Situation Report</h3><p data-i18n="d_dash_d">Today's market weather — regime, fidelity, condition. Read before you act.</p><p class="card-fire">Read the room correctly every time. Never once adjusted the report to please the audience.</p></div>
+        <a class="card" href="offer/index.html"><div class="num">06</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Esther" style="background-image:url('assets/keepers/06_esther.webp')"></div><div class="keeper-name" data-slot="5">Esther</div><h3 data-i18n="d_sub_t">The Offer</h3><p data-i18n="d_sub_d">What you get, what it costs, how to join. Loss-prevention-first AI assistance.</p><p class="card-fire">Held the position until the right moment. Did not move before the setup was clear.</p></a>
+        <a class="card" href="https://spy-pipeline-rosie.pplx.app" target="_blank" rel="noopener"><div class="num">07</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Ruth" style="background-image:url('assets/keepers/07_ruth.webp')"></div><div class="keeper-name" data-slot="6">Ruth</div><h3 data-i18n="d_spy_t">SPY Harbor Watch</h3><p data-i18n="d_spy_d">Live SPY tracking since Rosie's first trade — price, alerts, and the 90-day dashboard.</p><p class="card-fire">Stayed when leaving was the easier, more reasonable choice.</p></a>
+        <a class="card" href="laugh-lounge/index.html"><div class="num">08</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — David" style="background-image:url('assets/keepers/08_david.webp')"></div><div class="keeper-name" data-slot="7">David</div><h3 data-i18n="d_laugh_t">The Laugh Lounge</h3><p data-i18n="d_laugh_d">A lighter door. Harbor and lighthouse humor, and a library you can browse at your own pace.</p><p class="card-fire">Wrote songs in caves. Praised in the dark before the light arrived. Laughter in that frequency is not a distraction — it is praise.</p></a>
+        <a class="card" href="metaphor-gate/index.html"><div class="num">09</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Adam" style="background-image:url('assets/keepers/09_adam.webp')"></div><div class="keeper-name" data-slot="8">Adam</div><h3>The Metaphor Gate</h3><p>The teaching layer. Learn to hear what is actually being said — in markets, in leadership, in scripture.</p><p class="card-fire">Adam's fire was carrying a promise forward without any proof it would hold. That is the same posture this teaching layer asks of you — learn to trust the pattern before you can see how it resolves.</p></a>
+      </div>
+      <a class="sage-library-link" href="fire-spirit/index.html#song">Explore the full Sage Missions Library →</a>
+        </div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+
+<script>
+
+(function () {
+  const t = document.querySelector('[data-theme-toggle]'), r = document.documentElement;
+  let d = 'dark';
+  r.setAttribute('data-theme', d);
+  function icon(dark){ return dark
+    ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+    : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'; }
+  if (t) { t.innerHTML = icon(d==='dark'); t.setAttribute('aria-label','Switch to '+(d==='dark'?'light':'dark')+' mode');
+    t.addEventListener('click', () => { d = d==='dark'?'light':'dark'; r.setAttribute('data-theme', d); t.innerHTML = icon(d==='dark'); t.setAttribute('aria-label','Switch to '+(d==='dark'?'light':'dark')+' mode'); });
+  }
+  var tr = document.querySelector('[data-translate]');
+  if (tr) { tr.addEventListener('click', function(){
+    window.open('https://translate.google.com/translate?sl=auto&tl=auto&u=' + encodeURIComponent(window.location.href), '_blank', 'noopener');
+  }); }
+})();
+</script>
+<script>
+(function(){
+  var cta=document.querySelector('.hero-cta .btn');
+  if(cta){cta.addEventListener('click',function(){var d=document.getElementById('hn-details');if(d){d.open=true;}});}
+})();
+</script>
+<script>
+/* Harbor freshness guard. Locked per Noal 2026-07-23 — automates the two
+ * on-page date displays (section heading + "As of close" line) so they
+ * reflect the visitor's real "today" instead of a hand-typed date going
+ * stale. The static markup is honest by default — it labels the read
+ * "Most recent harbor read" and dates it to the machine-readable
+ * data-harbor-asof close date, so a no-JS viewer never sees a false "today"
+ * claim. When the read is genuinely fresh relative to the viewer's own clock
+ * (within ~4 business days, tolerating weekends), we upgrade the label to
+ * "Today's harbor" and stamp it with the live date. When it is stale, we keep
+ * the honest label and reveal a muted stale-data notice. Real data is never
+ * altered — only the framing around it. Do not remove without Noal confirming
+ * directly. */
+(function(){
+  var sec = document.getElementById('harbor-now');
+  if(!sec) return;
+  var asofStr = sec.getAttribute('data-harbor-asof');
+  if(!asofStr) return;
+  var parts = asofStr.split('-');
+  if(parts.length !== 3) return;
+  var asof = new Date(+parts[0], +parts[1]-1, +parts[2]);
+  var now = new Date(); now.setHours(0,0,0,0);
+  var MS_DAY = 86400000;
+  var calGap = Math.round((now - asof) / MS_DAY);
+  // Business-day gap: subtract weekend days in (asof, now].
+  var weekend = 0;
+  for(var t = asof.getTime() + MS_DAY; t <= now.getTime(); t += MS_DAY){
+    var wd = new Date(t).getDay();
+    if(wd === 0 || wd === 6) weekend++;
+  }
+  var businessGap = calGap - weekend;
+  var FRESH_MAX_BUSINESS_DAYS = 4;
+  var fresh = calGap < 0 || businessGap <= FRESH_MAX_BUSINESS_DAYS;
+  var label = sec.querySelector('.hn-heading-label');
+  var dateEl = sec.querySelector('.hn-heading-date');
+  var note = sec.querySelector('.hn-stale-note');
+  if(fresh){
+    if(label) label.textContent = 'Today\u2019s harbor';
+    if(dateEl){
+      try {
+        dateEl.textContent = now.toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric', year:'numeric'});
+      } catch(e){}
+      var iso = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
+      dateEl.setAttribute('datetime', iso);
+    }
+    if(note) note.hidden = true;
+  } else {
+    if(label) label.textContent = 'Most recent harbor read';
+    if(note) note.hidden = false;
+  }
+})();
+</script>
+
+<!-- Flame / Ember companion -->
+<div class="flame-rail" id="flame-rail">
+<div class="flame-rail-line"></div>
+<div class="ember" id="ember" role="button" tabindex="0" aria-label="Flame — the harbor's companion">
+  <svg viewBox="0 0 54 74" fill="none" aria-hidden="true">
+    <ellipse class="flame-glow" cx="27" cy="60" rx="22" ry="8" fill="#FF4500" opacity="0.25"/>
+    <path class="flame-body" d="M27 8 C20 18 14 26 14 40 a13 13 0 0 0 26 0 c0-9-5-16-9-24 -2 5-5 6-5 2 0-3 1-6 1-10 z" fill="url(#flameGradHP)"/>
+    <circle cx="22" cy="42" r="2.4" fill="#0A1428" class="eye"/>
+    <circle cx="32" cy="42" r="2.4" fill="#0A1428" class="eye"/>
+    <path d="M23 48 Q27 51 31 48" stroke="#0A1428" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+    <defs>
+      <linearGradient id="flameGradHP" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FFD27A"/>
+        <stop offset="0.5" stop-color="#FF8A2A"/>
+        <stop offset="1" stop-color="#FF4500"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  <div class="ember-bubble" id="emberBubble">The harbor is calm. Read before you act.</div>
+</div>
+</div><!-- /flame-rail -->
+
+<script>
+(function(){
+  var ember = document.getElementById('ember');
+  var bubble = document.getElementById('emberBubble');
+  if (!ember) return;
+
+  // Section-specific words — keyed to section id or class
+  var sectionWords = {
+    'keeper-hero':   'The promise is plain. No honest system guarantees results.',
+    'hero':          'Inner posture meets disciplined action. That is the whole teaching.',
+    'harbor':        'Nine doors. Enter wherever the signal is strongest.',
+    'fire-protocol': 'Thirty-three days. One word at a time. Showing up is the practice.',
+    'harbor-now':    'Read the weather before you touch anything.',
+    '_default':      'The harbor holds still. Everything else arrives.'
+  };
+
+  var MYSTERIES = [
+    { day: 1, title: 'The Infinite in a Jar', mission: 'Open your mind, your heart, and your life to that which you do not yet know — so that you may contain that which is greater than yourself.' },
+    { day: 2, title: 'The I Am of All I Ams', mission: 'Learn the secret of living each moment from His life — doing from His doing, loving from His love, and being from His being.' },
+    { day: 3, title: 'The Shana', mission: 'Leave your old ways, habits, and steps. Do what you have never done before, but should have done. Walk in the newness of the Spirit.' },
+    { day: 4, title: 'The Ruach', mission: 'What part of your life runs against the direction of the Spirit? Turn it around and begin walking with the wind at your back.' },
+    { day: 5, title: 'Designating Your Days', mission: 'Prepare the days to come. Set them apart. Designate the days for the fulfillment of His purposes.' },
+    { day: 6, title: 'The Mystery of the Bride', mission: 'Set apart everything that substitutes for His presence. Join yourself to everything that is His.' },
+    { day: 16, title: 'The Claw', mission: 'Live in the spirit of the Lamb. Let everything you do be done in love. Make your life a blessing to others.' },
+    { day: 17, title: 'How to Alter Your Past', mission: 'Receive from Heaven your changed past — innocent, pure, and loved. A past as white as snow.' },
+    { day: 18, title: 'Yeshua', mission: 'God has become your Yeshua — the specific answer to your deepest needs. Let Him in and live accordingly.' },
+    { day: 19, title: 'Aliyah', mission: 'Choose the higher step, the higher act, the higher ground — in every decision. Begin making your life an Aliyah.' },
+    { day: 20, title: 'The Footstool World', mission: 'See the world in a new way — as the footstool world, with only footstool matters. Live accordingly.' },
+    { day: 21, title: 'The Heartbeat of the Miracle', mission: 'Live this day inside the miracle of your existence. Make your moments worthy of each heartbeat.' },
+    { day: 22, title: 'The Elohim Mystery', mission: 'Seek to know God as one who knows not even half of Him — as if for the first time.' },
+    { day: 23, title: 'Whose Name Is Like Oil', mission: 'Delight in the name of your beloved. Let it pour out of your lips, your mind, and your heart.' },
+    { day: 24, title: 'The Secret Place', mission: 'Enter the secret place — apart from the world, away from everything except His presence.' },
+    { day: 25, title: 'The Lord of Eden', mission: 'Bring the thorns, the wounds, the shame, the sorrows of your life to the King of Thorns.' },
+    { day: 26, title: 'The Power of Emunah', mission: 'Take a word from the Word of God and give it your strongest amen — the total yes of heart, soul, mind, and will.' },
+    { day: 27, title: 'The Ivrim', mission: 'What barriers stand between you and the will of God? Identify them. Then begin to cross your Jordan. You are born to cross to the other side.' },
+    { day: 28, title: 'The Mystery of Masada', mission: 'Bring your most hopeless situations to God. Believe for the impossible. Live and move in the power of the impossible.' },
+    { day: 29, title: 'The Identical One', mission: 'Live as someone condemned who has instead been set free — with a second chance at life through His love.' },
+    { day: 30, title: 'The Non-Possessive Divine', mission: 'Learn the secret of living without having. Release your possessions, your burdens, your life. Possess God.' },
+    { day: 31, title: 'The Portal', mission: "Use God's door to leave what you could never leave and go where you could never go. Enter through the portal." }
+  ];
+
+  var currentWord = sectionWords['_default'];
+  var shown = false;
+  var sayCount = 0;
+  var mysteryIdx = Math.floor(Math.random() * MYSTERIES.length);
+
+  // Move Flame within the rail to align with a section's summary heading
+  function moveToSummary(summaryEl) {
+    if (!shown) return;
+    var rect = summaryEl.getBoundingClientRect();
+    var midY = rect.top + rect.height / 2;
+    var targetTop = Math.max(80, Math.min(window.innerHeight - 120, midY - 30));
+    ember.style.top = targetTop + 'px';
+    ember.style.bottom = 'auto';
+  }
+
+  // Accordion — close all other SECTION-level details when one opens
+  // Excludes fp-cell (inner cards) so they don't collapse the parent section
+  var allDetails = document.querySelectorAll('main details.collapsible');
+  allDetails.forEach(function(det) {
+    det.addEventListener('toggle', function() {
+      if (det.open) {
+        allDetails.forEach(function(other) {
+          if (other !== det && other.open) other.removeAttribute('open');
+        });
+      }
+    });
+  });
+
+  // On any <details> toggle — scroll heading to top of viewport when expanding
+  document.querySelectorAll('main details').forEach(function(det) {
+    det.addEventListener('toggle', function() {
+      if (det.open) {
+        var summary = det.querySelector('summary');
+        if (summary) {
+          // Match section word
+          var section = det.closest('section');
+          if (section) {
+            var key = section.id || section.className.split(' ')[0];
+            var matched = '_default';
+            Object.keys(sectionWords).forEach(function(k){
+              if (key.indexOf(k) !== -1) matched = k;
+            });
+            currentWord = sectionWords[matched];
+          }
+          // Scroll summary to top of viewport, offset for sticky header
+          setTimeout(function() {
+            var headerH = (document.querySelector('header') || {offsetHeight: 0}).offsetHeight || 0;
+            var top = summary.getBoundingClientRect().top + window.scrollY - headerH - 8;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+            moveToSummary(summary);
+          }, 30);
+          setTimeout(say, 150);
+        }
+      }
+    });
+  });
+
+  // Also track scroll for passive repositioning between clicks
+  var sections = document.querySelectorAll('main > section');
+  window.addEventListener('scroll', function() {
+    if (!shown) return;
+    var best = null, bestDist = Infinity;
+    sections.forEach(function(s) {
+      var rect = s.getBoundingClientRect();
+      var dist = Math.abs(rect.top - window.innerHeight * 0.3);
+      if (dist < bestDist) { bestDist = dist; best = s; }
+    });
+    if (best) {
+      var key = best.id || best.className.split(' ')[0];
+      var matched = '_default';
+      Object.keys(sectionWords).forEach(function(k){
+        if (key.indexOf(k) !== -1) matched = k;
+      });
+      currentWord = sectionWords[matched];
+      var summary = best.querySelector('summary');
+      if (summary) moveToSummary(summary);
+    }
+  }, { passive: true });
+
+  var sayTimer = null;
+  function say() {
+    sayCount++;
+    var text;
+    // Every 3rd say, pull a mystery mission instead of the section word
+    if (sayCount % 3 === 0) {
+      var m = MYSTERIES[mysteryIdx % MYSTERIES.length];
+      mysteryIdx++;
+      text = '\u2015 Day ' + m.day + ', ' + m.title + ':\n' + m.mission;
+    } else {
+      text = currentWord;
+    }
+    // Render line breaks for mystery format
+    bubble.innerHTML = text.replace(/\n/g, '<br><br>');
+    ember.classList.add('show');
+    clearTimeout(sayTimer);
+    // Mysteries are longer — give them more time
+    var dur = 18000;
+    sayTimer = setTimeout(function(){ ember.classList.remove('show'); }, dur);
+  }
+
+  ember.addEventListener('click', say);
+  ember.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); say(); }
+  });
+
+  // Appear after first scroll
+  function checkEmber() {
+    if (shown) return;
+    if (window.scrollY > 200) {
+      shown = true;
+      ember.style.top = (window.innerHeight / 2) + 'px';
+      ember.style.bottom = 'auto';
+      ember.classList.add('shown');
+      setTimeout(say, 1400);
+      setInterval(say, 24000);
+    }
+  }
+  window.addEventListener('scroll', checkEmber, { passive: true });
+  checkEmber();
+
+  // Dock when footer is visible
+  var footer = document.querySelector('footer');
+  if (footer && 'IntersectionObserver' in window) {
+    var footIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) { ember.classList.add('docked'); ember.classList.remove('show'); }
+        else if (shown) { ember.classList.remove('docked'); }
+      });
+    }, { threshold: 0.2 });
+    footIO.observe(footer);
+  }
+})();
+</script>
+
+<!-- Keeper hero portrait: single image rotating through all 8 Keepers, synced with the promise card -->
+<script>
+(function(){
+  var ALL_KEEPERS = [
+    { file: '01_peter.webp', name: 'Peter' },
+    { file: '02_solomon.webp', name: 'Solomon' },
+    { file: '03_mary_magdalene.webp', name: 'Mary Magdalene' },
+    { file: '04_mary_of_bethany.webp', name: 'Mary of Bethany' },
+    { file: '05_daniel.webp', name: 'Daniel' },
+    { file: '06_esther.webp', name: 'Esther' },
+    { file: '07_ruth.webp', name: 'Ruth' },
+    { file: '08_david.webp', name: 'David' }
+  ];
+  var KEEPER_TRAITS = {
+    '01_peter.webp':           'Stood at the gate. Denied. Returned. Held the position anyway.',
+    '02_solomon.webp':         'Asked for wisdom when he could have asked for anything else.',
+    '03_mary_magdalene.webp':  'First to the tomb. First to carry the news. Carried the signal when no one else did.',
+    '04_mary_of_bethany.webp': 'Chose the one thing. Sat at the feet when the room said get up and work.',
+    '05_daniel.webp':          'Read the room correctly every time. Never once adjusted the report to please the audience.',
+    '06_esther.webp':          'Held the position until the right moment. Did not move before the setup was clear.',
+    '07_ruth.webp':            'Stayed when leaving was the easier, more reasonable choice.',
+    '08_david.webp':           'Wrote songs in caves. Praised in the dark before the light arrived.'
+  };
+
+  var portrait = document.getElementById('kh-portrait');
+  var traitEl = document.getElementById('kh-trait');
+  var card = document.getElementById('keeper-hero-card');
+  var ctaWrap = document.getElementById('rosie-cta-wrap');
+  if (!portrait) return;
+  var idx = Math.floor(Math.random() * ALL_KEEPERS.length);
+  function setPortrait(k) {
+    portrait.style.opacity = '0';
+    if (traitEl) traitEl.style.opacity = '0';
+    setTimeout(function(){
+      portrait.style.backgroundImage = "url('assets/keepers/" + k.file + "')";
+      portrait.setAttribute('aria-label', 'Keeper portrait \u2014 ' + k.name);
+      portrait.style.opacity = '1';
+      if (traitEl) {
+        traitEl.textContent = KEEPER_TRAITS[k.file] || '';
+        traitEl.style.opacity = '1';
+      }
+    }, 300);
+  }
+  setPortrait(ALL_KEEPERS[idx]);
+  setInterval(function(){
+    idx = (idx + 1) % ALL_KEEPERS.length;
+    setPortrait(ALL_KEEPERS[idx]);
+  }, 18000);
+  // Show CTA only when card is open
+  if (card && ctaWrap) {
+    function syncCTA() { ctaWrap.style.display = card.open ? 'block' : 'none'; }
+    syncCTA();
+    card.addEventListener('toggle', syncCTA);
+  }
+})();
+</script>
+
+<!-- Keeper portrait carousel: the 9 door cards draw from the Keeper portraits
+     committed under assets/keepers/ and swap every 5 seconds.
+     Slots alternate man/woman by card position (01 man, 02 woman, 03 man, ...) per Noal's
+     instruction (2026-07-17) so the grid always reads as a balanced mix.
+     Roster must stay in sync with KEEPER_UNITS in rotate_keepers.py; a Keeper
+     may only be listed here once their portrait file is committed. -->
+<script>
+(function(){
+  var MEN = [
+    { file: '01_peter.webp', name: 'Peter' },
+    { file: '02_solomon.webp', name: 'Solomon' },
+    { file: '05_daniel.webp', name: 'Daniel' },
+    { file: '08_david.webp', name: 'David' },
+    { file: '09_adam.webp', name: 'Adam' }
+  ];
+  var WOMEN = [
+    { file: '07_ruth.webp', name: 'Ruth' },
+    { file: '03_mary_magdalene.webp', name: 'Mary Magdalene' },
+    { file: '04_mary_of_bethany.webp', name: 'Mary of Bethany' },
+    { file: '06_esther.webp', name: 'Esther' }
+  ];
+  var slots = document.querySelectorAll('.keeper-portrait');
+  if (!slots.length) return;
+  var names = document.querySelectorAll('.keeper-name');
+
+  function shuffled(list) {
+    var a = list.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function rotate(instant) {
+    var menCount = Math.ceil(slots.length / 2);
+    var womenCount = Math.floor(slots.length / 2);
+    var men = shuffled(MEN).slice(0, menCount);
+    var women = shuffled(WOMEN).slice(0, womenCount);
+    slots.forEach(function (el, i) {
+      var k = (i % 2 === 0) ? men[i / 2] : women[(i - 1) / 2];
+      if (!k) return;
+      var nameEl = names[i];
+      var apply = function () {
+        el.style.backgroundImage = "url('assets/keepers/" + k.file + "')";
+        el.setAttribute('aria-label', 'Keeper portrait \u2014 ' + k.name);
+        el.style.opacity = '1';
+        if (nameEl) { nameEl.textContent = k.name; nameEl.style.opacity = '1'; }
+      };
+      if (instant) { apply(); return; }
+      el.style.opacity = '0';
+      if (nameEl) { nameEl.style.opacity = '0'; }
+      setTimeout(apply, 300);
+    });
+  }
+
+  rotate(true); // balance the grid immediately, don't wait for the first 5s tick
+  setInterval(rotate, 5000);
+})();
+</script>
+
+
+<!-- Harbor visitor counter: records this visit, then polls so anyone
+     with the homepage open sees a sparkle burst + toast when someone new
+     arrives, plus a small running count badge bottom-right. -->
+<div id="wg-badge" class="wg-badge" aria-live="polite">
+  <span class="wg-dot"></span>
+  <span id="wg-count-text">moving along the rosy path</span>
+</div>
+<div id="wg-toast" class="wg-toast" role="status"></div>
+<canvas id="wg-sparkle-canvas" aria-hidden="true"></canvas>
+<style>
+  .wg-badge{position:fixed;right:16px;bottom:16px;z-index:70;display:flex;align-items:center;gap:.5rem;
+    background:var(--surface,rgba(20,20,20,.85));color:var(--text,#eee);border:1px solid var(--border,rgba(255,255,255,.15));
+    border-radius:999px;padding:.45rem .85rem;font-size:.78rem;font-weight:600;letter-spacing:.01em;
+    box-shadow:0 6px 20px rgba(0,0,0,.18);backdrop-filter:blur(8px);opacity:.92;transition:transform .2s;pointer-events:none;}
+  [data-theme="light"] .wg-badge{background:rgba(255,255,255,.92);color:#15241c;border-color:rgba(0,0,0,.08);}
+  .wg-badge.wg-pulse{transform:scale(1.06);}
+  .wg-dot{width:7px;height:7px;border-radius:50%;background:#9ad14a;box-shadow:0 0 8px rgba(154,209,74,.7);flex:none;}
+  .wg-toast{position:fixed;left:50%;top:18px;transform:translate(-50%,-140%);z-index:71;
+    background:var(--surface,#14261c);color:var(--text,#eef5ee);border:1px solid rgba(154,209,74,.5);
+    border-radius:999px;padding:.55rem 1.1rem;font-size:.85rem;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.25);
+    transition:transform .45s cubic-bezier(.2,.9,.25,1),opacity .45s;opacity:0;white-space:nowrap;pointer-events:none;}
+  [data-theme="light"] .wg-toast{background:#fff;color:#15241c;}
+  .wg-toast.wg-show{transform:translate(-50%,0);opacity:1;}
+  #wg-sparkle-canvas{position:fixed;inset:0;z-index:69;pointer-events:none;width:100%;height:100%;}
+  @media (max-width:640px){.wg-badge{right:10px;bottom:10px;font-size:.72rem;padding:.4rem .7rem;}}
+</style>
+<script>
+(function(){
+  var API_BASE = 'https://spy-pipeline-rosie.pplx.app';
+  var badge = document.getElementById('wg-badge');
+  var countText = document.getElementById('wg-count-text');
+  var toast = document.getElementById('wg-toast');
+  var canvas = document.getElementById('wg-sparkle-canvas');
+  var ctx = canvas.getContext ? canvas.getContext('2d') : null;
+  var lastKnownCount = null;
+  var dpr = window.devicePixelRatio || 1;
+
+  function resizeCanvas(){
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    if(ctx) ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  function fmtCount(n){
+    return n.toLocaleString(navigator.language || 'en');
+  }
+
+  function setCountText(n){
+    countText.textContent = fmtCount(n) + ' moving along the rosy path';
+  }
+
+  function pulseBadge(){
+    badge.classList.add('wg-pulse');
+    setTimeout(function(){ badge.classList.remove('wg-pulse'); }, 350);
+  }
+
+  function showToast(text){
+    toast.textContent = text;
+    toast.classList.add('wg-show');
+    clearTimeout(toast._hideTimer);
+    toast._hideTimer = setTimeout(function(){ toast.classList.remove('wg-show'); }, 2600);
+  }
+
+  // Lightweight canvas sparkle burst near the top of the viewport.
+  function sparkleBurst(){
+    if(!ctx) return;
+    var w = window.innerWidth, cx = w/2, cy = 60;
+    var particles = [];
+    var colors = ['#9ad14a','#e8b659','#ffffff','#c68f4a'];
+    for(var i=0;i<22;i++){
+      var angle = Math.random()*Math.PI*2;
+      var speed = 1.5 + Math.random()*3;
+      particles.push({
+        x: cx, y: cy,
+        vx: Math.cos(angle)*speed,
+        vy: Math.sin(angle)*speed - 1.5,
+        life: 1,
+        size: 2 + Math.random()*3,
+        color: colors[i % colors.length]
+      });
+    }
+    var start = performance.now();
+    function frame(now){
+      var elapsed = now - start;
+      ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
+      var alive = false;
+      particles.forEach(function(p){
+        if(p.life <= 0) return;
+        alive = true;
+        p.x += p.vx; p.y += p.vy; p.vy += 0.05; p.life -= 0.018;
+        ctx.globalAlpha = Math.max(p.life,0);
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI*2);
+        ctx.fill();
+      });
+      ctx.globalAlpha = 1;
+      if(alive && elapsed < 2200){
+        requestAnimationFrame(frame);
+      } else {
+        ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function celebrate(newCount, isSelf){
+    sparkleBurst();
+    pulseBadge();
+    showToast(isSelf ? 'You just entered the harbor' : 'Someone just entered the harbor');
+    setCountText(newCount);
+  }
+
+  function recordSelfVisit(){
+    fetch(API_BASE + '/api/wicket-gate/visit', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({page:'home'})
+    }).then(function(r){ return r.json(); }).then(function(data){
+      if(typeof data.count === 'number'){
+        lastKnownCount = data.count;
+        celebrate(data.count, true);
+      }
+    }).catch(function(){ /* SPY Pipeline unreachable -- badge just won't update, no error shown */ });
+  }
+
+  function pollCount(){
+    fetch(API_BASE + '/api/wicket-gate/count').then(function(r){ return r.json(); }).then(function(data){
+      if(typeof data.count !== 'number') return;
+      if(lastKnownCount === null){
+        lastKnownCount = data.count;
+        setCountText(data.count);
+        return;
+      }
+      if(data.count > lastKnownCount){
+        lastKnownCount = data.count;
+        celebrate(data.count, false);
+      }
+    }).catch(function(){ /* quietly skip this poll cycle */ });
+  }
+
+  recordSelfVisit();
+  setInterval(pollCount, 8000);
+})();
+</script>
+</body>
+</html>

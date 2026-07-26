@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<script>if ("scrollRestoration" in history) { history.scrollRestoration = "manual"; } window.scrollTo(0,0); window.addEventListener("load", function () { window.scrollTo(0,0); }); window.addEventListener("pageshow", function () { window.scrollTo(0,0); });</script>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>The Laugh Lounge — Lime Signalworks</title>
+<meta name="description" content="A lighter door at Lime Signalworks. Harbor and lighthouse humor, browse the library, or let it surface a joke on its own." />
+<link rel="canonical" href="https://limesignalworks.com/laugh-lounge/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://limesignalworks.com/laugh-lounge/">
+<meta property="og:title" content="The Laugh Lounge — Lime Signalworks">
+<meta property="og:description" content="A lighter door at Lime Signalworks. Harbor and lighthouse humor, browse the library, or let it surface a joke on its own.">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet">
+<style>
+  :root,[data-theme="dark"]{
+    --harbor-black:#0A1428; --harbor-deep:#0b1020; --harbor-night:#0d1729;
+    --surface:#101a30; --surface-2:#142038; --surface-3:#182542;
+    --border:rgba(154,209,74,0.14); --border-strong:rgba(154,209,74,0.32); --divider:rgba(255,255,255,0.06);
+    --lime:#9ad14a; --lime-glow:rgba(154,209,74,0.50); --lime-soft:rgba(154,209,74,0.14); --lime-faint:rgba(154,209,74,0.06);
+    --fire:#ff6a45; --fire-glow:rgba(255,106,69,0.45); --fire-soft:rgba(255,106,69,0.12);
+    --text:#e6edf2; --text-muted:#8fa3b3; --text-faint:#5d7286;
+    --font-display:'Instrument Serif',Georgia,serif; --font-body:'General Sans','Helvetica Neue',sans-serif;
+    --radius-sm:0.5rem; --radius-md:0.75rem; --radius-lg:1rem; --radius-xl:1.25rem;
+    --content:880px;
+  }
+  [data-theme="light"]{
+    --harbor-black:#e7e3dd; --harbor-deep:#e7e3dd; --harbor-night:#e7e3dd;
+    --surface:#ffffff; --surface-2:#f7faf8; --surface-3:#eef3ef;
+    --border:rgba(79,122,31,0.18); --border-strong:rgba(79,122,31,0.36); --divider:rgba(21,36,28,0.08);
+    --lime:#4f7a1f; --lime-glow:rgba(79,122,31,0.35); --lime-soft:rgba(79,122,31,0.10); --lime-faint:rgba(79,122,31,0.06);
+    --fire:#c1451f; --fire-glow:rgba(193,69,31,0.35); --fire-soft:rgba(193,69,31,0.10);
+    --text:#15241c; --text-muted:#56685e; --text-faint:#8a9c92;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:1.05rem;color:var(--text);
+    background:radial-gradient(circle at 20% -10%, var(--lime-faint), transparent 45%),
+               radial-gradient(circle at 100% 0%, var(--fire-soft), transparent 40%),
+               var(--harbor-black);}
+  a{color:inherit}
+  .wrap{max-width:var(--content);margin:0 auto;padding:0 1.5rem;}
+  nav.top{padding:1.5rem 0;border-bottom:1px solid var(--divider);}
+  nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+  .brand{display:flex;align-items:center;gap:0.6rem;text-decoration:none;font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--text);}
+  .brand svg{width:2.2rem;height:2.2rem;flex-shrink:0;color:var(--lime);}
+  .back{font-size:0.9rem;color:var(--text-muted);text-decoration:none;display:flex;align-items:center;gap:0.4rem;}
+  .back:hover{color:var(--lime);}
+  header.hero{padding:3.5rem 0 2rem;text-align:center;}
+  header.hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(2rem,1.4rem+2.5vw,3rem);letter-spacing:-0.01em;margin-bottom:0.75rem;}
+  header.hero h1 span{color:var(--lime);}
+  header.hero p{color:var(--text-muted);max-width:56ch;margin:0 auto;font-size:1.05rem;}
+
+  .joke-card{background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--radius-xl);
+    padding:2.5rem 2rem;margin:2rem auto 1.25rem;max-width:640px;text-align:center;
+    box-shadow:0 0 40px rgba(0,255,127,0.05);position:relative;}
+  .joke-card .tag{display:inline-block;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;
+    color:var(--lime);background:var(--lime-soft);border-radius:999px;padding:0.25rem 0.75rem;margin-bottom:1.1rem;}
+  #joke-text{font-family:var(--font-display);font-size:1.3rem;line-height:1.5;font-weight:500;min-height:4.5rem;
+    display:flex;align-items:center;justify-content:center;transition:opacity 250ms ease;}
+  .controls-row{display:flex;justify-content:center;gap:0.75rem;margin-top:1.5rem;flex-wrap:wrap;}
+  .btn{font-family:var(--font-body);font-weight:600;font-size:0.95rem;border-radius:999px;padding:0.7rem 1.4rem;
+    border:1px solid var(--border-strong);background:transparent;color:var(--text);cursor:pointer;transition:all 180ms ease;}
+  .btn:hover{border-color:var(--lime);color:var(--lime);}
+  .btn.primary{background:var(--lime);color:var(--harbor-black);border-color:var(--lime);}
+  .btn.primary:hover{box-shadow:0 0 18px var(--lime-glow);color:var(--harbor-black);}
+  .cadence-box{max-width:640px;margin:0 auto 3rem;background:var(--surface-2);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:1.5rem 1.75rem;}
+  .cadence-box h3{font-family:var(--font-display);font-size:1rem;margin-bottom:0.4rem;}
+  .cadence-box p{color:var(--text-muted);font-size:0.9rem;margin-bottom:1rem;}
+  .cadence-options{display:flex;gap:0.5rem;flex-wrap:wrap;}
+  .chip{font-size:0.85rem;padding:0.5rem 1rem;border-radius:999px;border:1px solid var(--border);
+    background:var(--surface-3);color:var(--text-muted);cursor:pointer;transition:all 160ms ease;}
+  .chip.active{border-color:var(--lime);color:var(--lime);background:var(--lime-faint);}
+  .cadence-status{margin-top:0.9rem;font-size:0.85rem;color:var(--text-faint);}
+
+  .library-section{padding:1rem 0 4rem;}
+  .library-section h2{font-family:var(--font-display);font-size:1.4rem;text-align:center;margin-bottom:0.4rem;}
+  .library-section > .wrap > p.sub{text-align:center;color:var(--text-muted);font-size:0.95rem;margin-bottom:1.75rem;}
+  .filter-row{display:flex;justify-content:center;gap:0.5rem;margin-bottom:1.75rem;flex-wrap:wrap;}
+  .filter-chip{font-size:0.85rem;padding:0.45rem 0.95rem;border-radius:999px;border:1px solid var(--border);
+    background:transparent;color:var(--text-muted);cursor:pointer;}
+  .filter-chip.active{border-color:var(--fire);color:var(--fire);background:var(--fire-soft);}
+  .joke-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0.9rem;max-width:960px;margin:0 auto;}
+  .joke-item{background:var(--surface);border:1px solid var(--divider);border-radius:var(--radius-md);
+    padding:1.1rem 1.2rem;font-size:0.92rem;color:var(--text-muted);line-height:1.5;}
+  .joke-item .cat{display:block;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--lime);margin-bottom:0.5rem;}
+
+  footer{border-top:1px solid var(--divider);padding:2rem 0;text-align:center;color:var(--text-faint);font-size:0.85rem;}
+
+  @media (max-width:640px){
+    header.hero{padding:2.5rem 0 1.5rem;}
+    .joke-card{padding:2rem 1.4rem;margin:1.5rem 1rem 1rem;}
+    #joke-text{font-size:1.1rem;}
+  }
+</style>
+<script defer data-domain="limesignalworks.com" src="https://plausible.io/js/script.js"></script>
+<link rel="stylesheet" href="../assets/css/header-cta.css">
+  <link rel="stylesheet" href="../assets/css/site-header.css">
+</head>
+<body>
+<header class="site-header">
+  <!-- Canonical shared header (assets/css/site-header.css) — mirrors the
+       homepage header exactly: sticky blur bar, lighthouse-loop.mp4 mark,
+       mixed-case "Lime Signalworks LLC", the "Rosie Interactive now →" CTA
+       (public preview URL — NOT the gated IB-confirmation button, which
+       stays out per Noal's standing rule), and the translate + theme icons.
+       Page-specific controls live in the .hdr-local row below. -->
+  <div class="wrap hdr">
+    <a class="brand" href="../index.html" aria-label="Lime Signalworks home">
+      <video class="brand-mark" src="../assets/brand/lighthouse-loop.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
+      <span class="word">Lime&nbsp;<b>Signalworks</b> LLC</span>
+    </a>
+    <div class="hdr-actions">
+    <a class="rosie-cta-btn hdr-cta" href="https://limesignalworks.pplx.app" target="_blank" rel="noopener"><span class="cta-cap">R</span>osie <span class="cta-cap">I</span>nteractive <span class="cta-cap">N</span>ow →</a>
+    <div class="hdr-tools">
+      <button class="icon-btn" data-translate aria-label="Translate this page">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </button>
+      <button class="icon-btn notranslate" translate="no" data-theme-toggle aria-label="Switch theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+    </div>
+    </div>
+  </div>
+  <div class="wrap hdr-local">
+    <a href="../index.html" class="back">&larr; Back to the harbor</a>
+    <a class="ibkr-demo-cta" href="https://limesignalworks.pplx.app" target="_blank" rel="noopener">Rosie + IBKR &mdash; Live Data Demo</a>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>The <span>Laugh</span> Lounge</h1>
+    <p>Door eight. Harbor and lighthouse humor, just for the heck of it. Browse the library below, or let a joke find you on its own.</p>
+    <p style="font-size:0.9rem;color:var(--text-muted);margin-top:0.5rem;">In appreciation of <span style="color:var(--lime);">Rick H.</span> — lifelong friend, whose humor and friendship inspired this room.</p>
+  </div>
+</header>
+
+<main>
+  <div id="gateway-wrap" style="display:none;">
+    <div id="gateway-scene-root" style="position:relative;height:480px;border-radius:1.25rem;overflow:hidden;border:1px solid var(--border-strong);margin:2rem auto 1.25rem;max-width:640px;"></div>
+    <p id="gateway-note" style="text-align:center;color:var(--text-muted);font-size:0.85rem;margin-bottom:2rem;">Door 8's Joker-archetype gateway — a brief pause before the jokes. Prefer the simple version? <a href="#" id="skip-gateway" style="color:var(--lime);">Skip straight to the jokes</a>.</p>
+  </div>
+  <div class="wrap">
+    <div class="joke-card">
+      <span class="tag">Fresh joke</span>
+      <div id="joke-text">Loading...</div>
+      <div class="controls-row">
+        <button class="btn primary" id="another-btn">Give me another →</button>
+      </div>
+    </div>
+
+    <div class="cadence-box">
+      <h3>Let it surface on its own</h3>
+      <p>Choose how often you'd like a joke to pop up right here while this page stays open. Nothing leaves this page — no email, no push notifications.</p>
+      <div class="cadence-options">
+        <button class="chip active" data-cadence="off">Off</button>
+        <button class="chip" data-cadence="random">Random</button>
+        <button class="chip" data-cadence="1">Every hour</button>
+        <button class="chip" data-cadence="2">Every 2 hours</button>
+        <button class="chip" data-cadence="3">Every 3 hours</button>
+      </div>
+      <div class="cadence-status" id="cadence-status">Currently off. Your choice is remembered on this device.</div>
+    </div>
+  </div>
+
+  <section class="library-section" id="library">
+    <div class="wrap">
+      <h2>The Humor Library</h2>
+      <p class="sub">Every joke, browsable at your own pace.</p>
+      <div class="filter-row" id="filter-row">
+        <button class="filter-chip active" data-cat="all">All</button>
+        <button class="filter-chip" data-cat="lighthouse">Lighthouse</button>
+        <button class="filter-chip" data-cat="harbor">Harbor</button>
+        <button class="filter-chip" data-cat="nature">Nature</button>
+        <button class="filter-chip" data-cat="life">Life</button>
+        <button class="filter-chip" data-cat="trading">Trading</button>
+      </div>
+      <div class="joke-grid" id="joke-grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer style="text-align:center;">
+  <div>&copy; 2026 Lime Signalworks LLC. Loss prevention first. Always.</div>
+  <div style="margin-top:0.5rem;"><a href="../index.html" style="color:var(--text-muted);text-decoration:none;border-bottom:1px solid var(--border);">&larr; Return to the harbor</a></div>
+</footer>
+
+<script>
+(function(){
+  const STORAGE_CADENCE = "lime_laugh_cadence";
+  let jokes = [];
+  let cadence = localStorage.getItem(STORAGE_CADENCE) || "off";
+  let timerHandle = null;
+  let lastIndex = -1;
+
+  const jokeTextEl = document.getElementById("joke-text");
+  const gridEl = document.getElementById("joke-grid");
+  const statusEl = document.getElementById("cadence-status");
+
+  function pickRandomIndex(){
+    if (jokes.length < 2) return 0;
+    let i;
+    do { i = Math.floor(Math.random() * jokes.length); } while (i === lastIndex);
+    lastIndex = i;
+    return i;
+  }
+
+  function showJoke(index){
+    const j = jokes[index];
+    if (!j) return;
+    jokeTextEl.style.opacity = 0;
+    setTimeout(() => {
+      jokeTextEl.textContent = j.en;
+      jokeTextEl.style.opacity = 1;
+    }, 150);
+  }
+
+  function renderLibrary(filterCat){
+    gridEl.innerHTML = "";
+    jokes
+      .filter(j => filterCat === "all" || j.category === filterCat)
+      .forEach(j => {
+        const div = document.createElement("div");
+        div.className = "joke-item";
+        const catLabel = (j.category || "").charAt(0).toUpperCase() + (j.category || "").slice(1);
+        div.innerHTML = `<span class="cat">${catLabel}</span>${j.en}`;
+        gridEl.appendChild(div);
+      });
+  }
+
+  function cadenceMs(){
+    if (cadence === "off") return null;
+    if (cadence === "random"){
+      // "just for the heck of it" -- somewhere between 20 and 90 minutes
+      return (20 + Math.random() * 70) * 60 * 1000;
+    }
+    return parseInt(cadence, 10) * 60 * 60 * 1000;
+  }
+
+  function scheduleNext(){
+    if (timerHandle) clearTimeout(timerHandle);
+    const ms = cadenceMs();
+    if (ms === null) return;
+    timerHandle = setTimeout(() => {
+      showJoke(pickRandomIndex());
+      scheduleNext();
+    }, ms);
+  }
+
+  function setCadence(newCadence){
+    cadence = newCadence;
+    localStorage.setItem(STORAGE_CADENCE, cadence);
+    document.querySelectorAll(".chip").forEach(c => c.classList.toggle("active", c.dataset.cadence === cadence));
+    const labels = {off: "Currently off.", random: "Currently random — somewhere between 20 and 90 minutes.",
+      "1": "Currently every hour.", "2": "Currently every 2 hours.", "3": "Currently every 3 hours."};
+    statusEl.textContent = (labels[cadence] || "") + " Your choice is remembered on this device.";
+    scheduleNext();
+  }
+
+  document.querySelectorAll(".chip").forEach(btn => {
+    btn.addEventListener("click", () => setCadence(btn.dataset.cadence));
+  });
+  document.querySelectorAll(".filter-chip").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".filter-chip").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderLibrary(btn.dataset.cat);
+    });
+  });
+  document.getElementById("another-btn").addEventListener("click", () => showJoke(pickRandomIndex()));
+
+  (function(){
+    const t = document.querySelector('[data-theme-toggle]'), r = document.documentElement;
+    let d = 'dark';
+    r.setAttribute('data-theme', d);
+    function icon(dark){ return dark
+      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'; }
+    if (t) { t.innerHTML = icon(d==='dark'); t.addEventListener('click', () => { d = d==='dark'?'light':'dark'; r.setAttribute('data-theme', d); t.innerHTML = icon(d==='dark'); }); }
+    var tr = document.querySelector('[data-translate]');
+    if (tr) { tr.addEventListener('click', function(){ var _tl = (navigator.language || navigator.userLanguage || 'es').split('-')[0]; window.open('https://translate.google.com/translate?sl=auto&tl=' + _tl + '&u=' + encodeURIComponent(window.location.href), '_blank', 'noopener'); }); }
+  })();
+
+  fetch("jokes.json")
+    .then(r => r.json())
+    .then(data => {
+      jokes = data;
+      showJoke(pickRandomIndex()); // the "click the door, a joke pops up" moment
+      renderLibrary("all");
+      document.querySelectorAll(".chip").forEach(c => c.classList.toggle("active", c.dataset.cadence === cadence));
+      const labels = {off: "Currently off.", random: "Currently random — somewhere between 20 and 90 minutes.",
+        "1": "Currently every hour.", "2": "Currently every 2 hours.", "3": "Currently every 3 hours."};
+      statusEl.textContent = (labels[cadence] || "") + " Your choice is remembered on this device.";
+      scheduleNext();
+    })
+    .catch(() => { jokeTextEl.textContent = "Couldn't load the joke library right now — try refreshing."; });
+})();
+</script>
+
+<script type="module">
+// The Keeper of Wit — Door 8's WebXR gateway, layered in front of the plain
+// joke card above. Real WebGL feature-detection first: if it fails for any
+// reason (old device, no WebGL2, blocked context), this silently leaves the
+// plain 2D joke card as the only thing visible — nothing breaks for the
+// family/gramma audience this page is actually built for. The gateway is an
+// enhancement layered on top of a page that already works without it, not a
+// replacement that requires it.
+function webglAvailable() {
+  try {
+    const c = document.createElement('canvas');
+    return !!(window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl')));
+  } catch (e) { return false; }
+}
+
+if (webglAvailable()) {
+  try {
+    const THREE = await import('https://esm.sh/three@0.160.0');
+    const gatewayWrap = document.getElementById('gateway-wrap');
+    const jokeWrap = document.querySelector('main > .wrap');
+    const sceneRoot = document.getElementById('gateway-scene-root');
+
+    gatewayWrap.style.display = 'block';
+    jokeWrap.style.display = 'none';
+    document.getElementById('skip-gateway').addEventListener('click', (e) => {
+      e.preventDefault();
+      gatewayWrap.style.display = 'none';
+      jokeWrap.style.display = '';
+    });
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0b1020); // matches Rosie dashboard --bg
+    scene.fog = new THREE.FogExp2(0x0e1426, 0.03);
+
+    const width = sceneRoot.clientWidth, height = sceneRoot.clientHeight;
+    const camera = new THREE.PerspectiveCamera(58, width / height, 0.1, 200);
+    camera.position.set(0, 1.4, 5.5);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    sceneRoot.appendChild(renderer.domElement);
+
+    scene.add(new THREE.AmbientLight(0x1a2a3a, 1.0));
+    const beacon = new THREE.PointLight(0x00ff7f, 0.5, 30);
+    beacon.position.set(-5, 2, -10);
+    scene.add(beacon);
+
+    const orbGroup = new THREE.Group();
+    orbGroup.position.set(0, 1.2, -2.5);
+    scene.add(orbGroup);
+    const core = new THREE.Mesh(
+      new THREE.SphereGeometry(0.35, 32, 32),
+      new THREE.MeshStandardMaterial({ color: 0xe6b980, emissive: 0xe6b980, emissiveIntensity: 0.6, roughness: 0.3 })
+    );
+    orbGroup.add(core);
+    const ring = new THREE.Mesh(
+      new THREE.TorusGeometry(0.6, 0.018, 16, 64),
+      new THREE.MeshStandardMaterial({ color: 0xe6b980, emissive: 0xe6b980, emissiveIntensity: 0.3, transparent: true, opacity: 0.5 })
+    );
+    orbGroup.add(ring);
+
+    // burst particles on release, same pattern as the dashboard gateway
+    const burstCount = 40;
+    const burstGeo = new THREE.BufferGeometry();
+    const burstPos = new Float32Array(burstCount * 3);
+    const burstVel = [];
+    for (let i = 0; i < burstCount; i++) {
+      const theta = Math.random() * Math.PI * 2, phi = Math.random() * Math.PI;
+      const speed = 0.5 + Math.random() * 0.7;
+      burstVel.push([Math.sin(phi)*Math.cos(theta)*speed, Math.sin(phi)*Math.sin(theta)*speed, Math.cos(phi)*speed]);
+    }
+    burstGeo.setAttribute('position', new THREE.BufferAttribute(burstPos, 3));
+    const burstMat = new THREE.PointsMaterial({ color: 0xffd9a0, size: 0.08, transparent: true, opacity: 0 });
+    const burstPoints = new THREE.Points(burstGeo, burstMat);
+    orbGroup.add(burstPoints);
+    let burstActive = false, burstStart = 0;
+
+    // overlay text — reuses the label/cta pattern already on this page
+    const label = document.createElement('div');
+    label.style.cssText = 'position:absolute;bottom:1.5rem;left:0;right:0;text-align:center;color:var(--text-muted);font-family:var(--font-body);pointer-events:none;';
+    label.textContent = 'Gathering…';
+    sceneRoot.appendChild(label);
+
+    const CYCLE_MS = 8000;
+    let cyclePhase = 'gather', cycleStart = performance.now();
+    function animate() {
+      const now = performance.now();
+      const t = (now - cycleStart) % CYCLE_MS;
+      const inGather = t < CYCLE_MS / 2;
+      const phase = inGather ? 'gather' : 'release';
+      if (phase !== cyclePhase) {
+        cyclePhase = phase;
+        label.textContent = phase === 'gather' ? 'Gathering…' : 'Release — there it is.';
+        if (phase === 'release') { burstActive = true; burstStart = now; burstMat.opacity = 0.9; beacon.intensity = 1.2; }
+        else { beacon.intensity = 0.5; }
+      }
+      const half = CYCLE_MS / 2;
+      const localT = inGather ? (t / half) : ((t - half) / half);
+      const eased = 0.5 - 0.5 * Math.cos(Math.PI * localT);
+      orbGroup.scale.setScalar(inGather ? 0.7 + eased * 0.1 : 0.8 + eased * 0.6);
+      ring.rotation.z += 0.004;
+      if (burstActive) {
+        const bt = (now - burstStart) / 900;
+        if (bt >= 1) { burstActive = false; burstMat.opacity = 0; }
+        else {
+          const arr = burstGeo.attributes.position.array;
+          for (let i = 0; i < burstCount; i++) {
+            arr[i*3] = burstVel[i][0]*bt*1.4; arr[i*3+1] = burstVel[i][1]*bt*1.4; arr[i*3+2] = burstVel[i][2]*bt*1.4;
+          }
+          burstGeo.attributes.position.needsUpdate = true;
+          burstMat.opacity = 0.9 * (1 - bt);
+        }
+      }
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    sceneRoot.addEventListener('click', () => {
+      gatewayWrap.style.display = 'none';
+      jokeWrap.style.display = '';
+      document.getElementById('library').scrollIntoView({ behavior: 'smooth' });
+    });
+    const enterHint = document.createElement('div');
+    enterHint.style.cssText = 'position:absolute;top:1.2rem;left:0;right:0;text-align:center;color:var(--text-faint);font-size:0.8rem;pointer-events:none;';
+    enterHint.textContent = 'Click anywhere to enter the Laugh Lounge';
+    sceneRoot.appendChild(enterHint);
+  } catch (e) {
+    // any Three.js/WebGL runtime failure -> the plain joke card (already
+    // visible by default) stays as the real, working experience.
+    console.warn('Keeper of Wit gateway failed to load, falling back to the plain joke card:', e);
+  }
+}
+</script>
+<script defer src="../assets/js/accordion-hover.js"></script>
+<script defer src="../assets/js/header-cta.js"></script>
+</body>
+</html>

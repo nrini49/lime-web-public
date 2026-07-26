@@ -1,0 +1,31 @@
+/* Shared "Rosie x IBKR" header CTA + its click toast.
+ * Added 2026-07-19 per Noal: same button on every page's header, not just
+ * the homepage, so everyone has a chance to click it wherever they land. */
+.ibkr-demo-cta {
+  display: inline-flex; align-items: center; height: 38px; padding: 0 1rem;
+  border-radius: 999px; border: 1px solid var(--color-primary, #5ca6a9);
+  color: var(--color-primary, #5ca6a9); background: transparent;
+  font-size: 0.85rem; font-weight: 600; text-decoration: none; white-space: nowrap;
+}
+.ibkr-demo-cta:hover { background: var(--color-primary, #5ca6a9); color: var(--color-bg, #fff); }
+@media (max-width: 640px) { .ibkr-demo-cta { display: none; } }
+
+/* Icon-buttons + CTA cluster, per Noal 2026-07-19: icon buttons stretch to
+ * match the CTA's height exactly, and the gap between the icon-button pair
+ * and the CTA is widened to 1.5x the pair's own internal gap so the CTA
+ * (the most important action) stands out slightly. Used on pages that
+ * don't define their own .hdr-tools rule inline. */
+.hdr-tools { display: flex; align-items: stretch; gap: var(--space-6, 1.5rem); }
+.icon-btn-pair { display: flex; align-items: stretch; gap: var(--space-2, 0.5rem); }
+
+/* Click toast: shown once the reader clicks the CTA, so "coming soon" is
+ * disclosed after the click, not printed on the button itself. */
+.cta-toast {
+  position: fixed; left: 50%; top: 18px; transform: translate(-50%, -140%);
+  z-index: 80; background: var(--color-surface, #14261c); color: var(--color-text, #eef5ee);
+  border: 1px solid var(--color-primary, #5ca6a9); border-radius: 999px;
+  padding: 0.55rem 1.1rem; font-size: 0.85rem; font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25); white-space: nowrap; pointer-events: none;
+  transition: transform .45s cubic-bezier(.2,.9,.25,1), opacity .45s; opacity: 0;
+}
+.cta-toast.cta-toast-show { transform: translate(-50%, 0); opacity: 1; }

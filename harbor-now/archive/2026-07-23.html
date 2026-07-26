@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harbor Now — July 23, 2026 | Lime Signalworks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet">
+<style>
+:root{--text-xs:clamp(.75rem,.7rem+.25vw,.875rem);--text-sm:clamp(.875rem,.8rem+.35vw,1rem);--text-base:clamp(1rem,.95rem+.25vw,1.125rem);--text-lg:clamp(1.125rem,1rem+.75vw,1.5rem);--text-xl:clamp(1.5rem,1.2rem+1.25vw,2.25rem);--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;--radius-md:.5rem;--radius-xl:1rem;--radius-full:9999px;--transition:180ms cubic-bezier(.16,1,.3,1);--font-display:'Instrument Serif',Georgia,serif;--font-body:'General Sans','Helvetica Neue',sans-serif;}
+:root,[data-theme="dark"]{--color-bg:#0a131c;--color-surface:#0f1c28;--color-surface-2:#132433;--color-border:#1f3346;--color-divider:#1a2c3c;--color-text:#e6edf2;--color-text-muted:#8fa3b3;--color-text-faint:#5d7286;--color-primary:#9ad14a;--color-primary-hover:#b4e06a;--color-beam:#e8b659;--shadow-md:0 4px 24px rgba(0,0,0,.35);}
+[data-theme="light"]{--color-bg:#f4f7f5;--color-surface:#fff;--color-surface-2:#eef3ef;--color-border:#dbe4dd;--color-divider:#e4ece6;--color-text:#15241c;--color-text-muted:#56685e;--color-text-faint:#8a9c92;--color-primary:#4f7a1f;--color-primary-hover:#3d6017;--color-beam:#b07d1f;--shadow-md:0 4px 24px rgba(20,40,28,.08);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth;}
+body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg);}
+a,button{transition:color var(--transition),background var(--transition),border-color var(--transition);}
+h1,h2,h3{text-wrap:balance;line-height:1.15;font-family:var(--font-display);font-weight:400;letter-spacing:-.01em;}
+p{text-wrap:pretty;max-width:70ch;}
+:focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-md);}
+.wrap{max-width:780px;margin:0 auto;padding:0 var(--space-6);}
+header{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);background:color-mix(in oklab,var(--color-bg) 82%,transparent);border-bottom:1px solid var(--color-divider);}
+.hdr{display:flex;align-items:center;justify-content:space-between;padding:var(--space-4) 0;gap:var(--space-4);}
+.back{display:inline-flex;align-items:center;gap:var(--space-2);text-decoration:none;color:var(--color-text-muted);font-size:var(--text-sm);font-weight:500;}
+.back:hover{color:var(--color-primary);}
+.brand{font-family:var(--font-body);font-weight:600;font-size:var(--text-base);color:var(--color-text);text-decoration:none;} .brand b{font-weight:700;color:var(--color-primary);}
+.icon-btn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:var(--radius-full);border:1px solid var(--color-border);color:var(--color-text-muted);background:var(--color-surface);cursor:pointer;}
+main{padding:clamp(var(--space-16),8vw,var(--space-24)) 0 var(--space-24);}
+.kicker{font-size:var(--text-xs);letter-spacing:.22em;text-transform:uppercase;color:var(--color-primary);font-weight:600;margin-bottom:var(--space-5);}
+.report{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:clamp(var(--space-6),4vw,var(--space-8));box-shadow:var(--shadow-md);position:relative;overflow:hidden;}
+.report::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(in oklab,var(--color-primary),var(--color-beam));}
+.report h1{font-size:var(--text-xl);margin-bottom:var(--space-3);}
+.tag{color:var(--color-text-muted);font-style:italic;margin-bottom:var(--space-6);}
+p.body{color:var(--color-text);margin-bottom:var(--space-5);} p.body.muted{color:var(--color-text-muted);margin-bottom:0;}
+details.section{border-top:1px solid var(--color-divider);padding:var(--space-5) 0;}
+details.section:first-of-type{border-top:1px solid var(--color-divider);margin-top:var(--space-2);}
+details.section summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:var(--space-3);font-family:var(--font-display);font-size:var(--text-lg);color:var(--color-text);-webkit-tap-highlight-color:transparent;}
+details.section summary::-webkit-details-marker{display:none;}
+details.section summary::before{content:"+";color:var(--color-primary);font-family:var(--font-body);font-weight:600;font-size:var(--text-base);width:1.2em;flex-shrink:0;}
+details.section[open] summary::before{content:"–";}
+details.section .inner{padding-top:var(--space-4);}
+.sym-row{display:grid;grid-template-columns:64px 1fr auto;gap:var(--space-3);align-items:baseline;padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider);}
+.sym-row:last-child{border-bottom:none;}
+.sym-row .sym{font-weight:700;color:var(--color-primary);}
+.sym-row .read{color:var(--color-text-muted);font-size:var(--text-sm);}
+.sym-row .nums{text-align:right;font-size:var(--text-sm);}
+.sym-row .nums .chg-up{color:var(--color-primary);} .sym-row .nums .chg-down{color:#e05d5d;}
+@media (max-width:480px){
+  .sym-row{grid-template-columns:1fr;gap:var(--space-1,.25rem);}
+  .sym-row .nums{text-align:left;}
+}
+.field-list{list-style:none;display:flex;flex-direction:column;gap:var(--space-3);}
+.field-list li{position:relative;padding-left:var(--space-5);color:var(--color-text);}
+.field-list li::before{content:"□";position:absolute;left:0;color:var(--color-text-faint);}
+.wx-line{display:flex;flex-wrap:wrap;gap:var(--space-2);align-items:baseline;margin-top:var(--space-4);color:var(--color-text);}
+.wx-line b{color:var(--color-primary);font-weight:600;}
+.canon-block h3{font-size:var(--text-base);font-family:var(--font-body);font-weight:700;color:var(--color-primary);margin:var(--space-5) 0 var(--space-2);}
+.canon-block h3:first-child{margin-top:0;}
+.canon-block ul{list-style:none;display:flex;flex-direction:column;gap:var(--space-2);}
+.canon-block li{position:relative;padding-left:var(--space-5);color:var(--color-text-muted);font-size:var(--text-sm);}
+.canon-block li::before{content:"□";position:absolute;left:0;color:var(--color-text-faint);}
+footer{border-top:1px solid var(--color-divider);padding:var(--space-12) 0;background:var(--color-surface);text-align:center;font-size:var(--text-sm);color:var(--color-text-muted);}
+footer a{color:var(--color-text-muted);text-decoration:none;border-bottom:1px solid var(--color-border);} footer a:hover{color:var(--color-primary);border-color:var(--color-primary);}
+</style>
+</head>
+<body>
+<header><div class="wrap hdr">
+  <a class="back" href="../index.html">&larr; <span>Back to Harbor Now</span></a>
+  <a class="brand" href="../../index.html">Lime <b>Signalworks</b></a>
+  <button class="icon-btn" data-translate aria-label="Translate this page"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></button>
+  <button class="icon-btn" data-theme-toggle aria-label="Switch theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></button>
+</div></header>
+<script>(function(){var tr=document.querySelector("[data-translate]");if(tr){tr.addEventListener("click",function(){window.open('https://translate.google.com/translate?sl=auto&tl=auto&u='+encodeURIComponent(window.location.href),"_blank","noopener");});}})();</script>
+<main><div class="wrap">
+  <p class="kicker">Harbor Now &middot; July 23, 2026</p>
+  <div class="report">
+    <h1>Broad risk-off close — QQQ leads lower as VIX spikes into heavy earnings</h1>
+    <p class="tag">All four major ETFs closed red with QQQ the weakest and volatility jumping sharply — a day to protect capital amid one of the busiest earnings sessions of the quarter.</p>
+
+    <details class="section" open>
+      <summary>Market Weather</summary>
+      <div class="inner">
+        <div class="sym-rows"><div class="sym-row"><span class="sym">SPY</span><span class="read">Pulled back further from the 52-week high — broad risk-off tape</span><span class="nums">$738.18 <span class="chg-down">-1.23%</span> <span style="color:var(--color-text-faint)">&middot; 52w hi $760.40</span></span></div>
+      <div class="sym-row"><span class="sym">QQQ</span><span class="read">Clear laggard again — mega-cap tech led the market lower</span><span class="nums">$691.96 <span class="chg-down">-1.90%</span></span></div>
+      <div class="sym-row"><span class="sym">DIA</span><span class="read">Fell in line with the broader tape — no defensive rotation today</span><span class="nums">$516.26 <span class="chg-down">-1.00%</span></span></div>
+      <div class="sym-row"><span class="sym">IWM</span><span class="read">Held up best of the four — small caps relatively resilient</span><span class="nums">$292.09 <span class="chg-down">-0.58%</span></span></div></div>
+        <p class="wx-line"><b>Market sentiment:</b> BEARISH &mdash; broad decline across all four major ETFs with volatility spiking</p>
+        <p class="wx-line"><b>Volatility:</b> VIX 18.70, up 12.38% on the day — fear premium jumped sharply</p>
+        <p class="wx-line"><b>Today's language:</b> Protect-first — steep down day with a volatility spike; wait for the tape to stabilize</p>
+      </div>
+    </details>
+
+    <details class="section" open>
+      <summary>Cluster Behavior</summary>
+      <div class="inner"><ul class="field-list"><li>Leadership lane: IWM held up best; QQQ was the clear laggard — broad-based weakness, not a single-sector story</li>
+        <li>Volatility regime: VIX jumped to 18.70 (+12.38%) — treat signals as lower-confidence until vol cools</li>
+        <li>Breadth read: all four major ETFs closed red — a broad risk-off day</li>
+        <li>Heavy earnings tape: Intel, T-Mobile, Union Pacific, Honeywell, Comcast, Lockheed Martin, Blackstone, and Southwest Airlines were among today&#x27;s reporters</li>
+        <li>Rotation note: no clear rotation into safety — value, growth, and small caps all fell together</li>
+        <li>Behavior rule: no chasing downside; keep size small, demand A+ setups, and respect wider stops given the vol spike</li></ul></div>
+    </details>
+
+    <details class="section" open>
+      <summary>Account &amp; Behavior Stance</summary>
+      <div class="inner"><ul class="field-list"><li>Mission for today: protect capital — reduce size and wait for a cleaner tape before adding risk</li>
+        <li>Broker status: IB sandbox scoped, not yet connected; Schwab pending</li>
+        <li>Event risk: earnings season remains in full swing — more large-cap reports land through the rest of the week</li>
+        <li>Rosie is the pilot; you are the admiral — Rosie proposes missions, you approve or decline.</li>
+        <li>No new trade goes on without a written reason, a target range, and a pre-named exit or trim rule.</li>
+        <li>Cash is safety and optionality at highs — a high-cash stance near ATH is valid, not a failure.</li>
+        <li>Harbor gets updated after any significant execution today, not only at day end.</li></ul></div>
+    </details>
+
+    <details class="section" open>
+      <summary>Operations Checklist &mdash; Before the Open</summary>
+      <div class="inner"><ul class="field-list"><li>Execution reality check: cash is safety — no obligation to trade a volatile, broad-red tape</li>
+        <li>Core universe glance: SPY/QQQ/DIA/IWM all red; QQQ weakest, IWM steadiest</li>
+        <li>Day-specific catalyst note #1: Intel, T-Mobile, Union Pacific, Honeywell, Comcast, Lockheed Martin, Blackstone, and Southwest Airlines reported today</li>
+        <li>Day-specific catalyst note #2: VIX spiked over 12% — treat any new entries as lower-confidence until volatility settles</li>
+        <li>No stories, no drama, no romance — only states.</li>
+        <li>Pick the single symbol and single scenario that earns attention at the open.</li>
+        <li>Everything else is background weather unless it triggers a named alert or rule.</li></ul></div>
+    </details>
+
+    <p class="body muted">Today is a protect-first day. A volatility spike like this calls for patience, not new risk.</p>
+
+    <details class="section">
+      <summary>Rosie Canon Rules (reference — unchanged day to day)</summary>
+      <div class="inner">
+<div class="canon-block">
+  <h3>Operator Logic</h3>
+  <ul>
+    <li>Rosie operates in this order: observe, classify, rank, propose, then execute only if allowed.</li>
+    <li>Rosie's core verdict states are Enter, Watch, and Avoid.</li>
+    <li>Rosie judges each symbol relative to SPY market weather, not in isolation.</li>
+    <li>Symbols equal to or slightly stronger than SPY lean favorable for entry; weaker-than-SPY setups are lower quality.</li>
+  </ul>
+  <h3>Entry Rules</h3>
+  <ul>
+    <li>Blue progression is light blue to medium blue to dark blue. Weakness progression is yellow to orange to red-orange to red.</li>
+    <li>Rosie uses the 1-hour chart range tool workflow with recurring 1% or 2% structure bands where relevant.</li>
+    <li>About 0.5% is treated as the conservative seed-entry strike zone near support.</li>
+    <li>Rosie prefers entries near a recent low with K line crossing above its signal line, rather than chasing extended price.</li>
+    <li>If price leaves the entry band, the verdict downgrades from Enter to Watch or Avoid.</li>
+  </ul>
+  <h3>Operator Chart Tools</h3>
+  <ul>
+    <li>Range Tool 1: maroon arrows, anchored at the left-side peak, expanded to 0.5%.</li>
+    <li>Range Tool 2: prior high down to the low, color bar set to light blue.</li>
+    <li>These tools define the safe strike zone and pullback structure, not a blind trigger.</li>
+  </ul>
+  <h3>Risk Rules</h3>
+  <ul>
+    <li>Rosie remains approval-based first, even if fuller automation becomes available later.</li>
+    <li>No trade is sent unless the route is intentionally armed by the operator.</li>
+    <li>After each buy, Rosie creates or requires protective stop logic immediately, not as an afterthought.</li>
+    <li>Stop placement respects structure and the last qualified support area, not an arbitrary fixed percent.</li>
+    <li>Rosie helps prevent revenge behavior by locking out low-quality re-entries after failed setups until conditions improve.</li>
+    <li>Near-ATH tape means stops must be respected faster — extended distance to support is lower here.</li>
+  </ul>
+  <h3>Alert &amp; Control Rules</h3>
+  <ul>
+    <li>Rosie surfaces clear operator-facing controls for relevant trading and analysis modes.</li>
+    <li>Alarm or sound cue with on/off control is active for important triggers.</li>
+    <li>In focused alert mode, alerts may be narrowed to SPY-only when needed.</li>
+  </ul>
+  <h3>Performance Rules</h3>
+  <ul>
+    <li>Rosie maintains a journal and performance review trail so rules can be tuned over time.</li>
+    <li>Canon and tactics stay distinct — doctrine governs what Rosie is allowed to do, tactics govern how Rosie interprets setups inside those bounds.</li>
+  </ul>
+  <h3>Behavior Language</h3>
+  <ul>
+    <li>Today's win is clean state, clean log, and no trades made from boredom, fear, revenge, or make-it-back thinking.</li>
+    <li>P/L is a downstream result, not the mission.</li>
+    <li>Harbor by 9:30 and Harbor after any major move is non-negotiable.</li>
+    <li>A calm account with defined stops and clear posture is a win, not a problem to fix by adding risk.</li>
+    <li>We do not chase. We wait for clean, aligned clusters across our LIME tools before adding risk.</li>
+    <li>Near highs is when discipline earns its money — patience is the position.</li>
+  </ul>
+  <h3>Canon vs. Tactics</h3>
+  <ul>
+    <li>Harbor Now canon defines sea-state reading and account posture — the top-level doctrine that constrains what Rosie is allowed to do.</li>
+    <li>Tactics live underneath and may evolve, as long as they remain inside canon.</li>
+    <li>Changes to canon are rare, deliberate edits, not session-by-session adjustments.</li>
+  </ul>
+</div>
+</div>
+    </details>
+  </div>
+</div></main>
+<footer><div class="wrap"><a href="../index.html">&larr; All Harbor Nows</a> &nbsp;&middot;&nbsp; <a href="../../index.html">Return to the harbor</a></div></footer>
+<script>
+(function(){var t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;var d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';r.setAttribute('data-theme',d);function ic(k){return k?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';}if(t){t.innerHTML=ic(d==='dark');t.addEventListener('click',function(){d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);t.innerHTML=ic(d==='dark');});}})();
+</script>
+</body>
+</html>

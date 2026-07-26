@@ -1,0 +1,215 @@
+/* Canonical site header — the single shared source for every major subpage.
+ *
+ * Mirrors the guarded homepage header in index.html: sticky blur bar, the
+ * animated lighthouse-loop.mp4 mark, the mixed-case "Lime Signalworks LLC"
+ * wordmark, the "Rosie Interactive now →" CTA pill, and the translate +
+ * theme icon buttons. The homepage keeps its own inline copy as the pixel
+ * canon; this file lets the 11 subpages share one header so they can never
+ * drift from each other. Keep the two in sync when the header changes.
+ *
+ * Everything is scoped under `header.site-header` and uses self-contained
+ * `--sh-*` tokens (keyed off [data-theme]) so the header renders identically
+ * regardless of each page's own CSS-variable system, and so its rules win
+ * over any older inline header rules a page still carries.
+ *
+ * `.hdr-local` is a second, centered row beneath the canonical bar that
+ * carries each page's own controls (presence meters, nav links, back link,
+ * page CTAs) without deleting any functionality. */
+
+header.site-header {
+  --sh-bg: #0a131c;
+  --sh-surface: #0f1c28;
+  --sh-border: #1f3346;
+  --sh-divider: #1a2c3c;
+  --sh-text: #e7e3dd;
+  --sh-text-muted: #a89f96;
+  --sh-primary: #9ad14a;
+  --sh-beam: #e8b659;
+  --sh-text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --sh-text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --sh-text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+  --sh-space-2: 0.5rem;
+  --sh-space-3: 0.75rem;
+  --sh-space-4: 1rem;
+  --sh-space-6: 1.5rem;
+  --sh-font-body: 'General Sans', 'Helvetica Neue', sans-serif;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  background: color-mix(in oklab, var(--sh-bg) 82%, transparent);
+  border-bottom: 1px solid var(--sh-divider);
+}
+
+[data-theme="light"] header.site-header {
+  --sh-bg: #e7e3dd;
+  --sh-surface: #ffffff;
+  --sh-border: #dbe4dd;
+  --sh-divider: #e4ece6;
+  --sh-text: #15241c;
+  --sh-text-muted: #56685e;
+  --sh-primary: #4f7a1f;
+  --sh-beam: #b07d1f;
+}
+
+header.site-header .wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 var(--sh-space-6);
+}
+
+header.site-header .hdr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: var(--sh-space-4) 0;
+  gap: var(--sh-space-4);
+}
+
+header.site-header .hdr-actions {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: var(--sh-space-4);
+}
+
+header.site-header .brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sh-space-3);
+  text-decoration: none;
+  color: var(--sh-text);
+}
+
+header.site-header .brand-mark {
+  height: 114px;
+  width: 114px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid var(--sh-border);
+}
+
+@media (max-width: 560px) {
+  header.site-header .brand-mark { height: 60px; width: 60px; }
+}
+
+header.site-header .brand .word {
+  font-family: var(--sh-font-body);
+  font-weight: 600;
+  font-size: var(--sh-text-lg);
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  text-transform: none;
+}
+
+header.site-header .brand .word b {
+  font-weight: 700;
+  color: var(--sh-primary);
+}
+
+header.site-header .brand:hover {
+  color: var(--sh-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+header.site-header .hdr-tools {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+header.site-header .icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  /* Matches the homepage's rendered icon buttons, which are square: the
+   * homepage rule reads `border-radius: var(--radius-full)` but --radius-full
+   * is never defined there, so it resolves to 0. We mirror that exactly for
+   * pixel parity. If the homepage later defines its radius token to round
+   * these, round them here to match (see PR note about the latent bug). */
+  border-radius: 0;
+  border: 1px solid var(--sh-border);
+  color: var(--sh-text-muted);
+  background: var(--sh-surface);
+  cursor: pointer;
+}
+
+header.site-header .icon-btn:hover {
+  color: var(--sh-text);
+  border-color: var(--sh-primary);
+}
+
+@media (min-width: 768px) {
+  header.site-header .brand .word { margin-inline: 2ch; }
+  header.site-header .hdr-tools { margin-left: 2ch; }
+}
+
+/* CTA pill — "Rosie Interactive now →". Matches the homepage's rendered
+ * .rosie-cta-btn.hdr-cta (solid beam pill; the leading letter of each word
+ * is bumped up one type step via .cta-cap). */
+header.site-header .hdr-cta {
+  display: inline-block;
+  font-size: var(--sh-text-sm);
+  padding: 0.45rem 1.1rem;
+  white-space: nowrap;
+  background: var(--sh-beam);
+  color: #0a1a08 !important;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+header.site-header .hdr-cta .cta-cap { font-size: var(--sh-text-base); }
+header.site-header .hdr-cta:hover { filter: brightness(1.08); }
+
+@media (max-width: 480px) {
+  header.site-header .hdr-cta { display: none; }
+}
+
+/* Page-local controls row beneath the canonical bar. */
+header.site-header .hdr-local {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sh-space-4);
+  padding: 0 0 var(--sh-space-3);
+}
+
+header.site-header .hdr-local:empty { display: none; }
+
+header.site-header .hdr-local .back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sh-space-2);
+  text-decoration: none;
+  color: var(--sh-text-muted);
+  font-size: var(--sh-text-sm);
+  font-weight: 500;
+}
+
+header.site-header .hdr-local .back:hover { color: var(--sh-primary); }
+
+header.site-header .hdr-local .nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sh-space-4);
+}
+
+header.site-header .hdr-local .nav-links a {
+  text-decoration: none;
+  color: var(--sh-text-muted);
+  font-size: var(--sh-text-sm);
+  font-weight: 500;
+}
+
+header.site-header .hdr-local .nav-links a:hover { color: var(--sh-primary); }

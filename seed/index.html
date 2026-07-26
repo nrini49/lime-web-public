@@ -1,0 +1,1168 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<script>if ("scrollRestoration" in history) { history.scrollRestoration = "manual"; } window.scrollTo(0,0); window.addEventListener("load", function () { window.scrollTo(0,0); }); window.addEventListener("pageshow", function () { window.scrollTo(0,0); });</script>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>Lime Signalworks — A calm harbor for family capital</title>
+  <meta name="description" content="Lime Signalworks builds Rosie, a calm trading cockpit that protects family money first. Four disciplined tools, a lighthouse beacon in any storm." />
+  <link rel="canonical" href="https://limesignalworks.com/seed/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://limesignalworks.com/seed/" />
+  <meta property="og:title" content="Lime Signalworks — A calm harbor for family capital" />
+  <meta property="og:description" content="Lime Signalworks builds Rosie, a calm trading cockpit that protects family money first. Four disciplined tools, a lighthouse beacon in any storm." />
+  <meta property="og:site_name" content="Lime Signalworks" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lime Signalworks — A calm harbor for family capital" />
+  <meta name="twitter:description" content="Lime Signalworks builds Rosie, a calm trading cockpit that protects family money first." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <style>
+    /* ============ LIME THEME TOKENS ============ */
+    :root {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.25rem);
+      --text-3xl: clamp(2.5rem, 1rem + 4vw, 4.5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+      --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
+      --space-12: 3rem; --space-16: 4rem; --space-20: 5rem; --space-24: 6rem; --space-32: 8rem;
+
+      /* Harbor navy base */
+      --harbor-black: #0A1428;
+      --harbor-deep: #0b1020;
+      --harbor-night: #0d1729;
+      --surface: #101a30;
+      --surface-2: #142038;
+      --surface-3: #182542;
+      --border: rgba(0,255,127,0.10);
+      --border-strong: rgba(0,255,127,0.28);
+      --divider: rgba(255,255,255,0.06);
+
+      /* Lime beacon */
+      --lime: #00FF7F;
+      --lime-glow: rgba(0,255,127,0.50);
+      --lime-soft: rgba(0,255,127,0.14);
+      --lime-faint: rgba(0,255,127,0.06);
+      /* Fire ember */
+      --fire: #FF4500;
+      --fire-glow: rgba(255,69,0,0.45);
+      --fire-soft: rgba(255,69,0,0.12);
+      /* Text */
+      --text: #f3f7f4;
+      --text-muted: #9fb0ac;
+      --text-faint: #5d6b6a;
+
+      --font-display: 'Cabinet Grotesk', 'Inter', sans-serif;
+      --font-body: 'Satoshi', 'Inter', sans-serif;
+      --transition: 200ms cubic-bezier(0.16,1,0.3,1);
+      --radius-sm: 0.5rem; --radius-md: 0.75rem; --radius-lg: 1rem; --radius-xl: 1.25rem; --radius-full: 999px;
+      --content: 1180px;
+    }
+
+    /* Light theme -- same variable names, cockpit accent colors (lime/fire) stay
+       constant since they're signal colors, not shell chrome. */
+    [data-theme="light"] {
+      --harbor-black: #eef1ea;
+      --harbor-deep: #e7e3dd;
+      --harbor-night: #ded9d0;
+      --surface: #f5f2ec;
+      --surface-2: #eee9e1;
+      --surface-3: #e3ddd2;
+      --border: rgba(23,90,58,0.14);
+      --border-strong: rgba(23,90,58,0.32);
+      --divider: rgba(0,0,0,0.08);
+      --lime: #1f7a3f;
+      --lime-glow: rgba(31,122,63,0.35);
+      --lime-soft: rgba(31,122,63,0.12);
+      --lime-faint: rgba(31,122,63,0.06);
+      --text: #16241c;
+      --text-muted: #5b6b60;
+      --text-faint: #8a9690;
+    }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;scroll-behavior:smooth;scroll-padding-top:80px}
+    body{
+      min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:var(--text-base);
+      color:var(--text);background-color:var(--harbor-deep);
+      background-image:
+        radial-gradient(1100px 600px at 80% -10%, rgba(0,255,127,0.07), transparent 60%),
+        radial-gradient(900px 500px at 5% 20%, rgba(0,255,127,0.04), transparent 55%),
+        radial-gradient(800px 700px at 60% 120%, rgba(255,69,0,0.04), transparent 60%);
+      background-attachment:fixed;
+      overflow-x:hidden;
+    }
+    img,svg{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    button{cursor:pointer;border:none;background:none;font:inherit;color:inherit}
+    h1,h2,h3,h4{text-wrap:balance;line-height:1.12;font-family:var(--font-display)}
+    p,li{max-width:68ch;text-wrap:pretty}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    :focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:var(--radius-sm)}
+    ::selection{background:rgba(0,255,127,0.25);color:#fff}
+    @media (prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+    }
+
+    .wrap{max-width:var(--content);margin:0 auto;padding:0 var(--space-6)}
+    .kicker{font-family:var(--font-body);font-size:var(--text-xs);font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--lime)}
+
+    /* ============ NAV ============ */
+    .nav{position:sticky;top:0;z-index:60;background:color-mix(in oklab, var(--harbor-deep) 82%, transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+    .nav-inner{max-width:var(--content);margin:0 auto;padding:0 var(--space-6);height:64px;display:flex;align-items:center;gap:var(--space-5)}
+    .hdr-tools{display:flex;align-items:stretch;gap:var(--space-6)}
+    .icon-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--border-strong);background:var(--surface-2);color:var(--text);display:flex;align-items:center;justify-content:center;transition:all var(--transition)}
+    .icon-btn:hover{background:var(--lime-soft);border-color:var(--lime)}
+    .icon-btn svg{width:18px;height:18px}
+    .brand{display:flex;align-items:center;gap:var(--space-3);margin-right:auto}
+    .brand svg{width:36px;height:36px;color:var(--lime);filter:drop-shadow(0 0 6px var(--lime-glow))}
+    .brand-name{font-family:var(--font-display);font-weight:800;font-size:1.05rem;letter-spacing:-0.01em;line-height:1}
+    .brand-name span{display:block;font-family:var(--font-body);font-weight:500;font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-top:3px}
+    .nav-links{display:flex;align-items:center;gap:var(--space-6)}
+    .nav-links a{font-size:var(--text-sm);color:var(--text-muted);font-weight:500;transition:color var(--transition)}
+    .nav-links a:hover{color:var(--lime)}
+    .nav-cta{padding:0.55rem 1.1rem;border:1px solid var(--border-strong);border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:700;color:var(--lime);transition:all var(--transition)}
+    .nav-cta:hover{background:var(--lime-soft);box-shadow:0 0 0 4px var(--lime-faint)}
+    @media (max-width:860px){.nav-links{display:none}}
+    @media (max-width:600px){
+      .nav-inner{gap:var(--space-3);padding:0 var(--space-4);height:58px}
+      .brand svg{width:30px;height:30px}
+      .brand{gap:var(--space-2)}
+      .brand-name{font-size:0.92rem}
+      .brand-name span{display:none}
+      .nav-cta{padding:0.45rem 0.75rem;font-size:0.72rem;white-space:nowrap;flex:none}
+    }
+
+    /* ============ FIRE SPIRIT COMPANION (fixed) ============ */
+    .ember{position:fixed;bottom:var(--space-6);right:var(--space-6);z-index:55;width:54px;height:74px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity 600ms ease;transform:translateY(8px)}
+    .ember.shown{opacity:1;pointer-events:auto;transform:none}
+    .ember.shown svg{animation:emberFadeIn 1.2s ease forwards}
+    .ember.docked{opacity:0 !important;pointer-events:none;transform:translateY(8px)}
+    .ember svg{width:100%;height:100%;filter:drop-shadow(0 0 10px rgba(255,120,0,0.55))}
+    .ember .flame-body{transform-origin:center bottom;animation:flicker 2.4s ease-in-out infinite}
+    .ember .flame-glow{transform-origin:center bottom;animation:flickerGlow 3.1s ease-in-out infinite}
+    .ember .eye{animation:wink 5s ease-in-out infinite}
+    @keyframes flicker{0%,100%{transform:scaleY(1) scaleX(1) rotate(-1deg)}25%{transform:scaleY(1.08) scaleX(0.96) rotate(1.5deg)}50%{transform:scaleY(0.94) scaleX(1.04) rotate(-0.5deg)}75%{transform:scaleY(1.05) scaleX(0.98) rotate(1deg)}}
+    @keyframes flickerGlow{0%,100%{opacity:0.5;transform:scale(1)}50%{opacity:0.8;transform:scale(1.15)}}
+    @keyframes wink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(0.1)}}
+    .ember-bubble{position:absolute;right:62px;bottom:8px;width:190px;min-width:190px;background:var(--surface-2);border:1px solid var(--border-strong);border-radius:var(--radius-lg);padding:0.7rem 0.9rem;font-size:0.82rem;line-height:1.4;color:var(--text);box-shadow:0 8px 24px rgba(0,0,0,0.4);opacity:0;transform:translateX(8px) scale(0.9);pointer-events:none;transition:all 280ms cubic-bezier(0.16,1,0.3,1)}
+    .ember.show .ember-bubble{opacity:1;transform:translateX(0) scale(1)}
+    .ember-bubble::after{content:"";position:absolute;right:-6px;bottom:16px;width:12px;height:12px;background:var(--surface-2);border-right:1px solid var(--border-strong);border-top:1px solid var(--border-strong);transform:rotate(45deg)}
+    @media (max-width:560px){.foot-links{gap:var(--space-3);font-size:0.62rem}.foot-links a{letter-spacing:0.04em}.foot-inner{flex-direction:column;align-items:flex-start;gap:var(--space-4)}.foot-note{text-align:left}.ember{width:44px;height:60px;bottom:var(--space-4);right:var(--space-4)}.ember-bubble{right:50px;width:160px;min-width:160px}}
+
+    /* ============ HERO ============ */
+    .hero{position:relative;padding:var(--space-12) 0 var(--space-16);overflow:hidden}
+    .hero-glow{position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:900px;height:500px;background:radial-gradient(ellipse at center,rgba(0,255,127,0.10),transparent 65%);pointer-events:none}
+    .hero-top{text-align:center;max-width:760px;margin:0 auto var(--space-10);position:relative}
+    .hero h1{font-size:var(--text-3xl);font-weight:800;letter-spacing:-0.02em;margin:var(--space-4) 0 var(--space-5)}
+    .hero h1 .lime-word{color:var(--lime);text-shadow:0 0 24px rgba(0,255,127,0.35)}
+    .hero-sub{font-size:var(--text-lg);color:var(--text-muted);max-width:560px;margin:0 auto}
+    .hero-tags{display:flex;gap:var(--space-3);justify-content:center;flex-wrap:wrap;margin-top:var(--space-6)}
+    .tag{display:inline-flex;align-items:center;gap:0.45rem;padding:0.4rem 0.85rem;border:1px solid var(--border);border-radius:var(--radius-full);font-size:var(--text-xs);color:var(--text-muted);background:rgba(0,255,127,0.03)}
+    .tag .tdot{width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 6px var(--lime-glow)}
+
+    /* ============ COCKPIT (the hero workstation) ============ */
+    .cockpit{position:relative;background:linear-gradient(180deg,rgba(20,32,56,0.7),rgba(16,26,48,0.85));border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-5);box-shadow:0 24px 60px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.03)}
+    .cockpit-bar{display:flex;align-items:center;gap:var(--space-3);padding-bottom:var(--space-4);margin-bottom:var(--space-6);flex-wrap:wrap}
+    .cockpit-bar .live-dot{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 5px rgba(0,255,127,0.18);animation:livePulse 2s ease-in-out infinite}
+    @keyframes livePulse{0%,100%{box-shadow:0 0 0 5px rgba(0,255,127,0.18)}50%{box-shadow:0 0 0 8px rgba(0,255,127,0.08)}}
+    .cockpit-bar .clock{margin-left:auto;font-variant-numeric:tabular-nums;font-size:var(--text-sm);color:var(--text-muted);font-weight:500;white-space:nowrap;flex-shrink:0}
+    .cockpit-bar .state-pill{padding:0.3rem 0.7rem;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:700;letter-spacing:0.06em;border:1px solid var(--border-strong);background:var(--lime-soft);color:var(--lime);white-space:nowrap;flex-shrink:0}
+
+    .ck-grid{display:grid;grid-template-columns:1.7fr 1fr;gap:var(--space-4)}
+    @media (max-width:980px){.ck-grid{grid-template-columns:1fr}}
+
+    .panel{background:linear-gradient(160deg,rgba(0,255,127,0.05),rgba(10,20,40,0.4));border:1px solid var(--border);border-radius:var(--radius-lg);padding:var(--space-4)}
+    .panel.active{border-color:var(--border-strong);box-shadow:0 0 0 1px rgba(0,255,127,0.06), 0 0 24px rgba(0,255,127,0.06)}
+    .panel-head{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);margin-bottom:var(--space-3)}
+    .panel-title{font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);letter-spacing:0.02em}
+    .panel-sub{font-size:var(--text-xs);color:var(--text-faint);margin-top:2px}
+    .badge{display:inline-flex;align-items:center;padding:0.28rem 0.6rem;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:700;letter-spacing:0.04em;white-space:nowrap;flex-shrink:0}
+    .b-lime{background:var(--lime-soft);color:var(--lime)}
+    .b-fire{background:var(--fire-soft);color:var(--fire)}
+    .b-blue{background:rgba(85,145,199,0.15);color:#7ab6e6}
+    .b-gold{background:rgba(225,153,0,0.16);color:#e8af34}
+
+    /* chart */
+    .chart{position:relative;height:240px;border-radius:var(--radius-md);background:linear-gradient(180deg,rgba(0,255,127,0.07),transparent 50%),repeating-linear-gradient(90deg,transparent 0 79px,rgba(255,255,255,0.04) 79px 80px),repeating-linear-gradient(0deg,transparent 0 59px,rgba(255,255,255,0.04) 59px 60px),var(--harbor-night);overflow:hidden}
+    .chart svg{position:absolute;inset:0;width:100%;height:100%}
+    .chart .price-tag{position:absolute;top:10px;left:12px;font-variant-numeric:tabular-nums;font-size:var(--text-sm);font-weight:700}
+    .chart .price-tag .sym{color:var(--text-muted);font-weight:500;margin-right:6px}
+    .chart .price-tag .val{color:var(--lime)}
+    .chart .weather-bands{position:absolute;inset:0;pointer-events:none}
+
+    /* trade deck */
+    .deck{display:grid;gap:var(--space-3)}
+    .advice{padding:var(--space-3);border-radius:var(--radius-md);background:var(--lime-soft);border:1px solid var(--border-strong)}
+    .advice .lbl{font-size:var(--text-xs);color:var(--lime);font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+    .advice .read{font-size:var(--text-lg);font-weight:700;margin-top:0.3rem;font-family:var(--font-display)}
+    .advice .note{font-size:var(--text-xs);color:var(--text-muted);margin-top:0.4rem}
+    .gramma-rule{padding:var(--space-3);border-radius:var(--radius-md);background:rgba(0,255,127,0.05);border:1px solid var(--border)}
+    .gramma-rule .lbl{font-size:var(--text-xs);color:var(--text-muted);font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+    .gramma-rule .body{font-size:var(--text-xs);color:var(--text-muted);margin-top:0.3rem}
+    .deck-list{display:grid;gap:0}
+    .deck-list .row{display:grid;grid-template-columns:1fr auto auto;gap:var(--space-3);align-items:center;padding:0.6rem 0;border-top:1px solid var(--divider);font-size:var(--text-sm)}
+    .deck-list .row:first-child{border-top:none}
+    .deck-list .pct{font-variant-numeric:tabular-nums;color:var(--text-muted);font-size:var(--text-xs)}
+
+    /* rosie state slider */
+    .slider-panel{margin-top:var(--space-4)}
+    .slider-track{position:relative;height:44px;display:flex;align-items:center}
+    .slider-bg{position:absolute;inset:14px 0;border-radius:var(--radius-full);background:rgba(255,255,255,0.05);border:1px solid var(--divider)}
+    .slider-fill{position:absolute;left:0;top:14px;bottom:14px;width:50%;border-radius:var(--radius-full);background:linear-gradient(90deg,rgba(0,255,127,0.3),rgba(0,255,127,0.6));box-shadow:0 0 12px var(--lime-glow);transition:width 400ms cubic-bezier(0.16,1,0.3,1)}
+    .slider-knob{position:absolute;top:7px;width:30px;height:30px;border-radius:50%;background:var(--harbor-deep);border:2px solid var(--lime);box-shadow:0 0 14px var(--lime-glow);left:calc(50% - 15px);transition:left 400ms cubic-bezier(0.16,1,0.3,1);cursor:grab;display:grid;place-items:center}
+    .slider-knob:active{cursor:grabbing}
+    .slider-stops{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr)}
+    .stop{display:grid;place-items:center;font-size:var(--text-xs);font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-faint);cursor:pointer;z-index:2;transition:color var(--transition)}
+    .stop.active{color:var(--lime)}
+    .stop:hover{color:var(--text)}
+
+    /* lower grid */
+    .ck-lower{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-top:var(--space-4)}
+    @media (max-width:760px){.ck-lower{grid-template-columns:1fr}}
+    .heat{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)}
+    .heat-card{border:1px solid var(--border);border-radius:var(--radius-md);padding:var(--space-3);background:var(--surface)}
+    .heat-card.h-calm{background:rgba(0,255,127,0.07);border-color:rgba(0,255,127,0.3)}
+    .heat-card.h-watch{background:rgba(85,145,199,0.10);border-color:rgba(85,145,199,0.3)}
+    .heat-card.h-caution{background:rgba(225,153,0,0.12);border-color:rgba(225,153,0,0.36)}
+    .heat-card.h-risk{background:rgba(255,69,0,0.10);border-color:rgba(255,69,0,0.34)}
+    .heat-card .h-top{display:flex;justify-content:space-between;align-items:center}
+    .heat-card .h-name{font-weight:700;font-size:var(--text-sm)}
+    .heat-card .h-copy{font-size:var(--text-xs);color:var(--text-muted);margin-top:0.4rem}
+
+    /* alert log */
+    .log-list{display:grid;gap:0}
+    .log-list .row{display:grid;grid-template-columns:1fr auto auto;gap:var(--space-3);align-items:center;padding:0.55rem 0;border-top:1px solid var(--divider);font-size:var(--text-sm)}
+    .log-list .row:first-child{border-top:none}
+    .log-list .row .ts{color:var(--text-faint);font-size:var(--text-xs);font-variant-numeric:tabular-nums}
+    .log-list .row.new{animation:logFlash 1.6s ease}
+    @keyframes logFlash{0%{background:rgba(0,255,127,0.14)}100%{background:transparent}}
+
+    /* ============ SECTION SCAFFOLD ============ */
+    section{padding:var(--space-20) 0;position:relative}
+    .sec-head{max-width:680px;margin:0 auto var(--space-12);text-align:center}
+    .sec-head h2{font-size:var(--text-2xl);font-weight:800;letter-spacing:-0.02em;margin:var(--space-3) 0}
+    .sec-head p{font-size:var(--text-lg);color:var(--text-muted);margin:0 auto}
+
+    /* ============ RULES / FOUR TOOLS ============ */
+    .golden-rule{max-width:760px;margin:0 auto var(--space-12);padding:var(--space-6);border:1px solid var(--border-strong);border-radius:var(--radius-lg);background:linear-gradient(160deg,rgba(0,255,127,0.08),rgba(10,20,40,0.5));text-align:center;position:relative}
+    .golden-rule .gr-label{font-size:var(--text-xs);font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--lime)}
+    .golden-rule .gr-body{font-size:var(--text-xl);font-weight:700;font-family:var(--font-display);margin-top:var(--space-3);line-height:1.3}
+    .golden-rule .gr-body em{color:var(--lime);font-style:normal}
+    .golden-rule .gr-note{font-size:var(--text-sm);color:var(--text-muted);margin-top:var(--space-3)}
+
+    .tools-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-5)}
+    @media (max-width:820px){.tools-grid{grid-template-columns:1fr}}
+    .tool{position:relative;background:linear-gradient(165deg,rgba(0,255,127,0.06),rgba(13,23,41,0.6));border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-6);overflow:hidden;transition:border-color var(--transition),transform var(--transition)}
+    .tool:hover{border-color:var(--border-strong);transform:translateY(-3px)}
+    .tool .tool-glow{position:absolute;top:-60px;right:-40px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(0,255,127,0.12),transparent 65%);pointer-events:none}
+    .tool .tool-num{font-family:var(--font-display);font-weight:800;font-size:2.6rem;color:rgba(0,255,127,0.16);line-height:1}
+    .tool .tool-icon{width:42px;height:42px;margin-bottom:var(--space-3);color:var(--lime)}
+    .tool h3{font-size:var(--text-lg);font-weight:800;margin:var(--space-3) 0 var(--space-1)}
+    .tool .role{font-size:var(--text-xs);color:var(--text-muted);font-weight:600;letter-spacing:0.06em;text-transform:uppercase}
+    .tool p{font-size:var(--text-sm);color:var(--text-muted);margin-top:var(--space-3)}
+    .tool .lights{display:flex;gap:var(--space-2);margin-top:var(--space-4)}
+    .light{flex:1;text-align:center;padding:var(--space-2);border-radius:var(--radius-sm);font-size:var(--text-xs);font-weight:700;border:1px solid var(--divider)}
+    .light.g{background:rgba(0,255,127,0.12);color:var(--lime);border-color:rgba(0,255,127,0.25)}
+    .light.y{background:rgba(225,153,0,0.12);color:#e8af34;border-color:rgba(225,153,0,0.25)}
+    .light.r{background:rgba(255,69,0,0.12);color:var(--fire);border-color:rgba(255,69,0,0.25)}
+
+    /* ============ HOW ROSIE WORKS ============ */
+    .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-3);counter-reset:step}
+    @media (max-width:980px){.flow{grid-template-columns:1fr}}
+    .flow-step{position:relative;padding:var(--space-5);border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface);counter-increment:step}
+    .flow-step::before{content:counter(step,decimal-leading-zero);font-family:var(--font-display);font-weight:800;font-size:0.8rem;color:var(--lime);letter-spacing:0.1em}
+    .flow-step h4{font-size:var(--text-base);font-weight:700;margin:var(--space-2) 0 var(--space-2)}
+    .flow-step p{font-size:var(--text-xs);color:var(--text-muted)}
+    .flow-step .arrow{position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--lime);opacity:0.5;z-index:2}
+    @media (max-width:980px){.flow-step .arrow{display:none}}
+
+    /* ============ CALM ACCOUNT ============ */
+    .calm{display:grid;grid-template-columns:1.1fr 0.9fr;gap:var(--space-10);align-items:center}
+    @media (max-width:860px){.calm{grid-template-columns:1fr}}
+    .calm-visual{position:relative;aspect-ratio:1;max-width:420px;margin:0 auto}
+    .calm-visual svg{width:100%;height:100%}
+    .calm h2{font-size:var(--text-2xl);font-weight:800;letter-spacing:-0.02em}
+    .calm .lead{font-size:var(--text-lg);color:var(--text-muted);margin-top:var(--space-4)}
+    .calm-list{margin-top:var(--space-6);display:grid;gap:var(--space-3)}
+    .calm-item{display:flex;gap:var(--space-3);align-items:flex-start}
+    .calm-item .check{flex:none;width:22px;height:22px;border-radius:50%;background:var(--lime-soft);border:1px solid var(--border-strong);display:grid;place-items:center;color:var(--lime);margin-top:1px}
+    .calm-item .check svg{width:13px;height:13px}
+    .calm-item p{font-size:var(--text-sm);color:var(--text)}
+
+    /* ============ FIRE SPIRIT SECTION ============ */
+    .spirit{position:relative;overflow:hidden}
+    .spirit-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(255,120,0,0.10),transparent 60%);pointer-events:none}
+    .spirit-inner{display:grid;grid-template-columns:0.9fr 1.1fr;gap:var(--space-12);align-items:center;position:relative}
+    @media (max-width:860px){.spirit-inner{grid-template-columns:1fr}}
+    .spirit-flame{max-width:300px;margin:0 auto;position:relative}
+    .spirit-flame svg{width:100%;height:auto;filter:drop-shadow(0 0 24px rgba(255,120,0,0.4))}
+    .spirit-flame .big-flame{transform-origin:center bottom;animation:flicker 3.2s ease-in-out infinite}
+    .spirit-flame .big-glow{transform-origin:center bottom;animation:flickerGlow 4s ease-in-out infinite}
+    .spirit-flame .big-eye{animation:wink 7s ease-in-out infinite}
+    .spirit-copy h2{font-size:var(--text-2xl);font-weight:800;letter-spacing:-0.02em}
+    .spirit-copy .lead{font-size:var(--text-lg);color:var(--text-muted);margin-top:var(--space-4)}
+    .spirit-cards{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-top:var(--space-6)}
+    @media (max-width:560px){.spirit-cards{grid-template-columns:1fr}}
+    .spirit-card{padding:var(--space-4);border:1px solid var(--border);border-radius:var(--radius-lg);background:rgba(255,69,0,0.04);display:flex;flex-direction:column}
+    .spirit-card .sc-lbl{font-size:var(--text-xs);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#ff8a4a}
+    .spirit-card p{font-size:var(--text-sm);color:var(--text);margin-top:var(--space-2)}
+
+    /* ============ ARTIFACTS ============ */
+    .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5)}
+    @media (max-width:980px){.art-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:640px){.art-grid{grid-template-columns:1fr}}
+    .art-card{position:relative;display:flex;flex-direction:column;padding:var(--space-5);border:1px solid var(--border);border-radius:var(--radius-xl);background:linear-gradient(165deg,rgba(0,255,127,0.04),rgba(13,23,41,0.6));overflow:hidden;transition:all var(--transition)}
+    .art-card:hover{border-color:var(--border-strong);transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,0.3)}
+    .art-card .art-mark{width:40px;height:40px;margin-bottom:var(--space-4);color:var(--lime);opacity:0.9}
+    .art-card .art-mark.fire{color:#ff8a4a}
+    .art-card .art-from{font-size:var(--text-xs);color:var(--text-faint);font-weight:600;letter-spacing:0.08em;text-transform:uppercase}
+    .art-card h3{font-size:var(--text-lg);font-weight:800;margin:var(--space-2) 0 var(--space-2)}
+    .art-card p{font-size:var(--text-sm);color:var(--text-muted);flex:1}
+    .art-card .art-cta{margin-top:var(--space-4);display:inline-flex;align-items:center;gap:0.4rem;font-size:var(--text-sm);font-weight:700;color:var(--lime)}
+    .art-card .art-cta svg{width:15px;height:15px;transition:transform var(--transition)}
+    .art-card:hover .art-cta svg{transform:translateX(3px)}
+    .art-card.featured .art-cta{color:var(--text-muted)}
+
+    /* ============ CTA ============ */
+    .cta{position:relative;text-align:center;padding:var(--space-24) 0;overflow:hidden}
+    .cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse at center,rgba(0,255,127,0.12),transparent 65%);pointer-events:none}
+    .cta h2{font-size:var(--text-2xl);font-weight:800;letter-spacing:-0.02em;position:relative}
+    .cta p{font-size:var(--text-lg);color:var(--text-muted);margin:var(--space-4) auto;max-width:560px;position:relative}
+    .cta-btns{display:flex;gap:var(--space-4);justify-content:center;margin-top:var(--space-8);flex-wrap:wrap;position:relative}
+    .btn-primary{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 1.6rem;border-radius:var(--radius-full);background:var(--lime);color:var(--harbor-black);font-weight:700;font-size:var(--text-sm);letter-spacing:0.02em;box-shadow:0 0 24px var(--lime-glow);transition:all var(--transition)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 32px var(--lime-glow)}
+    .btn-ghost{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 1.6rem;border-radius:var(--radius-full);border:1px solid var(--border-strong);color:var(--lime);font-weight:700;font-size:var(--text-sm);transition:all var(--transition)}
+    .btn-ghost:hover{background:var(--lime-soft)}
+
+    /* ============ FOOTER ============ */
+    footer{border-top:1px solid var(--border);padding:var(--space-12) 0 var(--space-8)}
+    .foot-inner{display:flex;justify-content:space-between;gap:var(--space-6);flex-wrap:wrap;align-items:center}
+    .foot-brand{display:flex;align-items:center;gap:var(--space-3)}
+    .foot-brand svg{width:28px;height:28px;color:var(--lime)}
+    .foot-brand .fb-name{font-family:var(--font-display);font-weight:800;font-size:var(--text-sm)}
+    .foot-copy{font-size:var(--text-xs);color:var(--text-faint);letter-spacing:0.04em}
+    .foot-links{display:flex;gap:var(--space-4);flex-wrap:wrap;row-gap:var(--space-2)}
+    .foot-links a{font-size:var(--text-xs);color:var(--text-muted);letter-spacing:0.06em;text-transform:uppercase}
+    .foot-links a:hover{color:var(--lime)}
+    .foot-note{text-align:center;margin-top:var(--space-8);font-size:var(--text-xs);color:var(--text-faint);max-width:600px;margin-left:auto;margin-right:auto}
+
+    /* beacon beam decoration */
+    .beam{position:absolute;width:2px;background:linear-gradient(180deg,transparent,var(--lime-glow),transparent);opacity:0;animation:beamSweep 4s ease-in-out infinite;pointer-events:none}
+    @keyframes beamSweep{0%,100%{opacity:0;transform:rotate(0deg)}50%{opacity:0.5}}
+
+    /* scroll reveal */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity 700ms cubic-bezier(0.16,1,0.3,1),transform 700ms cubic-bezier(0.16,1,0.3,1)}
+    .reveal.in{opacity:1;transform:none}
+
+    /* ============ ANNOUNCEMENT BAR ============ */
+    .announce{background:var(--harbor-deep);border-bottom:1px solid rgba(0,255,127,0.16);position:relative;z-index:70}
+    .announce.hidden{display:none}
+    .announce-inner{max-width:var(--content);margin:0 auto;padding:0 var(--space-6);display:flex;align-items:center;justify-content:center;gap:var(--space-3);min-height:38px;position:relative}
+    .announce-text{font-size:var(--text-xs);color:var(--lime);font-weight:600;letter-spacing:0.02em;text-align:center;line-height:1.4}
+    .announce-text a{color:var(--lime);font-weight:700;text-decoration:underline;text-decoration-color:rgba(0,255,127,0.35);text-underline-offset:3px;transition:text-decoration-color var(--transition)}
+    .announce-text a:hover{text-decoration-color:var(--lime)}
+    .announce-close{position:absolute;right:var(--space-4);top:50%;transform:translateY(-50%);width:26px;height:26px;display:grid;place-items:center;border-radius:var(--radius-sm);color:var(--text-muted);transition:color var(--transition),background var(--transition)}
+    .announce-close:hover{color:var(--lime);background:var(--lime-soft)}
+    .announce-close svg{width:14px;height:14px}
+    @media(max-width:600px){.announce-inner{padding:0 var(--space-4)}.announce-close{right:var(--space-2)}}
+
+    /* ============ ACCORDION ============ */
+    .accordion{border-top:1px solid var(--border);margin-top:var(--space-4)}
+    .acc-panel{border-bottom:1px solid var(--border);scroll-margin-top:80px}
+    .acc-header{width:100%;display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-5) var(--space-6);text-align:left;transition:background var(--transition);background:transparent}
+    .acc-header:hover{background:rgba(0,255,127,0.03)}
+    .acc-header:focus-visible{outline:2px solid var(--lime);outline-offset:-2px;border-radius:var(--radius-sm)}
+    .acc-header-inner{display:flex;flex-direction:column;gap:0.25rem}
+    .acc-title{font-family:var(--font-display);font-weight:800;font-size:var(--text-xl);letter-spacing:-0.01em;color:var(--text);line-height:1.15}
+    .acc-chevron{flex:none;width:24px;height:24px;color:var(--lime);opacity:0.7;transition:transform 350ms cubic-bezier(0.16,1,0.3,1),opacity var(--transition)}
+    .acc-header:hover .acc-chevron{opacity:1}
+    .acc-header[aria-expanded="true"] .acc-chevron{transform:rotate(180deg);opacity:1}
+    .acc-content{display:grid;grid-template-rows:0fr;transition:grid-template-rows 420ms cubic-bezier(0.16,1,0.3,1)}
+    .acc-panel.open .acc-content{grid-template-rows:1fr}
+    .acc-content-inner{overflow:hidden;min-height:0}
+    .acc-content-pad{padding:0 var(--space-6) var(--space-12)}
+    .acc-lead{font-size:var(--text-lg);color:var(--text-muted);margin-bottom:var(--space-10);max-width:680px}
+    @media(max-width:600px){.acc-header{padding:var(--space-4)}.acc-content-pad{padding:0 var(--space-4) var(--space-10)}.acc-title{font-size:var(--text-lg)}}
+
+    /* The trading cockpit, golden-rule callout, tools grid, and artifact cards
+       are a fixed dark terminal look, same in both themes -- like a live
+       product screenshot, not page chrome. Re-pin their tokens to the
+       original dark values so light mode never washes them out. */
+    .cockpit, .golden-rule, .tools-grid, .art-grid {
+      color: var(--text);
+      --harbor-black: #0A1428;
+      --harbor-deep: #0b1020;
+      --harbor-night: #0d1729;
+      --surface: #101a30;
+      --surface-2: #142038;
+      --surface-3: #182542;
+      --border: rgba(0,255,127,0.10);
+      --border-strong: rgba(0,255,127,0.28);
+      --divider: rgba(255,255,255,0.06);
+      --lime: #00FF7F;
+      --lime-glow: rgba(0,255,127,0.50);
+      --lime-soft: rgba(0,255,127,0.14);
+      --lime-faint: rgba(0,255,127,0.06);
+      --text: #f3f7f4;
+      --text-muted: #9fb0ac;
+      --text-faint: #5d6b6a;
+    }
+
+  </style>
+<script defer data-domain="limesignalworks.com" src="https://plausible.io/js/script.js"></script>
+<link rel="stylesheet" href="../assets/css/header-cta.css">
+  <link rel="stylesheet" href="../assets/css/site-header.css">
+</head>
+<body>
+
+
+<!-- ===== ANNOUNCEMENT BAR ===== -->
+<div class="announce" id="announceBar">
+  <div class="announce-inner">
+    <span class="announce-text">The Rosie Cockpit is live &mdash; <a href="https://rosie-trading-v2.pplx.app" target="_blank" rel="noopener">see it in action</a></span>
+    <button class="announce-close" id="announceClose" aria-label="Dismiss announcement">
+      <svg viewBox="0 0 14 14" fill="none"><path d="M2 2L12 12M12 2L2 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ===== NAV ===== -->
+<header class="site-header">
+  <!-- Canonical shared header (assets/css/site-header.css) — mirrors the
+       homepage header exactly: sticky blur bar, lighthouse-loop.mp4 mark,
+       mixed-case "Lime Signalworks LLC", the "Rosie Interactive now →" CTA
+       (public preview URL — NOT the gated IB-confirmation button, which
+       stays out per Noal's standing rule), and the translate + theme icons.
+       Page-specific controls live in the .hdr-local row below. -->
+  <div class="wrap hdr">
+    <a class="brand" href="../index.html" aria-label="Lime Signalworks home">
+      <video class="brand-mark" src="../assets/brand/lighthouse-loop.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
+      <span class="word">Lime&nbsp;<b>Signalworks</b> LLC</span>
+    </a>
+    <div class="hdr-actions">
+    <a class="rosie-cta-btn hdr-cta" href="https://limesignalworks.pplx.app" target="_blank" rel="noopener"><span class="cta-cap">R</span>osie <span class="cta-cap">I</span>nteractive <span class="cta-cap">N</span>ow →</a>
+    <div class="hdr-tools">
+      <button class="icon-btn" data-translate aria-label="Translate this page">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </button>
+      <button class="icon-btn notranslate" translate="no" data-theme-toggle aria-label="Switch theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+    </div>
+    </div>
+  </div>
+  <div class="wrap hdr-local">
+    <div class="nav-links">
+      <a href="#cockpit">Cockpit</a>
+      <a href="#rules">The Rules</a>
+      <a href="#how">How Rosie Works</a>
+      <a href="#calm">Calm Account</a>
+      <a href="#library">Library</a>
+    </div>
+    <a href="#cta" class="nav-cta">Open the Harbor</a>
+    <a class="ibkr-demo-cta" href="https://limesignalworks.pplx.app" target="_blank" rel="noopener">Rosie + IBKR &mdash; Live Data Demo</a>
+  </div>
+</header>
+
+<!-- ===== FIRE SPIRIT COMPANION (fixed, whimsical) ===== -->
+<div class="ember" id="ember" role="button" tabindex="0" aria-label="Say hello to Ember, the harbor's little flame">
+  <svg viewBox="0 0 54 74" fill="none" aria-hidden="true">
+    <ellipse class="flame-glow" cx="27" cy="60" rx="22" ry="8" fill="#FF4500" opacity="0.25"/>
+    <path class="flame-body" d="M27 8 C20 18 14 26 14 40 a13 13 0 0 0 26 0 c0-9-5-16-9-24 -2 5-5 6-5 2 0-3 1-6 1-10 z" fill="url(#flameGrad)"/>
+    <circle cx="22" cy="42" r="2.4" fill="#0A1428" class="eye"/>
+    <circle cx="32" cy="42" r="2.4" fill="#0A1428" class="eye"/>
+    <path d="M23 48 Q27 51 31 48" stroke="#0A1428" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+    <defs>
+      <linearGradient id="flameGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FFD27A"/>
+        <stop offset="0.5" stop-color="#FF8A2A"/>
+        <stop offset="1" stop-color="#FF4500"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  <div class="ember-bubble" id="emberBubble">Hi there. The harbor's calm today. Want to see the beacon?</div>
+</div>
+
+<!-- ===== HERO + COCKPIT ===== -->
+<header class="hero" id="top">
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <div class="hero-top">
+      <span class="kicker">Lime Signalworks &middot; Rosie Cockpit</span>
+      <h1>A <span class="lime-word">calm harbor</span> for family capital.</h1>
+      <p class="hero-sub">Rosie watches the storm so your family's money can rest. Four disciplined tools, one lighthouse beacon, nothing armed until you say so.</p>
+      <div class="hero-tags">
+        <span class="tag"><span class="tdot"></span> SPY-relative, always</span>
+        <span class="tag"><span class="tdot"></span> Approval-based</span>
+        <span class="tag"><span class="tdot"></span> Stops on structure</span>
+        <span class="tag"><span class="tdot"></span> PL is downstream</span>
+      </div>
+    </div>
+
+    <!-- THE TRADING WORKSTATION -->
+    <div class="cockpit reveal" id="cockpit" aria-label="Rosie trading cockpit preview">
+      <div class="cockpit-bar">
+        <span class="live-dot"></span>
+        <span style="font-weight:700;font-size:var(--text-sm)">Rosie Live Cockpit</span>
+        <span class="badge b-lime">Weather aligned</span>
+        <span class="state-pill" id="statePill">ARMED</span>
+        <span class="clock" id="cockpitClock">10:12 AM</span>
+      </div>
+
+      <div class="ck-grid">
+        <!-- Center chart -->
+        <article class="panel active">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title">Center Chart &mdash; QQQ</div>
+              <div class="panel-sub">Color Weather bands &middot; Lime Hammer signal</div>
+            </div>
+            <span class="badge b-blue">Watching</span>
+          </div>
+          <div class="chart" id="chart">
+            <div class="weather-bands">
+              <div style="position:absolute;left:0;right:0;top:0;height:34%;background:rgba(0,255,127,0.06)"></div>
+              <div style="position:absolute;left:0;right:0;top:34%;height:40%;background:rgba(225,153,0,0.05)"></div>
+              <div style="position:absolute;left:0;right:0;top:74%;height:26%;background:rgba(0,255,127,0.06)"></div>
+            </div>
+            <svg viewBox="0 0 800 240" preserveAspectRatio="none" id="chartSvg">
+              <defs>
+                <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#00FF7F" stop-opacity="0.30"/>
+                  <stop offset="1" stop-color="#00FF7F" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path id="chartArea" d="" fill="url(#areaGrad)"/>
+              <path id="chartLine" d="" fill="none" stroke="#00FF7F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path id="chartGhost" d="" fill="none" stroke="#00FF7F" stroke-width="1.5" stroke-dasharray="6 8" opacity="0.4"/>
+              <circle id="chartDot" cx="0" cy="0" r="4.5" fill="#00FF7F">
+                <animate attributeName="r" values="4.5;7;4.5" dur="1.8s" repeatCount="indefinite"/>
+              </circle>
+            </svg>
+            <div class="price-tag"><span class="sym">QQQ</span><span class="val" id="qqqPrice">487.20</span></div>
+          </div>
+        </article>
+
+        <!-- Trade deck -->
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title">Trade Deck</div>
+              <div class="panel-sub">Direction &middot; size &middot; trigger</div>
+            </div>
+            <span class="badge b-lime">Guarded live</span>
+          </div>
+          <div class="deck">
+            <div class="advice">
+              <div class="lbl">Primary read</div>
+              <div class="read">Favor leader pullbacks, size at half</div>
+              <div class="note">Enter only if momentum resumes above reclaim and exhaustion stays quiet.</div>
+            </div>
+            <div class="gramma-rule">
+              <div class="lbl">Gramma Rule &middot; Safety Suit</div>
+              <div class="body">Size at half until a clean retest confirms. No chase, no make-it-back trades.</div>
+            </div>
+            <div class="deck-list">
+              <div class="row"><span>SMH scalp setup</span><span class="badge b-blue">Watch</span><span class="pct">41.2%</span></div>
+              <div class="row"><span>QQQ continuation</span><span class="badge b-lime">Ready</span><span class="pct">68.4%</span></div>
+              <div class="row"><span>IWM fade risk</span><span class="badge b-gold">Caution</span><span class="pct">29.7%</span></div>
+              <div class="row"><span>TSLA squeeze window</span><span class="badge b-blue">Watch</span><span class="pct">52.1%</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Rosie state slider -->
+      <div class="panel slider-panel">
+        <div class="panel-head">
+          <div>
+            <div class="panel-title">Rosie State Slider</div>
+            <div class="panel-sub">Nothing executes until the operator intentionally arms the route</div>
+          </div>
+          <span class="badge b-gold">Approval-based</span>
+        </div>
+        <div class="slider-track" id="sliderTrack">
+          <div class="slider-bg"></div>
+          <div class="slider-fill" id="sliderFill"></div>
+          <div class="slider-knob" id="sliderKnob">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#00FF7F" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="slider-stops">
+            <span class="stop" data-state="0">Observe</span>
+            <span class="stop active" data-state="1">Watch</span>
+            <span class="stop" data-state="2">Arm</span>
+            <span class="stop" data-state="3">Execute</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lower grid: sector + alert log -->
+      <div class="ck-lower">
+        <article class="panel">
+          <div class="panel-head">
+            <div><div class="panel-title">Sector Grid</div><div class="panel-sub">Broad strength board</div></div>
+            <span class="badge b-lime">Lime Weather</span>
+          </div>
+          <div class="heat">
+            <div class="heat-card h-calm"><div class="h-top"><span class="h-name">Semis</span><span class="badge b-lime">Strong</span></div><div class="h-copy">Leadership intact; pullbacks favored.</div></div>
+            <div class="heat-card h-watch"><div class="h-top"><span class="h-name">Software</span><span class="badge b-blue">Firm</span></div><div class="h-copy">Trend positive; wait for reset.</div></div>
+            <div class="heat-card h-caution"><div class="h-top"><span class="h-name">Financials</span><span class="badge b-gold">Mixed</span></div><div class="h-copy">Rotation unclear; avoid heavy size.</div></div>
+            <div class="heat-card h-risk"><div class="h-top"><span class="h-name">Energy</span><span class="badge b-gold">Fading</span></div><div class="h-copy">Tactical only unless strength returns.</div></div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div><div class="panel-title">Alert Log</div><div class="panel-sub">Signal &amp; execution trail</div></div>
+            <span class="badge b-blue">Live</span>
+          </div>
+          <div class="log-list" id="alertLog">
+            <div class="row"><span>Momentum reclaimed</span><span class="badge b-lime">Signal</span><span class="ts">QQQ</span></div>
+            <div class="row"><span>Exhaustion cooled</span><span class="badge b-blue">Lime</span><span class="ts">SMH</span></div>
+            <div class="row"><span>Role bridge updated</span><span class="badge b-gold">22</span><span class="ts">R08</span></div>
+            <div class="row"><span>Awaiting live confirm</span><span class="badge b-blue">Order</span><span class="ts">Manual</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== WHAT LIME IS (mission statement) — Door 02 landing copy.
+     Governing statement (locked 2026-07-16): Fire Spirit is interior,
+     governing doctrine; Rosie Interactive is exterior, stewardship
+     mechanism; causality — the operator's condition sets the operation's
+     quality. Written for both readers: the neo-Christian reader and the
+     energy/frequency reader, per the Two Readers, One Door bridge. ===== -->
+<section id="what-lime-is">
+  <div class="wrap" style="max-width:760px;">
+    <span class="kicker">What LIME Is</span>
+    <h2 style="margin-top:var(--space-3);font-size:var(--text-2xl);font-weight:800;letter-spacing:-0.02em;">Two things, one name.</h2>
+    <div style="margin-top:var(--space-5);display:flex;flex-direction:column;gap:var(--space-4);font-size:var(--text-lg);color:var(--text-muted);line-height:1.7;">
+      <p>LIME is two things wearing one name. An inner discipline, and an outer tool. The inner one is called Fire Spirit &mdash; it's not a doctrine you join, it's the condition you're in before you touch a chart. The outer one is Rosie &mdash; four instruments that watch the market so you don't have to watch it with a hunter's eyes.</p>
+      <p>Here's the part most systems skip: the state you bring into the market is the actual variable. Not the signal. Not the setup. You. A calm operator running a good plan gets a different result than an anxious operator running the same plan &mdash; same tools, same market, different outcome, because the outcome was never only about the tools. Frequency, if that's your word for it. Peace, if that's yours. Same behavior, two names for it &mdash; steady instead of hunting, received instead of grabbed at.</p>
+      <p>That's why LIME doesn't start with the trade. It starts with the person placing it. Three returns in the morning, six at midday, nine at close &mdash; not a magic number, a rhythm that trains the reflex out of chasing and into watching. Ruth stayed when leaving was reasonable. Daniel read the room without flinching. Different centuries, same discipline: hold the line, move at the right moment, don't force the harvest.</p>
+      <p>Rosie is what that discipline looks like once it has hands. Four tools &mdash; Color Weather, Navigation, the Ark, Exhaustion &mdash; reading the market against itself continuously, so the practice runs even on the days your own attention doesn't. Approval-based. Nothing armed until you say so. Size matched to weather, never to hope.</p>
+      <p>We cannot and do not guarantee profits &mdash; no honest system can. What we can make is a calm account with a defined stop and an operator who isn't white-knuckling the screen. Loss prevention first, then profit. P&amp;L is downstream of that. A steady person running a steady system &mdash; that's the whole offer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ACCORDION: Rules, How, Calm, Library ===== -->
+<div class="accordion" id="accordion">
+
+  <!-- Panel 1: Rosie's Rules (open by default) -->
+  <div class="acc-panel open" id="rules">
+    <div class="wrap">
+      <button class="acc-header" aria-expanded="true" aria-controls="acc-rules-content" id="acc-rules-btn">
+        <span class="acc-header-inner">
+          <span class="kicker">Rosie's Rules</span>
+          <span class="acc-title">Four tools. One golden rule.</span>
+        </span>
+        <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="acc-content" id="acc-rules-content" role="region" aria-labelledby="acc-rules-btn">
+        <div class="acc-content-inner">
+          <div class="acc-content-pad">
+            <p class="acc-lead">Every symbol is judged relative to SPY &mdash; the whole market &mdash; never in isolation. A symbol that looks strong on its own chart but is weaker than the market is a lower-quality setup, no matter how green its own lights glow.</p>
+
+            <div class="golden-rule reveal">
+              <div class="gr-label">The Golden Rule</div>
+              <div class="gr-body">Equal to or stronger than <em>SPY</em> = favorable.<br>Weaker than SPY = downsize or skip.</div>
+              <div class="gr-note">Enforced across all four tools, not just one. Sail with the wind, not against it.</div>
+            </div>
+
+            <div class="tools-grid">
+              <article class="tool reveal">
+                <div class="tool-glow"></div>
+                <div class="tool-num">01</div>
+                <svg class="tool-icon" viewBox="0 0 40 40" fill="none"><path d="M8 28 a12 12 0 0 1 24 0" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="14" r="4" stroke="currentColor" stroke-width="2.5"/><path d="M4 32 H36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <div class="role">The Sky &middot; overall mood</div>
+                <h3>LIME Color Weather</h3>
+                <p>Colors the chart like a weather map. Green seas = friendly, you can be a little bolder. Yellow = caution, smaller size. Red = storm, stay small or stay out. Match your size to the weather. Never fight red weather.</p>
+                <div class="lights"><span class="light g">Friendly</span><span class="light y">Caution</span><span class="light r">Storm</span></div>
+              </article>
+
+              <article class="tool reveal">
+                <div class="tool-glow"></div>
+                <div class="tool-num">02</div>
+                <svg class="tool-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="13" stroke="currentColor" stroke-width="2.5"/><path d="M20 7 L20 20 L29 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="20" r="2" fill="currentColor"/></svg>
+                <div class="role">Compass &amp; Radar &middot; where's the strength</div>
+                <h3>Navigation Sensor Array</h3>
+                <p>Shows which parts of the market are strong and pulling the boat forward. Green, leading sectors = clear direction. Mixed or flat = no leader, wait. Red = wrong way, stand aside. The SPY check lives here &mdash; only take trades at least as strong as the market.</p>
+                <div class="lights"><span class="light g">Leading</span><span class="light y">Flat</span><span class="light r">Wrong way</span></div>
+              </article>
+
+              <article class="tool reveal">
+                <div class="tool-glow"></div>
+                <div class="tool-num">03</div>
+                <svg class="tool-icon" viewBox="0 0 40 40" fill="none"><path d="M6 16 L20 8 L34 16 L34 32 L20 26 L6 32 Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M20 8 L20 26" stroke="currentColor" stroke-width="2.5"/></svg>
+                <div class="role">Captain's Plan &middot; how big to be</div>
+                <h3>Noal's Ark</h3>
+                <p>The Ark is your safe plan. It tells you exactly how much of your account to use for this trip so you never risk too much. Green = safe size. Yellow = smaller than usual. Red = too risky, skip. Follow the Ark's size exactly &mdash; never go bigger, even when you feel excited.</p>
+                <div class="lights"><span class="light g">Go size</span><span class="light y">Smaller</span><span class="light r">Skip</span></div>
+              </article>
+
+              <article class="tool reveal">
+                <div class="tool-glow"></div>
+                <div class="tool-num">04</div>
+                <svg class="tool-icon" viewBox="0 0 40 40" fill="none"><rect x="6" y="18" width="28" height="6" rx="3" stroke="currentColor" stroke-width="2.5"/><circle cx="11" cy="21" r="2.5" fill="currentColor"/><path d="M20 9 L20 14 M28 12 L26 16 M12 12 L14 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <div class="role">Tiredness Gauge &middot; is the move fresh</div>
+                <h3>LIME Exhaustion</h3>
+                <p>Tells you if price has been running hard and is getting tired, like a kid who played all day. Low and fresh = energy remains, good time to consider entry. Medium = tiring, trail the stop. High = exhausted, harvest profits or stay out. Enter fresh, trim tired.</p>
+                <div class="lights"><span class="light g">Fresh</span><span class="light y">Tiring</span><span class="light r">Exhausted</span></div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel 2: How Rosie Works -->
+  <div class="acc-panel" id="how">
+    <div class="wrap">
+      <button class="acc-header" aria-expanded="false" aria-controls="acc-how-content" id="acc-how-btn">
+        <span class="acc-header-inner">
+          <span class="kicker">How Rosie Works</span>
+          <span class="acc-title">Observe. Classify. Rank. Propose. Execute.</span>
+        </span>
+        <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="acc-content" id="acc-how-content" role="region" aria-labelledby="acc-how-btn">
+        <div class="acc-content-inner">
+          <div class="acc-content-pad">
+            <p class="acc-lead">Observe. Classify. Rank. Propose. Execute &mdash; only if armed. Rosie never reaches for the trade. She watches, sorts, ranks, and quietly suggests. The moment of action belongs to the operator alone.</p>
+            <div class="flow">
+              <div class="flow-step reveal"><div class="arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10H15M11 6L15 10L11 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Observe</h4><p>Read the sky and the radar before anything else. Weather, sectors, and the SPY-relative check come first.</p></div>
+              <div class="flow-step reveal"><div class="arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10H15M11 6L15 10L11 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Classify</h4><p>Sort each symbol into a single clear state. Probe, Armed, Track, or Rest. One posture at a time.</p></div>
+              <div class="flow-step reveal"><div class="arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10H15M11 6L15 10L11 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Rank</h4><p>Line up setups by quality. Equal-or-stronger-than-SPY floats to the top. Weaker ones sink, no matter how they look alone.</p></div>
+              <div class="flow-step reveal"><div class="arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10H15M11 6L15 10L11 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Propose</h4><p>Rosie offers a direction, a size from the Ark, and a pre-named exit. She never pulls the trigger herself.</p></div>
+              <div class="flow-step reveal"><h4>Execute &mdash; only if armed</h4><p>The operator intentionally arms the route. No arming, no trade. Harbor by 9:30. Stops on structure, immediately.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel 3: The Calm-Account Promise -->
+  <div class="acc-panel" id="calm">
+    <div class="wrap">
+      <button class="acc-header" aria-expanded="false" aria-controls="acc-calm-content" id="acc-calm-btn">
+        <span class="acc-header-inner">
+          <span class="kicker">The Calm-Account Promise</span>
+          <span class="acc-title">PL is downstream. A calm account is the win.</span>
+        </span>
+        <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="acc-content" id="acc-calm-content" role="region" aria-labelledby="acc-calm-btn">
+        <div class="acc-content-inner">
+          <div class="acc-content-pad">
+            <div class="calm">
+              <div class="calm-visual reveal">
+                <svg viewBox="0 0 400 400" fill="none" aria-hidden="true">
+                  <defs>
+                    <radialGradient id="harborGrad" cx="0.5" cy="0.4" r="0.6">
+                      <stop offset="0" stop-color="#00FF7F" stop-opacity="0.18"/>
+                      <stop offset="1" stop-color="#0A1428" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="beaconBeam" x1="0.5" y1="0" x2="0.5" y2="1">
+                      <stop offset="0" stop-color="#00FF7F" stop-opacity="0.55"/>
+                      <stop offset="1" stop-color="#00FF7F" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="200" cy="200" r="190" fill="url(#harborGrad)"/>
+                  <!-- water lines -->
+                  <path d="M40 300 Q120 290 200 300 T360 300" stroke="rgba(0,255,127,0.18)" stroke-width="1.5" fill="none"/>
+                  <path d="M30 320 Q130 308 230 320 T370 320" stroke="rgba(0,255,127,0.14)" stroke-width="1.5" fill="none"/>
+                  <path d="M50 340 Q140 330 230 340 T360 340" stroke="rgba(0,255,127,0.10)" stroke-width="1.5" fill="none"/>
+                  <!-- lighthouse -->
+                  <path d="M185 150 L215 150 L210 280 L190 280 Z" fill="#101a30" stroke="#00FF7F" stroke-width="2"/>
+                  <path d="M178 150 L222 150 L222 142 L178 142 Z" fill="#142038" stroke="#00FF7F" stroke-width="2"/>
+                  <circle cx="200" cy="120" r="16" fill="#00FF7F" opacity="0.9">
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="2.6s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="200" cy="120" r="28" fill="#00FF7F" opacity="0.12">
+                    <animate attributeName="r" values="22;34;22" dur="2.6s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.18;0.05;0.18" dur="2.6s" repeatCount="indefinite"/>
+                  </circle>
+                  <!-- beams -->
+                  <path d="M200 120 L70 70" stroke="url(#beaconBeam)" stroke-width="14" opacity="0.5">
+                    <animate attributeName="opacity" values="0.2;0.55;0.2" dur="4s" repeatCount="indefinite"/>
+                  </path>
+                  <path d="M200 120 L330 70" stroke="url(#beaconBeam)" stroke-width="14" opacity="0.5">
+                    <animate attributeName="opacity" values="0.55;0.2;0.55" dur="4s" repeatCount="indefinite"/>
+                  </path>
+                  <!-- rocks -->
+                  <path d="M150 285 Q160 275 175 285 L175 295 L150 295 Z" fill="#0d1729" stroke="rgba(0,255,127,0.2)" stroke-width="1"/>
+                  <path d="M225 285 Q240 275 255 285 L255 295 L225 295 Z" fill="#0d1729" stroke="rgba(0,255,127,0.2)" stroke-width="1"/>
+                  <text x="200" y="380" text-anchor="middle" fill="#5d6b6a" font-size="11" font-family="Satoshi,sans-serif" letter-spacing="3">CALM HARBOR</text>
+                </svg>
+              </div>
+              <div class="reveal">
+                <p class="acc-lead" style="margin-bottom:var(--space-6)">Rosie is built to protect family money first. Profit follows from discipline, not the other way around. The goal is never the big trade &mdash; it is an account that sleeps through the night.</p>
+                <div class="calm-list">
+                  <div class="calm-item"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7L6 11L12 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>No trade without a written reason, a target range, and a pre-named exit or trim.</p></div>
+                  <div class="calm-item"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7L6 11L12 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>A stop on the symbol's own structure, placed immediately after entry. No unprotected legs.</p></div>
+                  <div class="calm-item"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7L6 11L12 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Pyramid base starts at half size, capped at 1.1x total. Additions only when leg rules are met.</p></div>
+                  <div class="calm-item"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7L6 11L12 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>Harbor by 9:30 AM and after any major move. When scattered, track &mdash; don't execute.</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel 4: The LIME Library -->
+  <div class="acc-panel" id="library">
+    <div class="wrap">
+      <button class="acc-header" aria-expanded="false" aria-controls="acc-library-content" id="acc-library-btn">
+        <span class="acc-header-inner">
+          <span class="kicker">The LIME Library</span>
+          <span class="acc-title">Everything in the harbor.</span>
+        </span>
+        <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="acc-content" id="acc-library-content" role="region" aria-labelledby="acc-library-btn">
+        <div class="acc-content-inner">
+          <div class="acc-content-pad">
+            <p class="acc-lead">The artifacts that make up the LIME universe &mdash; the daily journal, the cockpit, the canon, and the teaching docs. Some are live; others live in the library for now.</p>
+            <div class="art-grid">
+              <a class="art-card reveal" href="https://rosie-trading-v2.pplx.app" target="_blank" rel="noopener">
+                <svg class="art-mark" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="6" stroke="currentColor" stroke-width="2.5"/><path d="M12 26L18 18L22 22L28 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="28" cy="14" r="2.5" fill="currentColor"/></svg>
+                <div class="art-from">Live artifact</div>
+                <h3>Rosie Trading Cockpit</h3>
+                <p>The live trading workstation &mdash; center chart, trade deck, Rosie state slider, sector grid, alert log, and The 22. The real thing, above and beyond.</p>
+                <span class="art-cta">Open the cockpit <svg viewBox="0 0 15 15" fill="none"><path d="M3 12L12 3M12 3H6M12 3V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
+
+              <div class="art-card reveal">
+                <svg class="art-mark" viewBox="0 0 40 40" fill="none"><path d="M8 12 L20 6 L32 12 L32 30 L20 24 L8 30 Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M20 6 L20 24" stroke="currentColor" stroke-width="2.5"/></svg>
+                <div class="art-from">from the LIME library</div>
+                <h3>Harbor Now</h3>
+                <p>The daily journal &mdash; the morning sit-rep, the weather, the radar, and the SPY-relative read. Rosie appoints the day before it begins, never reacting to it.</p>
+                <span class="art-cta featured">Daily journal &mdash; in the library</span>
+              </div>
+
+              <div class="art-card reveal">
+                <svg class="art-mark fire" viewBox="0 0 40 40" fill="none"><path d="M20 4 C14 14 10 20 10 28 a10 10 0 0 0 20 0 c0-7-4-12-7-18 -2 5-4 5-4 1 0-3 1-5 1-8 z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="16" cy="26" r="1.8" fill="currentColor"/><circle cx="24" cy="26" r="1.8" fill="currentColor"/></svg>
+                <div class="art-from">from the LIME library</div>
+                <h3>Fire Spirit</h3>
+                <p>The warm ember that keeps the harbor company &mdash; a quiet companion of warmth and light, never solemn, never preachy. Just a friendly flame that flickers when good work is afoot.</p>
+                <span class="art-cta featured">Companion &mdash; in the library</span>
+              </div>
+
+              <div class="art-card reveal">
+                <svg class="art-mark" viewBox="0 0 40 40" fill="none"><path d="M8 28 a12 12 0 0 1 24 0" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="14" r="4" stroke="currentColor" stroke-width="2.5"/><path d="M4 32 H36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <div class="art-from">from the LIME library</div>
+                <h3>LIME Tools Canon</h3>
+                <p>The four tools &mdash; Color Weather, Navigation Sensor Array, Noal's Ark, and Exhaustion &mdash; plus the golden SPY-relative rule. The official tactics-layer reference.</p>
+                <span class="art-cta featured">Canon reference &mdash; in the library</span>
+              </div>
+
+              <div class="art-card reveal">
+                <svg class="art-mark" viewBox="0 0 40 40" fill="none"><path d="M8 16 L20 8 L32 16 L32 30 L20 24 L8 30 Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M14 20 L20 24 L26 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                <div class="art-from">from the LIME library</div>
+                <h3>Pyramid Module</h3>
+                <p>Position math, canon-locked. Base entry at half size, two legs of 0.3x, total cap 1.1x. Stops on structure for every leg. Approval-based &mdash; nothing arms until code passes review.</p>
+                <span class="art-cta featured">Tactics spec &mdash; in the library</span>
+              </div>
+
+              <div class="art-card reveal">
+                <svg class="art-mark" viewBox="0 0 40 40" fill="none"><circle cx="12" cy="20" r="5" stroke="currentColor" stroke-width="2.5"/><circle cx="28" cy="20" r="5" stroke="currentColor" stroke-width="2.5"/><path d="M12 12 V8 M28 12 V8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                <div class="art-from">from the LIME library</div>
+                <h3>Gramma's 4-Light Cockpit</h3>
+                <p>The household teaching edition &mdash; the four tools told the way a grandma would tell them. The sky, the compass, the captain's plan, and the tiredness gauge, in plain family words.</p>
+                <span class="art-cta featured">Teaching doc &mdash; in the library</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== FIRE SPIRIT (whimsical, subtle — outside the accordion) ===== -->
+<section class="spirit" id="spirit">
+  <div class="spirit-glow"></div>
+  <div class="wrap">
+    <div class="spirit-inner">
+      <div class="spirit-flame reveal">
+        <svg viewBox="0 0 300 360" fill="none" aria-hidden="true">
+          <ellipse class="big-glow" cx="150" cy="300" rx="120" ry="40" fill="#FF4500" opacity="0.18"/>
+          <path class="big-flame" d="M150 30 C100 110 60 160 60 230 a90 90 0 0 0 180 0 c0-60-30-110-60-170 -14 36-34 42-34 14 0-22 4-44 4-74 z" fill="url(#bigFlameGrad)"/>
+          <ellipse cx="118" cy="250" r="11" fill="#0A1428" class="big-eye"/>
+          <ellipse cx="182" cy="250" r="11" fill="#0A1428" class="big-eye"/>
+          <circle cx="122" cy="246" r="3.5" fill="#FFD27A"/>
+          <circle cx="186" cy="246" r="3.5" fill="#FFD27A"/>
+          <path d="M130 286 Q150 304 170 286" stroke="#0A1428" stroke-width="6" stroke-linecap="round" fill="none"/>
+          <circle cx="100" cy="278" r="8" fill="#FF4500" opacity="0.3"/>
+          <circle cx="200" cy="278" r="8" fill="#FF4500" opacity="0.3"/>
+          <defs>
+            <linearGradient id="bigFlameGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFD27A"/>
+              <stop offset="0.45" stop-color="#FF8A2A"/>
+              <stop offset="1" stop-color="#FF4500"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="spirit-copy reveal">
+        <span class="kicker" style="color:#ff8a4a">A little warmth in the harbor</span>
+        <h2 style="margin-top:var(--space-3)">Meet the harbor's small flame.</h2>
+        <p class="lead">He's not a doctrine and not a sermon. He's a friendly ember who keeps the lighthouse company &mdash; a warm little glow that flickers when good work is being done and dozes off when the harbor is calm. Kids wave at him. Grandmas nod along.</p>
+        <div class="spirit-cards">
+          <div class="spirit-card"><div class="sc-lbl">When the work is clean</div><p>He burns steady and bright, like a candle someone set down on purpose.</p></div>
+          <div class="spirit-card"><div class="sc-lbl">When the wind picks up</div><p>He ducks behind the lantern and waits it out with you. Quiet counts.</p></div>
+        </div>
+        <p style="margin-top:var(--space-5);font-size:var(--text-sm);color:var(--text-muted)">Good work is a quiet blessing. That's the whole of it. Nothing to join, nothing to argue &mdash; just warmth, light, and a sense that the day was spent well.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta" id="cta">
+  <div class="cta-glow"></div>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="kicker">Open the Harbor</span>
+      <h2 style="margin-top:var(--space-3)">Keep the family money calm.</h2>
+      <p>Step into the Rosie cockpit and watch the beacon work. No noise, no chase, no make-it-back trades &mdash; just a calm harbor and a steady light.</p>
+      <div class="cta-btns">
+        <a class="btn-primary" href="https://rosie-trading-v2.pplx.app" target="_blank" rel="noopener">Open the Rosie Cockpit <svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn-ghost" href="#rules">Read the Rules</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M24 4 L24 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M24 14 a9 9 0 0 1 9 9 v17 a3 3 0 0 1 -3 3 H14 a3 3 0 0 1 -3 -3 V23 a9 9 0 0 1 9 -9 z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" fill="rgba(0,255,127,0.06)"/>
+          <circle cx="24" cy="23" r="6" fill="currentColor"/>
+        </svg>
+        <div class="fb-name">Lime Signalworks LLC</div>
+      </div>
+      <div class="foot-links">
+        <a href="#cockpit">Cockpit</a>
+        <a href="#rules">Rules</a>
+        <a href="#how">How Rosie Works</a>
+        <a href="#library">Library</a>
+        <a href="https://rosie-trading-v2.pplx.app" target="_blank" rel="noopener">Rosie Cockpit</a>
+      </div>
+    </div>
+    <p class="foot-note">A lighthouse beacon in any storm. Rosie protects family money first &mdash; disciplined, calm, and approval-based. PL is downstream; a calm account is the win.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---- live chart animation ---- */
+  var pts = [];
+  var N = 40, x, y;
+  for (var i=0;i<N;i++){
+    y = 140 + Math.sin(i*0.5)*30 + Math.sin(i*0.18)*22 - i*1.1;
+    pts.push([i*(800/(N-1)), y]);
+  }
+  function buildPath(points){
+    if(!points.length) return '';
+    var d = 'M'+points[0][0]+' '+points[0][1];
+    for(var i=1;i<points.length;i++){
+      var p0=points[i-1], p1=points[i];
+      var cx=(p0[0]+p1[0])/2;
+      d+=' Q'+cx+' '+p0[1]+' '+p1[0]+' '+p1[1];
+    }
+    return d;
+  }
+  var line=document.getElementById('chartLine');
+  var area=document.getElementById('chartArea');
+  var ghost=document.getElementById('chartGhost');
+  var dot=document.getElementById('chartDot');
+  function render(){
+    var d=buildPath(pts);
+    line.setAttribute('d',d);
+    area.setAttribute('d', d+' L800 240 L0 240 Z');
+    ghost.setAttribute('d',d);
+    var last=pts[pts.length-1];
+    dot.setAttribute('cx',last[0]); dot.setAttribute('cy',last[1]);
+  }
+  render();
+  var priceEl=document.getElementById('qqqPrice'); var price=487.20;
+  setInterval(function(){
+    pts.shift();
+    var last=pts[pts.length-1];
+    var ny = last[1] + (Math.random()-0.5)*16 - 0.6;
+    ny=Math.max(60,Math.min(210,ny));
+    var nx=last[0];
+    pts.push([nx,ny]);
+    render();
+    price += (Math.random()-0.48)*0.55; price=Math.max(480,price);
+    priceEl.textContent=price.toFixed(2);
+  },1800);
+
+  /* ---- clock ---- */
+  function tick(){
+    var d=new Date();
+    var h=d.getHours(), m=d.getMinutes();
+    var ap=h>=12?'PM':'AM'; var hh=h%12||12;
+    document.getElementById('cockpitClock').textContent=hh+':'+(m<10?'0'+m:m)+' '+ap;
+  }
+  tick(); setInterval(tick,30000);
+
+  /* ---- state slider ---- */
+  var stops=document.querySelectorAll('.stop');
+  var fill=document.getElementById('sliderFill');
+  var knob=document.getElementById('sliderKnob');
+  var statePill=document.getElementById('statePill');
+  var labels=['OBSERVE','WATCH','ARMED','EXECUTE'];
+  var colors=['#7ab6e6','#e8af34','#00FF7F','#FF4500'];
+  var cur=1;
+  function setState(i){
+    cur=i;
+    stops.forEach(function(s,idx){s.classList.toggle('active',idx===i);});
+    var pct=(i/(stops.length-1))*100;
+    fill.style.width=pct+'%';
+    knob.style.left='calc('+pct+'% - 15px)';
+    statePill.textContent=labels[i];
+    statePill.style.color=colors[i];
+    statePill.style.borderColor=colors[i]+'66';
+    statePill.style.background=colors[i]+'22';
+  }
+  stops.forEach(function(s,idx){s.addEventListener('click',function(){setState(idx);});});
+  knob.addEventListener('click',function(){setState((cur+1)%stops.length);});
+
+  /* ---- alert log ticker ---- */
+  var log=document.getElementById('alertLog');
+  var msgs=[
+    ['Momentum reclaimed','Signal','b-lime','QQQ'],
+    ['Exhaustion cooled','Lime','b-blue','SMH'],
+    ['Ark size confirmed','Lime','b-lime','NVDA'],
+    ['Role bridge updated','22','b-gold','R08'],
+    ['Weather band green','Signal','b-lime','SPY'],
+    ['Awaiting live confirm','Order','b-blue','Manual'],
+    ['Exhaustion rising','Caution','b-gold','TSLA'],
+    ['Clean retest holding','Signal','b-lime','QQQ']
+  ];
+  var mi=0;
+  setInterval(function(){
+    var m=msgs[mi%msgs.length]; mi++;
+    var row=document.createElement('div');
+    row.className='row new';
+    row.innerHTML='<span>'+m[0]+'</span><span class="badge '+m[2]+'">'+m[1]+'</span><span class="ts">'+m[3]+'</span>';
+    log.insertBefore(row, log.firstChild);
+    if(log.children.length>6) log.removeChild(log.lastChild);
+  },4200);
+
+  /* ---- ember companion ---- */
+  var ember=document.getElementById('ember');
+  var bubble=document.getElementById('emberBubble');
+  var lines=[
+    'Hi there. The harbor is calm today.',
+    'Psst. The beacon likes you.',
+    'Good work is a quiet blessing.',
+    'I keep the lighthouse company. It is a good job.',
+    'When the wind picks up, I duck behind the lantern. You should too.',
+    'A calm account sleeps well. So do I.'
+  ];
+  var li=0;
+  function say(){
+    bubble.textContent=lines[li%lines.length]; li++;
+    ember.classList.add('show');
+    setTimeout(function(){ember.classList.remove('show');},4200);
+  }
+  ember.addEventListener('click',say);
+  ember.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();say();}});
+  /* reveal the ember only after the user scrolls past the hero cockpit */
+  var emberShown=false;
+  function checkEmber(){
+    if(emberShown) return;
+    if(window.scrollY > 480 || document.documentElement.scrollTop > 480){
+      emberShown=true;
+      ember.classList.add('shown');
+      setTimeout(say,1600);
+      setInterval(say,22000);
+    }
+  }
+  window.addEventListener('scroll',checkEmber,{passive:true});
+  checkEmber();
+  /* dock (hide) the ember when the closing CTA is in view so it never covers footer links */
+  var ctaEl=document.getElementById('cta');
+  if(ctaEl && 'IntersectionObserver' in window){
+    var ctaIO=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ember.classList.add('docked');ember.classList.remove('show');}
+        else if(emberShown){ember.classList.remove('docked');}
+      });
+    },{threshold:0.25});
+    ctaIO.observe(ctaEl);
+  }
+
+
+  /* ---- announcement bar dismiss ---- */
+  var announceBar=document.getElementById('announceBar');
+  var announceClose=document.getElementById('announceClose');
+  if(announceClose){
+    announceClose.addEventListener('click',function(){
+      if(announceBar) announceBar.classList.add('hidden');
+    });
+  }
+
+  /* ---- accordion (single-open) ---- */
+  var accPanels=document.querySelectorAll('.acc-panel');
+  accPanels.forEach(function(panel){
+    var btn=panel.querySelector('.acc-header');
+    if(!btn) return;
+    function toggle(){
+      var isOpen=panel.classList.contains('open');
+      /* close all */
+      accPanels.forEach(function(p){
+        p.classList.remove('open');
+        var h=p.querySelector('.acc-header');
+        if(h) h.setAttribute('aria-expanded','false');
+      });
+      /* open this one if it was closed */
+      if(!isOpen){
+        panel.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+      }
+    }
+    btn.addEventListener('click',toggle);
+  });
+
+
+  /* ---- scroll reveal ---- */
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){en.target.classList.add('in'); io.unobserve(en.target);} });
+  },{threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+</script>
+<script>
+(function(){const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;let d='dark';r.setAttribute('data-theme',d);function icon(dark){return dark?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';}if(t){t.innerHTML=icon(d==='dark');t.addEventListener('click',()=>{d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);t.innerHTML=icon(d==='dark');});}})();
+</script>
+<script>(function(){var tr=document.querySelector('[data-translate]');if(tr){tr.addEventListener('click',function(){var _tl=(navigator.language||navigator.userLanguage||'es').split('-')[0];window.open('https://translate.google.com/translate?sl=auto&tl='+_tl+'&u='+encodeURIComponent(window.location.href),'_blank','noopener');});}})();</script>
+<script defer src="../assets/js/accordion-hover.js"></script>
+<script defer src="../assets/js/header-cta.js"></script>
+</body>
+</html>

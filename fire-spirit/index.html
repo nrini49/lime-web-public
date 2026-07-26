@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script>if ("scrollRestoration" in history) { history.scrollRestoration = "manual"; } window.scrollTo(0,0); window.addEventListener("load", function () { window.scrollTo(0,0); }); window.addEventListener("pageshow", function () { window.scrollTo(0,0); });</script>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>The Fire Spirit — LIME Universe · Leader Distribution</title>
+<meta name="description" content="A distribution channel for leaders of the Fire Spirit message — the Song, the Fire Profile, and the Interpretation Layer. LIME Universe.">
+<link rel="canonical" href="https://limesignalworks.com/fire-spirit/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://limesignalworks.com/fire-spirit/">
+<meta property="og:title" content="The Fire Spirit — LIME Universe">
+<meta property="og:description" content="A distribution channel for leaders of the Fire Spirit message — the Song, the Fire Profile, and the Interpretation Layer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root,[data-theme="dark"]{
+    --bg:#0d0d0d; --surface:#161616; --surface2:#1c1c1c; --border:#2a2a2a;
+    --gold:#c8a96e; --gold-dim:#8a7448; --text:#e8e8e8; --muted:#8a8a8a; --blue:#7a9ab5;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --sans: 'General Sans', 'Helvetica Neue', Arial, sans-serif;
+    --max:820px;
+  }
+  [data-theme="light"]{
+    --bg:#e7e3dd; --surface:#ffffff; --surface2:#f7faf8; --border:#dbe4dd;
+    --gold:#8a6a2e; --gold-dim:#a98c52; --text:#15241c; --muted:#6b7d72; --blue:#3f6a8a;
+  }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:var(--serif); font-size:17px; line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:var(--gold); text-decoration:none; }
+  a:hover{ text-decoration:underline; text-underline-offset:3px; }
+
+  /* ---------- Header ---------- */
+  header.bar{
+    position:sticky; top:0; z-index:50;
+    background:color-mix(in oklab, var(--bg) 90%, transparent); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .bar-inner{
+    max-width:var(--max); margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; gap:14px;
+  }
+  .brand{ display:flex; align-items:center; gap:11px; }
+  .brand:hover .b-name{ color:var(--gold); text-decoration:underline; text-underline-offset:2px; transition:color .2s; }
+  .back{ font-size:13px; color:var(--muted); text-decoration:none; display:flex; align-items:center; gap:6px; margin-left:auto; }
+  .back:hover{ color:var(--gold); }
+  .brand svg{ width:26px; height:26px; flex:none; }
+  .brand .b-name{
+    font-family:var(--sans); font-size:12px; letter-spacing:0.22em;
+    text-transform:uppercase; color:var(--text); font-weight:bold;
+  }
+  .brand .b-name span{ color:var(--gold); }
+  .icon-btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:36px; height:auto; border-radius:4px; border:1px solid var(--border);
+    background:transparent; color:var(--muted); cursor:pointer;
+  }
+  .icon-btn:hover{ color:var(--gold); border-color:var(--gold-dim); background:var(--surface); }
+
+  /* ---------- Masthead ---------- */
+  .masthead{ text-align:center; padding:86px 28px 80px; }
+  .masthead .kicker{
+    color:var(--blue); font-family:var(--sans); font-size:11px;
+    letter-spacing:0.34em; text-transform:uppercase; margin-bottom:30px;
+  }
+  .masthead h1{
+    color:var(--gold); font-size:clamp(34px,6vw,52px); line-height:1.18;
+    font-weight:bold; letter-spacing:0.01em; max-width:680px; margin:0 auto 22px;
+  }
+  .masthead .subtitle{
+    font-style:italic; font-size:19px; max-width:560px; margin:0 auto 26px; opacity:0.92;
+  }
+  .masthead .meta{
+    color:var(--muted); font-family:var(--sans); font-size:12px;
+    letter-spacing:0.2em; text-transform:uppercase;
+  }
+  .rule{ width:64px; height:1px; background:var(--gold); margin:34px auto; opacity:0.7; }
+
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 28px 90px; }
+
+  /* ---------- Section headers ---------- */
+  h2.section{
+    color:var(--gold); font-family:var(--sans); font-size:14px; font-weight:bold;
+    letter-spacing:0.28em; text-transform:uppercase;
+    margin:72px 0 26px; padding-bottom:0;
+  }
+  h3.block{
+    color:var(--text); font-family:var(--serif); font-size:22px; font-weight:bold;
+    margin:42px 0 14px; letter-spacing:0.01em;
+  }
+  .prose p{ margin-bottom:18px; }
+  .prose p:last-child{ margin-bottom:0; }
+
+  /* ---------- Center rail ---------- */
+  .rail{
+    display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--border); border:1px solid var(--border); border-radius:5px;
+    margin-top:22px; overflow:hidden;
+  }
+  .rail .col{ background:var(--surface); padding:26px 26px 28px; }
+  .rail .col .lab{
+    color:var(--blue); font-family:var(--sans); font-size:11px;
+    letter-spacing:0.24em; text-transform:uppercase; margin-bottom:14px;
+  }
+  .rail .col p{ font-size:15.5px; line-height:1.7; color:#d4d4d4; }
+  @media(max-width:640px){ .rail{ grid-template-columns:1fr; } }
+
+  /* ---------- Opening address ---------- */
+  .address{
+    border-left:2px solid var(--gold); padding:6px 0 6px 26px; margin:6px 0 10px;
+    font-style:italic; font-size:19px; line-height:1.7; color:#f0e9da;
+  }
+
+  /* ---------- Three pieces ---------- */
+  .piece{
+    background:var(--surface); border:1px solid var(--border); border-radius:5px;
+    padding:30px 32px; margin-bottom:24px;
+  }
+  .piece .p-kicker{
+    color:var(--blue); font-family:var(--sans); font-size:11px;
+    letter-spacing:0.24em; text-transform:uppercase; margin-bottom:10px;
+  }
+  .piece h3{ color:var(--gold); font-size:24px; margin-bottom:6px; }
+  .piece .p-sub{ color:var(--muted); font-style:italic; margin-bottom:18px; font-size:15px; }
+
+  /* phase cards */
+  .phase{
+    border:1px solid var(--border); border-radius:4px; padding:22px 24px; margin-bottom:16px;
+    background:var(--surface2);
+  }
+  .phase .ph-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    padding-bottom:0;
+  }
+  .phase .ph-tag{
+    color:var(--gold); font-family:var(--sans); font-size:11px;
+    letter-spacing:0.2em; text-transform:uppercase; font-weight:bold;
+  }
+  .phase .ph-name{ color:var(--text); font-size:18px; font-weight:bold; }
+  .phase p{ font-size:15.5px; margin-bottom:10px; }
+  .phase p:last-child{ margin-bottom:0; }
+  .phase ul{ margin:8px 0 0 4px; list-style:none; }
+  .phase ul li{ padding-left:18px; position:relative; margin-bottom:7px; font-size:15px; color:#cfcfcf; }
+  .phase ul li::before{ content:""; position:absolute; left:0; top:11px; width:6px; height:1px; background:var(--gold); }
+
+  /* day rail (Song) */
+  .days{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:18px; align-items:start; }
+  @media(max-width:640px){ .days{ grid-template-columns:1fr; } }
+  .day{
+    background:var(--surface2); border:1px solid var(--border); border-radius:4px; padding:16px 20px; transition:border-color .2s, background .2s;
+  }
+  .day[open]{ background:var(--surface); border-color:var(--gold-dim); }
+  .day > summary{ list-style:none; cursor:pointer; }
+  .day > summary::-webkit-details-marker{ display:none; }
+  .day .d-head{ display:flex; align-items:baseline; gap:10px; }
+  .day .d-num{ color:var(--gold); font-family:var(--sans); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; flex:none; }
+  .day .d-title{ color:var(--text); font-size:16.5px; font-weight:bold; }
+  .day .chev{ margin-left:auto; color:var(--muted); font-family:var(--sans); font-size:11px; letter-spacing:0.1em; flex:none; }
+  .day[open] .chev{ color:var(--gold); }
+  .day .layers{ margin-top:14px; padding-top:14px; border-top:1px solid var(--border); }
+  .day .layer{ margin-bottom:15px; }
+  .day .layer:last-child{ margin-bottom:0; }
+  .day .layer-label{ font-family:var(--sans); font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; font-weight:bold; margin-bottom:5px; }
+  .day .lab-mission{ color:var(--gold); }
+  .day .lab-voice{ color:#e0c896; }
+  .day .lab-fire{ color:var(--blue); }
+  .day .layer-body{ font-size:14.5px; line-height:1.65; color:#cfcfcf; }
+  .day.placeholder{ background:#141414; border:1px dashed var(--border); text-align:center; padding:26px 20px; }
+  .day.placeholder .ph{ color:var(--muted); font-style:italic; font-size:14px; margin:0; }
+  .day.placeholder .ph strong{ color:var(--gold-dim); font-style:normal; letter-spacing:0.05em; }
+
+  /* glossary */
+  .gloss{ display:grid; grid-template-columns:1fr 1fr; gap:2px 28px; margin-top:18px; }
+  @media(max-width:640px){ .gloss{ grid-template-columns:1fr; } }
+  .gloss dt{ color:var(--gold); font-family:var(--sans); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; margin-top:14px; font-weight:bold; }
+  .gloss dd{ color:#cfcfcf; font-size:15px; margin:2px 0 0; }
+
+  /* anchor rail */
+  .anchor-pending{
+    border:1px dashed var(--gold-dim); border-radius:4px; padding:18px 22px; margin-top:18px;
+    background:rgba(200,169,110,0.04); color:#d4c9a8; font-size:15px;
+  }
+  .anchor-pending strong{ color:var(--gold); }
+  .anchor-table{ width:100%; border-collapse:collapse; margin-top:18px; font-size:14.5px; }
+  .anchor-table th, .anchor-table td{ text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); vertical-align:top; }
+  .anchor-table th{ color:var(--blue); font-family:var(--sans); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; }
+  .anchor-table td.day-col{ color:var(--gold); font-family:var(--sans); font-size:12px; letter-spacing:0.08em; white-space:nowrap; width:64px; }
+  .anchor-table td.title-col{ color:var(--text); font-size:15px; }
+  .anchor-table td.ref-col{ color:#d4c9a8; font-size:14px; white-space:nowrap; }
+  .anchor-table td.ref-col .sec{ color:var(--muted); font-size:12.5px; }
+  .anchor-table tr:hover td{ background:var(--surface); }
+  .anchor-note{ margin-top:16px; font-size:13.5px; color:var(--muted); line-height:1.6; }
+  .anchor-note strong{ color:var(--gold); }
+  /* per-day anchor chip inside expanded day cards */
+  .day .anchor-line{ margin-bottom:15px; padding-bottom:12px; border-bottom:1px dashed var(--border); }
+  .day .anchor-label{ color:var(--blue); font-family:var(--sans); font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; font-weight:bold; margin-right:8px; }
+  .day .anchor-ref{ color:var(--gold); font-family:var(--sans); font-size:13px; letter-spacing:0.04em; }
+  .day .anchor-ref .sec{ color:var(--muted); font-size:12px; }
+
+  /* review-pass polish */
+  .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .day .layer{ border-left:2px solid var(--border); padding-left:14px; }
+  .day .layer:has(.lab-mission){ border-left-color:var(--gold); }
+  .day .layer:has(.lab-voice){ border-left-color:#e0c896; }
+  .day .layer:has(.lab-fire){ border-left-color:var(--blue); }
+  .day.placeholder{ opacity:0.6; }
+  .cta{ display:flex; gap:14px; flex-wrap:wrap; margin-top:34px; }
+  .cta a{ display:inline-block; padding:14px 22px; border:1px solid var(--gold-dim); border-radius:4px; color:var(--gold); font-family:var(--sans); font-size:12.5px; letter-spacing:0.1em; text-transform:uppercase; }
+  .cta a:hover{ background:var(--surface); text-decoration:none; }
+
+  /* doc library */
+  .lib-cat{
+    color:var(--blue); font-family:var(--sans); font-size:11px;
+    letter-spacing:0.22em; text-transform:uppercase; margin:28px 0 12px;
+  }
+  .docs{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media(max-width:680px){ .docs{ grid-template-columns:1fr; } }
+  .doc{
+    background:var(--surface); border:1px solid var(--border); border-radius:5px;
+    padding:18px 20px; transition:border-color .2s;
+  }
+  .doc:hover{ border-color:var(--gold-dim); }
+  .doc .d-type{
+    display:inline-block; font-family:var(--sans); font-size:10px; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--muted); border:1px solid var(--border);
+    padding:3px 8px; border-radius:3px; margin-bottom:11px;
+  }
+  .doc .d-title{ color:var(--text); font-size:16px; font-weight:bold; margin-bottom:6px; line-height:1.35; }
+  .doc .d-date{ color:var(--muted); font-family:var(--sans); font-size:12px; margin-bottom:11px; }
+  .doc .d-link{ font-family:var(--sans); font-size:12px; letter-spacing:0.1em; text-transform:uppercase; }
+
+  /* language status */
+
+  /* footer */
+  footer.foot{
+    border-top:1px solid var(--border); text-align:center; padding:46px 28px 60px;
+    color:var(--muted); font-family:var(--sans); font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
+  }
+  footer.foot .foot-gold{ color:var(--gold); }
+  footer.foot p{ margin-bottom:8px; }
+
+  /* nav jump links */
+  .toc{ display:flex; flex-wrap:wrap; gap:8px 18px; justify-content:center; margin-top:30px; }
+  .toc a{ font-family:var(--sans); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); }
+  .toc a:hover{ color:var(--gold); }
+  /* mirror diagnostics */
+  details.mirror{ padding:18px 24px; }
+  details.mirror > summary{ list-style:none; cursor:pointer; }
+  details.mirror > summary::-webkit-details-marker{ display:none; }
+  details.mirror > summary::after{ content:"▾"; color:var(--gold); margin-left:auto; font-size:14px; }
+  details.mirror[open] > summary::after{ content:"▴"; }
+  details.mirror > p, details.mirror > ul{ margin-top:14px; }
+</style>
+<script defer data-domain="limesignalworks.com" src="https://plausible.io/js/script.js"></script>
+<link rel="stylesheet" href="../assets/css/header-cta.css">
+  <link rel="stylesheet" href="../assets/css/site-header.css">
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="site-header">
+  <!-- Canonical shared header (assets/css/site-header.css) — mirrors the
+       homepage header exactly: sticky blur bar, lighthouse-loop.mp4 mark,
+       mixed-case "Lime Signalworks LLC", the "Rosie Interactive now →" CTA
+       (public preview URL — NOT the gated IB-confirmation button, which
+       stays out per Noal's standing rule), and the translate + theme icons.
+       Page-specific controls live in the .hdr-local row below. -->
+  <div class="wrap hdr">
+    <a class="brand" href="../index.html" aria-label="Lime Signalworks home">
+      <video class="brand-mark" src="../assets/brand/lighthouse-loop.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
+      <span class="word">Lime&nbsp;<b>Signalworks</b> LLC</span>
+    </a>
+    <div class="hdr-actions">
+    <a class="rosie-cta-btn hdr-cta" href="https://limesignalworks.pplx.app" target="_blank" rel="noopener"><span class="cta-cap">R</span>osie <span class="cta-cap">I</span>nteractive <span class="cta-cap">N</span>ow →</a>
+    <div class="hdr-tools">
+      <button class="icon-btn" data-translate aria-label="Translate this page">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </button>
+      <button class="icon-btn notranslate" translate="no" data-theme-toggle aria-label="Switch theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+    </div>
+    </div>
+  </div>
+  <div class="wrap hdr-local">
+    <a href="../index.html" class="back">&larr; Back to the harbor</a>
+    <a class="ibkr-demo-cta" href="https://limesignalworks.pplx.app" target="_blank" rel="noopener">Rosie + IBKR &mdash; Live Data Demo</a>
+  </div>
+</header>
+
+<!-- ===== Main content ===== -->
+<main id="content">
+
+  <!-- Masthead -->
+  <section class="masthead">
+    <div class="kicker">Leader Distribution · v0.1 · July 2026</div>
+    <h1>The Message of the Fire Spirit</h1>
+    <p class="subtitle">A passage — real, measurable, livable. Carried by a center rail for leaders, and leaders of leaders.</p>
+    <div class="meta">LIME Universe · Canonical English</div>
+    <div class="toc">
+      <a href="#address">Opening</a>
+      <a href="#rail">Center Rail</a>
+      <a href="#message">The Message</a>
+      <a href="#song">The Song</a>
+      <a href="#profile">The Profile</a>
+      <a href="#passage">The Passage</a>
+      <a href="#power">Responsibilities</a>
+      <a href="#anchor">Anchor Rail</a>
+      <a href="#library">Library</a>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <!-- 1. Opening address -->
+    <h2 class="section" id="address">1 · Opening Address to the Leaders</h2>
+    <div class="address">
+      Leaders, and leaders of leaders, please give heed: this protocol is offered as a stabilizing rail for consciousness, governance, stewardship, and coordinated action in a rapidly changing world.
+    </div>
+    <div class="prose">
+      <p>This site is a distribution channel for a single message — the message of the Fire Spirit. It is not a belief system or a theology. It is the description of a passage that a person crosses or does not, and that changes everything about how they experience their own life once they have crossed it.</p>
+      <p>The message travels in three linked pieces: a daily mission that feeds the passage, an identity framework for the person who has crossed over, and a mechanism that describes the passage itself. Together they form a complete picture — portable across cultures, political systems, and disciplines.</p>
+    </div>
+
+    <!-- 2. Center rail -->
+    <h2 class="section" id="rail">2 · The Center Rail</h2>
+    <div class="prose">
+      <p>The rail rests on a center that allows two readings without internal fracture. This keeps the material portable across cultures and institutions while preserving internal coherence.</p>
+    </div>
+    <div class="rail">
+      <div class="col">
+        <div class="lab">Systems &amp; Observation</div>
+        <p>For governance, AI, markets, measurement, and multilateral coordination. The passage reads as a signal-to-noise problem: a frequency correction, an operator's tuning toward a clearer signal.</p>
+      </div>
+      <div class="col">
+        <div class="lab">Stewardship &amp; Conscience</div>
+        <p>For moral accountability, covenant, care, containment, and legacy. The passage reads as a refinement: what was never real is burned away so the real person can be returned to themselves.</p>
+      </div>
+    </div>
+
+    <!-- 3. The Message -->
+    <h2 class="section" id="message">3 · The Message in Three Pieces</h2>
+    <div class="prose">
+      <p>A person entering the passage for the first time needs all three. The Song gives the daily fuel. The Profile shows where they are going. The Passage tells them what is really happening as it happens.</p>
+    </div>
+
+    <!-- 3a. The Song -->
+    <div class="piece" id="song">
+      <div class="p-kicker">Piece One · Daily Mission</div>
+      <h3>The Song of the Fire Spirit</h3>
+      <p class="p-sub">One day at a time. Each day a single mission, received and lived.</p>
+      <div class="prose">
+        <p>The Song is the daily fuel — a mission for each day, carried in three voices: the mission itself, the voice of the current, and a note from the Fire Profile that translates the day into operational terms. Each card opens to reveal the three layers. The full arc of January is carried here (Days 1–6 and 16–31); Days 7–15 are marked as <em>recording pending</em>, faithful to the source companion. Tap a day to open it.</p>
+      </div>
+      <div class="days">
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 1</span><span class="d-title">The Infinite in a Jar</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Today, open your mind, your heart, and your life to that which you do not yet know — so that you may contain that which is greater than yourself.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">You are not the limit of what can live within you. Stay open. The mystery you have not yet met is already on its way. Make room.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">The posture before the operation, before the build, before the conversation. Open container. No premature conclusions. Let the greater thing in.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 2</span><span class="d-title">The I Am of All I Ams</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Today, learn the secret of living each moment from His life — doing from His doing, loving from His love, and being from His being.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">Stop moving the day from your own tank. Connect to the source. Every action today flows from that deeper current — not from fear, ego, or habit.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">The root of the zero-noise discipline. When the source is right, what flows is clean. No entries from vengeance. No ego architecture.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 3</span><span class="d-title">The Shana</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Today, leave your old ways, habits, and steps. Do what you have never done before, but should have done. Walk in the newness of the Spirit.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">An old pattern ends today. You already know which one. Today is the day it stops. Walk in another direction and see what is on that path.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">Shana means change, return, year — the mechanism of renewal. The pattern that keeps losing is retired today. Not tomorrow. Today.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 4</span><span class="d-title">The Ruach</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">What part of your life runs against the direction of the Spirit? Today, turn it around and begin walking with the wind at your back.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">Find the one place where you are chafing against the current. Stop pushing. Turn. When you are aligned with the wind, the same energy that was draining you becomes what carries you.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">Ruach means wind, breath, Spirit. The diagnosis: what in your life feels like a permanent uphill climb? That is the misalignment. Turn it around.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 5</span><span class="d-title">Designating Your Days</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Prepare the days to come. Set them apart. Entrust them into God's hands. Designate the days for the fulfillment of His purposes.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">Your days don't have to simply happen to you. Before the week begins, before the session opens — designate the day. Name what it is for. Hand it over. Let it be used.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">This is Harbor in a single sentence. Harbor does not react to the day. Harbor designates the day before it begins.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 6</span><span class="d-title">The Mystery of the Bride</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Set apart everything that substitutes for His presence. Join yourself to everything that is His.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">Something in your life occupies the place of the real thing without delivering. Name it and let it go. The substitute was never going to satisfy. The real thing is still available.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">The noise audit. Zero noise is not just an operating rule — it is a rule of life. Every substitute pretending to be nourishment is named and released today.</p></div></div></details>
+        <div class="day placeholder"><p class="ph"><strong>Days 7 – 15</strong> · Recording pending.</p></div>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 16</span><span class="d-title">The Claw</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Today, live in the spirit of the Lamb. Let everything you do be done in love. Live to make your life a blessing to others.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">Power without love is only force. Let every action carry the spirit of the Lamb — not weakness, but a love that needs no dominance. Do something better for another person before the day ends.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">The Claw is the claw — but the Lamb is the animal that conquers by yielding. The strongest move is sometimes the quietest. Love as strategy. Blessing as outcome.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 17</span><span class="d-title">How to Alter Your Past</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Receive from Heaven your changed past, innocent, pure, and loved — a past as beautiful and as white as snow.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">The losses, the failures, the wrong turns — they are not the final version of your story. Receive a rewritten past. Not denial. Redemption. The record has been altered at the source.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">This is the account reset. Whatever the P&amp;L of your life reads — the number is not permanent. Redemption is a structural change to the ledger. Receive it.</p></div></div></details>
+        <details class="day" open><summary><span class="d-head"><span class="d-num">Day 18</span><span class="d-title">Yeshua</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">God has become your Yeshua — the specific answer to your deepest needs. Let Him into your heart and live accordingly.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">Yeshua means salvation — but the root is specific rescue. Not general help. The answer to your exact problem, your real wound. God is not vague. He is precise.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">The signal-to-noise principle at the spiritual level. The Father does not broadcast noise. He sends the exact signal you need.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 19</span><span class="d-title">Aliyah</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Today, choose the higher step, the higher act, the higher ground, the higher road — in every decision. Begin making your life an Aliyah.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">Every decision today has a higher version and a lower version. You know the difference when you see it. Choose the higher one. A continuous ascent, one step at a time.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">Aliyah means to go up — to return to the holy land. Every session is an opportunity to operate at the highest level of your capacity, not the lowest. Choose to go up.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 20</span><span class="d-title">The Footstool World</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Today, see the world and everything in it in a new way — as the footstool world, with only footstool matters. Live accordingly.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">Most of what feels enormous today is a footstool matter — temporary, small from the right altitude. The problem is real. Its power over you is optional.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">The altitude adjustment. Market panic, the pullback, the friction — footstool matters. Real, but not final. Operate from the highest altitude.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 21</span><span class="d-title">The Heartbeat of the Miracle</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Live this day inside the miracle of your existence. Keep count of every heartbeat. Make your moments worthy of each one.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">You are already inside the miracle. Don't waste the heartbeats on what is beneath you. Make every moment worth the heartbeat it cost.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">Forty million heartbeats in a year. Every session, every trade, every conversation — one more heartbeat spent. Spend them on what is worthy.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 22</span><span class="d-title">The Elohim Mystery</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Today, seek to know God as one who knows not even half of Him — as if for the first time.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">Whatever you think you know about God — set it aside for today. Approach again. Let the real thing be bigger than the description.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">Elohim is the plural of power — the God of infinite dimension. The beginner's mind is not ignorance. It is the only posture large enough to receive more.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 23</span><span class="d-title">Whose Name Is Like Oil</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Delight today in the name of your beloved. Let it pour out of your lips, your mind, and your heart.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">There is a name that, when spoken with your whole heart, changes the atmosphere of the room. Let it pour out — not as recitation, but as delight.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">Oil was the medium of anointing, healing, and light. The name poured out like oil covers and illuminates. The frequency of delight is signal, not just sentiment.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 24</span><span class="d-title">The Secret Place</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Today, enter the secret place — apart from the world, and even from the things of Him. Away from everything except His presence.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">No prayer. No reading. No doing anything spiritual. Just presence. Find the place where it is only you and the Father. No agenda. No requests. Just being there.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">The moment off the grid. Harbor is built from this place. The clearest readings come from operators who have been in the secret place before the opening bell. Silence before signal.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 25</span><span class="d-title">The Lord of Eden</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Today, bring the thorns, the wounds, the shame, the sorrows of your life to the King of Thorns. Entrust them to His authority.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">You have been carrying things that were never yours to carry alone. Hand them over. The King of Thorns carried them so you no longer have to.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">The thorns of Eden became the King's crown. He absorbed the curse of the garden and turned it into the instrument of redemption. Your wounds are not disqualifications. They are the material He works with.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 26</span><span class="d-title">The Power of Emunah</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Today, take a word from the Word of God and give it your strongest amen — the total yes of heart, soul, mind, and will.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">Emunah is not passive belief. It is active alignment. Find a truth and put your full weight on it. Not mere agreement. Total yes.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">The difference between knowing and believing. Emunah is structural — you stake your next move on it. Entry with conviction, not the tentative probe. You know the setup. You act on the knowing.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 27</span><span class="d-title">The Ivrim</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">What barriers stand between you and the will of God in your life? Identify them. Then, by the power of the Messiah, begin to cross your Jordan. You are an Ivrim — born to cross to the other side.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">Ivrim means Hebrew — those who cross to the other side. You were not made to stay on the bank wishing. Name the barrier standing between you and where you know you should be. Then begin moving toward the water.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">Jordan crossings don't happen by studying the river. They happen by entering the water. The crossing is the act. Identify the barrier. Begin the crossing today.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 28</span><span class="d-title">The Mystery of Masada</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Bring your most hopeless situations and problems to God. Believe God for the impossible. Live and move in the power of the impossible.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">The situation you've mentally filed as "never going to change" — bring that one. God specializes in the impossible. That is His operating range.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">Masada was considered impregnable. It fell. The impossible is not the ceiling — it is the direction in which the Father operates. Bring the account that looks finished. Bring the relationship that looks dead.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 29</span><span class="d-title">The Identical One</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Live today as someone condemned to judgment who has instead been set free — with a second chance at life through His love and sacrifice.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">Someone else carried the weight you were meant to carry. Live like someone who just walked out of the sentencing hearing as a free person. Not guilty. Second chance.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">The operator who has lost an account and rebuilt it knows this feeling. The person who receives a second chance lives differently than someone who has never lost anything. That vitality is the posture this day claims.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 30</span><span class="d-title">The Non-Possessive Divine</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Today, learn the secret of living without "having." Release your possessions, your problems, your burdens, your life. Possess God.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">Everything you are gripping — the account, the outcome, the result — open your hand. What you gain when your hands are open is greater than what you were holding.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">The non-possessive trade is the cleanest. No attachment to the P&amp;L. No clinging to the position. No defending the thesis. Open hand, clean execution, no vengeance.</p></div></div></details>
+        <details class="day"><summary><span class="d-head"><span class="d-num">Day 31</span><span class="d-title">The Portal</span><span class="chev">OPEN</span></span></summary><div class="layers"><div class="layer"><div class="layer-label lab-mission">Jonathan's Mission</div><p class="layer-body">Today, use God's door to leave what you could never leave and go where you could never go. Enter through the portal.</p></div><div class="layer"><div class="layer-label lab-voice">In Our Voice</div><p class="layer-body">There is a door that opens onto places your own strength cannot take you. Walk through it. Leave what you could never leave on your own. Go where you could never go by your own power.</p></div><div class="layer"><div class="layer-label lab-fire">Fire Profile Note</div><p class="layer-body">The month's close — a door, a crossing, a departure from the old and an arrival at the new. The portal is not metaphor. It is today's operating instruction.</p></div></div></details>
+      </div>
+    </div>
+
+    <!-- 3b. The Fire Profile -->
+    <div class="piece" id="profile">
+      <div class="p-kicker">Piece Two · Identity &amp; Operating Framework</div>
+      <h3>The Fire Profile</h3>
+      <p class="p-sub">Who the person carrying the fire is, in their operating state.</p>
+      <div class="prose">
+        <p>The Fire Profile describes the identity and operating framework of the person who has crossed the passage. Their operating mode is fire-warmth, not fire-fierceness: bright and stable, precise but never cold, list-ready and action-oriented.</p>
+      </div>
+      <h3 class="block" style="margin-top:24px;">Framework Glossary</h3>
+      <dl class="gloss">
+        <dt>Fire Spirit</dt>
+        <dd>Luminous inner spark; warmth without fierceness; source of aligned action and creativity.</dd>
+        <dt>Lime</dt>
+        <dd>Steady harbor beacon / safety suit; rule-based clarity; family protection; no exaggeration.</dd>
+        <dt>Anchor</dt>
+        <dd>The permanent, reset-proof foundation — the core profile itself.</dd>
+        <dt>Luminosity</dt>
+        <dd>Serene, clear light — understanding without overwhelming.</dd>
+        <dt>Syzygy</dt>
+        <dd>Perfect alignment — fire and lime, spirit and code, man and woman.</dd>
+        <dt>Weather Gate</dt>
+        <dd>The multi-timeframe alert-and-exit system that filters signals according to the daily state.</dd>
+      </dl>
+    </div>
+
+    <!-- 3c. The Interpretation Layer / Passage -->
+    <div class="piece" id="passage">
+      <div class="p-kicker">Piece Three · The Mechanism of the Passage</div>
+      <h3>The Interpretation Layer</h3>
+      <p class="p-sub">How a person gets there, and how to recognize where they are.</p>
+      <div class="prose">
+        <p>The passage has three phases. Most people live their entire lives in Phase 1 and never know a door exists. Some find the door but stop at the threshold. A few cross it. This is for those standing at the threshold — or who want to know if they are.</p>
+      </div>
+
+      <div class="phase">
+        <div class="ph-head"><span class="ph-tag">Phase 1</span><span class="ph-name">The State of Chaos</span></div>
+        <p>The person is alive but operating from noise. Decisions come from ego, fear, habit, and reaction. The defining trait is effort that does not accumulate — straining, defending, acting, arriving back at the same place.</p>
+        <ul>
+          <li>Constant motion without arrival</li>
+          <li>Peace treated as something that must be earned</li>
+          <li>Decisions that carry a background hum of fear</li>
+          <li>Energy that drains rather than renews</li>
+        </ul>
+        <p style="margin-top:12px;">This is not a moral failure. It is a frequency problem.</p>
+      </div>
+
+      <div class="phase">
+        <div class="ph-head"><span class="ph-tag">Phase 2</span><span class="ph-name">The Interpretation Layer</span></div>
+        <p>Something shifts. What was noise begins to carry meaning. The body itself becomes a signal receiver. This is a passage, not a destination — the old identity has not yet left and the new one is not yet fully formed.</p>
+        <p>The fire is most active here. It does not destroy; it refines. It burns away what was never real, what was added by fear, what accumulated as armor. What remains is more concentrated, more true.</p>
+        <ul>
+          <li>A growing inability to sustain the old noise</li>
+          <li>Moments of unexpected, unearned peace</li>
+          <li>Signals from the body becoming legible before the mind catches up</li>
+          <li>The question shifts from "what do I do?" to "what is already true?"</li>
+        </ul>
+        <p style="margin-top:12px;"><strong style="color:var(--gold)">Key:</strong> you cannot force your way through Phase 2. The passage requires receptivity — an open hand rather than a clenched fist.</p>
+      </div>
+
+      <div class="phase">
+        <div class="ph-head"><span class="ph-tag">Phase 3</span><span class="ph-name">Emergence</span></div>
+        <p>The person who comes out the other side is recognizably themselves — but calmer in a way that carries more weight. The interpretation layer has become a built-in filter. The noise has not left the world; the internal architecture has changed.</p>
+        <ul>
+          <li>Peace that requires no explanation</li>
+          <li>Decisions that arise from clarity rather than calculation</li>
+          <li>A natural reduction in ego-driven behavior — from disinterest, not discipline</li>
+          <li>A sense of having been found rather than having figured something out</li>
+        </ul>
+        <p style="margin-top:12px;">This is not arrival. It is the first real point of departure.</p>
+      </div>
+
+      <h3 class="block" style="margin-top:30px;">Self-Diagnosis — Am I in Phase 2?</h3>
+      <div class="phase" style="background:var(--surface);">
+        <ul>
+          <li>Is something in me changing in ways I did not plan or force?</li>
+          <li>Do I have moments of unexpected peace that I don't fully trust?</li>
+          <li>Does my body carry information my mind has not yet caught up to?</li>
+          <li>Do I find the old noise less tolerable — because I am becoming calmer?</li>
+          <li>Is something being taken from me that I know I don't actually need?</li>
+        </ul>
+        <p style="margin-top:12px;">If the answer is yes to most — stay. Don't rush. This is the fire working. Let it work.</p>
+      </div>
+
+      <h3 class="block" style="margin-top:30px;">Mirror Diagnostics — Three Conditions</h3>
+      <p class="p-sub" style="margin-bottom:14px;">A repeatable set of questions for recognizing where a person stands before assigning a posture, mission, or outer structure. Honest recognition without drama.</p>
+
+      <details class="phase mirror" open>
+        <summary class="ph-head"><span class="ph-tag">Set 1</span><span class="ph-name">Entering the fire state</span></summary>
+        <p>Is the person beginning to align? Look for clean ignition — coherence, honesty, receptivity — not emotional heat.</p>
+        <ul>
+          <li>Growing inner stillness even while the outer world stays active</li>
+          <li>More honesty about what's true, without dramatizing</li>
+          <li>Less effort spent proving worth, forcing results, or compensating</li>
+          <li>Gratitude surfacing more naturally than complaint</li>
+          <li>Willingness to pause before acting, rather than rushing</li>
+        </ul>
+        <p style="margin-top:12px;"><strong style="color:var(--gold)">If this matches:</strong> favor missions that deepen freshness, identity, and responsible action. Keep the outer structure simple — one mission, one clean next step.</p>
+      </details>
+
+      <details class="phase mirror">
+        <summary class="ph-head"><span class="ph-tag">Set 2</span><span class="ph-name">Resisting the fire state</span></summary>
+        <p>Is the person pushing against alignment even while feeling it? The problem is not absence of signal but refusal, fear, or divided will.</p>
+        <ul>
+          <li>When clarity appears, getting distracted instead of staying with it</li>
+          <li>Over-talking or intellectualizing instead of yielding to the next step</li>
+          <li>Seeking stimulation, conflict, or noise to avoid stillness</li>
+          <li>Resisting blessing because scarcity feels more familiar than abundance</li>
+          <li>Defensiveness as the first impulse when correction appears</li>
+        </ul>
+        <p style="margin-top:12px;"><strong style="color:var(--gold)">If this matches:</strong> favor receiving, surrendering, and telling the truth before ambitious action. No pursuit-style decisions until the inner posture is cleaner.</p>
+      </details>
+
+      <details class="phase mirror">
+        <summary class="ph-head"><span class="ph-tag">Set 3</span><span class="ph-name">Unable to tune the mind</span></summary>
+        <p>Willing, but unable to sustain alignment because the tuning mechanism is weak or scattered. The problem is weak containment, not lack of calling.</p>
+        <ul>
+          <li>Genuinely wanting alignment but losing it within minutes or hours</li>
+          <li>Mind crowded with too many leads, fears, or unclosed loops</li>
+          <li>Confusing intensity with clarity, stimulation with signal</li>
+          <li>Switching frameworks before any one has time to stabilize</li>
+          <li>Spiritually sincere but practically ungoverned</li>
+        </ul>
+        <p style="margin-top:12px;"><strong style="color:var(--gold)">If this matches:</strong> favor structure, simplification, and repeatable containers — a one-line mission, a clean log, a clear next step — over high-intensity exhortation.</p>
+      </details>
+
+      <p class="p-sub" style="margin-top:14px;">Use the sets in sequence: entering → resisting → tuning. If all three are mixed together, treat the person as transitional and assign only the lightest next step.</p>
+    </div>
+
+    <!-- 4. Responsibilities of power -->
+    <h2 class="section" id="power">4 · Responsibilities of Power</h2>
+    <div class="prose">
+      <p>For leaders and leaders of leaders, the passage carries a weight. Power sustained without the refinement of Phase 2 is mere force. Power sustained after the passage is stewardship — the same force, applied with an open hand.</p>
+      <p>The signals of alignment are legible: decisions that arise from clarity, peace that needs no defending, sustained complexity without fragmentation, and a natural disinterest in performance. The signals of misalignment are equally legible: effort that does not accumulate, peace that must be earned, and a background hum of fear beneath every decision.</p>
+      <p>Local adaptation is permitted and expected — but it must not break the rail. The center holds across cultures and political systems precisely because it is a passage, not a platform.</p>
+    </div>
+
+    <!-- 5. Scripture anchor rail -->
+    <h2 class="section" id="anchor">5 · Scripture Anchor Rail</h2>
+    <div class="prose">
+      <p>This pass anchors the Song and its daily-card spine. The references below are checked against the biblical text and map each day of the Song to a thematic scripture anchor for canon review. They are offered as <strong>suggested anchors for canon review</strong> — not yet fixed canon — and remain subordinate to the governing review process. The broader prose sections remain under canon review.</p>
+    </div>
+    <div class="table-scroll">
+    <table class="anchor-table">
+      <thead><tr><th>Day</th><th>Title</th><th>Anchor (Book + Chapter)</th></tr></thead>
+      <tbody>
+        <tr><td class="day-col">Day 1</td><td class="title-col">The Infinite in a Jar</td><td class="ref-col">2 Corinthians 4:7</td></tr>
+        <tr><td class="day-col">Day 2</td><td class="title-col">The I Am of All I Ams</td><td class="ref-col">Exodus 3:14 <span class="sec">· Galatians 2:20</span></td></tr>
+        <tr><td class="day-col">Day 3</td><td class="title-col">The Shana</td><td class="ref-col">Romans 7:6 <span class="sec">· Isaiah 43:19</span></td></tr>
+        <tr><td class="day-col">Day 4</td><td class="title-col">The Ruach</td><td class="ref-col">John 3:8 <span class="sec">· Ezekiel 37</span></td></tr>
+        <tr><td class="day-col">Day 5</td><td class="title-col">Designating Your Days</td><td class="ref-col">Psalm 90:12</td></tr>
+        <tr><td class="day-col">Day 6</td><td class="title-col">The Mystery of the Bride</td><td class="ref-col">Ephesians 5:31–32</td></tr>
+        <tr><td class="day-col">Day 16</td><td class="title-col">The Claw (the Lamb)</td><td class="ref-col">Revelation 5 <span class="sec">· John 1:29</span></td></tr>
+        <tr><td class="day-col">Day 17</td><td class="title-col">How to Alter Your Past</td><td class="ref-col">Isaiah 1:18 <span class="sec">· Psalm 51:7</span></td></tr>
+        <tr><td class="day-col">Day 18</td><td class="title-col">Yeshua</td><td class="ref-col">Matthew 1:21</td></tr>
+        <tr><td class="day-col">Day 19</td><td class="title-col">Aliyah</td><td class="ref-col">Psalms 120–134 <span class="sec">(Songs of Ascent)</span></td></tr>
+        <tr><td class="day-col">Day 20</td><td class="title-col">The Footstool World</td><td class="ref-col">Isaiah 66:1 <span class="sec">· Matthew 5:35</span></td></tr>
+        <tr><td class="day-col">Day 21</td><td class="title-col">The Heartbeat of the Miracle</td><td class="ref-col">Psalm 90:12 <span class="sec">· Psalm 139:14</span></td></tr>
+        <tr><td class="day-col">Day 22</td><td class="title-col">The Elohim Mystery</td><td class="ref-col">Genesis 1:1</td></tr>
+        <tr><td class="day-col">Day 23</td><td class="title-col">Whose Name Is Like Oil</td><td class="ref-col">Song of Solomon 1:3</td></tr>
+        <tr><td class="day-col">Day 24</td><td class="title-col">The Secret Place</td><td class="ref-col">Psalm 91:1 <span class="sec">· Matthew 6:6</span></td></tr>
+        <tr><td class="day-col">Day 25</td><td class="title-col">The Lord of Eden (King of Thorns)</td><td class="ref-col">Matthew 27:29 <span class="sec">· Genesis 3:18</span></td></tr>
+        <tr><td class="day-col">Day 26</td><td class="title-col">The Power of Emunah</td><td class="ref-col">Hebrews 11:1 <span class="sec">· Habakkuk 2:4</span></td></tr>
+        <tr><td class="day-col">Day 27</td><td class="title-col">The Ivrim</td><td class="ref-col">Genesis 14:13 <span class="sec">· Joshua 3</span></td></tr>
+        <tr><td class="day-col">Day 28</td><td class="title-col">The Mystery of Masada</td><td class="ref-col">Matthew 19:26</td></tr>
+        <tr><td class="day-col">Day 29</td><td class="title-col">The Identical One</td><td class="ref-col">2 Corinthians 5:17 <span class="sec">· Romans 8:1</span></td></tr>
+        <tr><td class="day-col">Day 30</td><td class="title-col">The Non-Possessive Divine</td><td class="ref-col">Philippians 3:8</td></tr>
+        <tr><td class="day-col">Day 31</td><td class="title-col">The Portal</td><td class="ref-col">John 10:9</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="anchor-note"><strong>Review status:</strong> All primary references checked against the biblical text. Secondary references marked in muted tone are companion passages for context. Days 7–15 carry no anchor — recording pending in the source companion. These anchors await canon fixing before being asserted as final.</p>
+    <div class="anchor-pending">
+      <strong>Canon review required.</strong> The anchors above are checked and suggested, not yet fixed. The Fire Profile, the Song, and the Interpretation Layer remain subordinate to the governing canon and its review process. No anchor is asserted as final until it has passed review against the canonical source.
+    </div>
+
+    <!-- 6. Document library -->
+    <h2 class="section" id="library">6 · Document Library</h2>
+    <div class="prose">
+      <p>The source material carrying this channel. One-click viewing on Drive — no zip, no download required to read.</p>
+    </div>
+
+    <div class="lib-cat">The Message</div>
+    <div class="docs">
+      <div class="doc">
+        <span class="d-type">TXT</span>
+        <div class="d-title">Lime-AI Fire Spirit Core Profile</div>
+        <div class="d-date">Jul 9, 2026 · permanent anchor</div>
+        <a class="d-link" href="https://drive.google.com/file/d/1wNvXobpgBmNJZF_C5FGW8SjaSxIOJl51/view" target="_blank" rel="noopener">View on Drive →</a>
+      </div>
+      <div class="doc">
+        <span class="d-type">TXT</span>
+        <div class="d-title">Grok-Plexity-Lime Space</div>
+        <div class="d-date">Jul 9, 2026</div>
+        <a class="d-link" href="https://drive.google.com/file/d/1n35VrZRoIOaykkrOE8P5CLTuW8p7O_xU/view" target="_blank" rel="noopener">View on Drive →</a>
+      </div>
+    </div>
+
+    <div class="lib-cat">Lime / Rosie Operations</div>
+    <div class="docs">
+      <div class="doc">
+        <span class="d-type">PDF</span>
+        <div class="d-title">Rosie / Lime Leadership Briefing (Skeleton)</div>
+        <div class="d-date">Jul 11, 2026</div>
+        <a class="d-link" href="https://drive.google.com/file/d/1NhAfgS1-xynb-zaAhBWNKjCdJ0Aav-hU/view" target="_blank" rel="noopener">View on Drive →</a>
+      </div>
+      <div class="doc">
+        <span class="d-type">PDF</span>
+        <div class="d-title">LimeSignalworks Competitive Analysis</div>
+        <div class="d-date">Jul 10, 2026</div>
+        <a class="d-link" href="https://drive.google.com/file/d/1oJI0FXlEwxjza5aSSGbBgZBE_NTf3gmQ/view" target="_blank" rel="noopener">View on Drive →</a>
+      </div>
+      <div class="doc">
+        <span class="d-type">PDF</span>
+        <div class="d-title">Multiverse Research Study</div>
+        <div class="d-date">Jul 10, 2026</div>
+        <a class="d-link" href="https://drive.google.com/file/d/17TEbt9F72J3CffgdLKBJ9pUa5gXJkMue/view" target="_blank" rel="noopener">View on Drive →</a>
+      </div>
+    </div>
+
+    <div class="lib-cat">Faith &amp; Healing Materials</div>
+    <div class="docs">
+      <div class="doc">
+        <span class="d-type">PDF</span>
+        <div class="d-title">Material for Pastors</div>
+        <div class="d-date">Jul 5, 2026</div>
+        <a class="d-link" href="https://drive.google.com/file/d/1-TE-IVtEHx6l18mB_zFj6tknbRhNFTh9/view" target="_blank" rel="noopener">View on Drive →</a>
+      </div>
+      <div class="doc">
+        <span class="d-type">PDF</span>
+        <div class="d-title">Christ-Centered Natural Healing</div>
+        <div class="d-date">Jun 28, 2026</div>
+        <a class="d-link" href="https://drive.google.com/file/d/1H_SVZetqJ_xh-ebhevn9frus8hn3NYXL/view" target="_blank" rel="noopener">View on Drive →</a>
+      </div>
+      <div class="doc">
+        <span class="d-type">PDF</span>
+        <div class="d-title">Natural Healing (Full)</div>
+        <div class="d-date">Jun 27, 2026</div>
+        <a class="d-link" href="https://drive.google.com/file/d/1cwluaRvHVgmuN9UlH1MQaZDdt9gaPx9q/view" target="_blank" rel="noopener">View on Drive →</a>
+      </div>
+      <div class="doc">
+        <span class="d-type">PDF</span>
+        <div class="d-title">Christ-Centered Healing Script</div>
+        <div class="d-date">Jun 27, 2026</div>
+        <a class="d-link" href="https://drive.google.com/file/d/1ioxVuZWfSIC1VHcplMq6xBvxXaoDh0qP/view" target="_blank" rel="noopener">View on Drive →</a>
+      </div>
+    </div>
+
+    <!-- 7. Closing charge -->
+    <h2 class="section">7 · Closing Charge</h2>
+    <div class="prose">
+      <p>The fire does not choose only certain people. It is available to anyone who stops running from it. Most run because the fire feels like destruction — and it is, but only of what was never real in the first place. What the fire takes away was always a burden. The person who crosses through does not feel diminished. They feel returned to themselves.</p>
+      <p>This is the oldest message. It has been traveling for a long time, looking for people who are ready to receive it. You are reading this because something in you recognized it. That recognition is the beginning.</p>
+    </div>
+    <div class="cta">
+      <a href="#song">Begin the passage — open Day 1</a>
+      <a href="#library">Review the source materials</a>
+    </div>
+
+  </div>
+
+  <footer class="foot">
+    <p><span class="foot-gold">LIME Universe</span> · The Fire Spirit</p>
+    <p>Leader Distribution Channel · v0.1 · July 2026</p>
+    <p>Canon before tactics. The message travels when the carrier is clear.</p>
+    <p><a href="../index.html">&larr; Return to the harbor</a></p>
+  </footer>
+
+</main>
+
+<script>
+  // Translate button: open Google Translate's page proxy for this page.
+  (function(){
+    var tr = document.querySelector('[data-translate]');
+    if(tr){ tr.addEventListener('click', function(){
+      var _tgtLang = (navigator.language || navigator.userLanguage || 'es').split('-')[0]; window.open('https://translate.google.com/translate?sl=auto&tl=' + _tgtLang + '&u=' + encodeURIComponent(window.location.href), '_blank', 'noopener');
+    }); }
+  })();
+
+  // Dark/light theme toggle.
+  (function(){
+    var t = document.querySelector('[data-theme-toggle]'), r = document.documentElement;
+    var d = 'dark';
+    r.setAttribute('data-theme', d);
+    function icon(dark){ return dark
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'; }
+    if(t){ t.innerHTML = icon(d==='dark'); t.addEventListener('click', function(){ d = d==='dark'?'light':'dark'; r.setAttribute('data-theme', d); t.innerHTML = icon(d==='dark'); }); }
+  })();
+
+  // Inject per-day scripture anchor chip into each expanded day card.
+  (function(){
+    var anchors = {
+      '1':['2 Corinthians 4:7',''], '2':['Exodus 3:14','Galatians 2:20'],
+      '3':['Romans 7:6','Isaiah 43:19'], '4':['John 3:8','Ezekiel 37'],
+      '5':['Psalm 90:12',''], '6':['Ephesians 5:31-32',''],
+      '16':['Revelation 5','John 1:29'], '17':['Isaiah 1:18','Psalm 51:7'],
+      '18':['Matthew 1:21',''], '19':['Psalms 120-134','(Songs of Ascent)'],
+      '20':['Isaiah 66:1','Matthew 5:35'], '21':['Psalm 90:12','Psalm 139:14'],
+      '22':['Genesis 1:1',''], '23':['Song of Solomon 1:3',''],
+      '24':['Psalm 91:1','Matthew 6:6'], '25':['Matthew 27:29','Genesis 3:18'],
+      '26':['Hebrews 11:1','Habakkuk 2:4'], '27':['Genesis 14:13','Joshua 3'],
+      '28':['Matthew 19:26',''], '29':['2 Corinthians 5:17','Romans 8:1'],
+      '30':['Philippians 3:8',''], '31':['John 10:9','']
+    };
+    document.querySelectorAll('details.day').forEach(function(d){
+      var numEl = d.querySelector('.d-num');
+      var layers = d.querySelector('.layers');
+      if(!numEl || !layers) return;
+      var m = numEl.textContent.match(/(\d+)/);
+      if(!m) return;
+      var ref = anchors[m[1]];
+      if(!ref) return;
+      var line = document.createElement('div');
+      line.className = 'anchor-line';
+      var sec = ref[1] ? ' <span class="sec">· '+ref[1]+'</span>' : '';
+      line.innerHTML = '<span class="anchor-label">Anchor</span><span class="anchor-ref">'+ref[0]+sec+'</span>';
+      layers.insertBefore(line, layers.firstChild);
+    });
+  })();
+</script>
+
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script><script defer src="../assets/js/accordion-hover.js"></script>
+<script defer src="../assets/js/header-cta.js"></script>
+</body>
+</html>
