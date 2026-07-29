@@ -274,7 +274,15 @@
      applied above the very first cell (see .lime-info rule below) so the top of the
      page gets the same gap instead of sitting flush under the header. */
   .lime-glow-cell { margin-bottom: var(--space-12); }
-  .lime-info { padding-top: var(--space-12) !important; }
+  /* .lime-info is the one section where .lime-glow-cell IS the collapsible body
+     itself (nested inside <details>, not a wrapper around it like every other
+     section) -- so its margin-bottom disappears entirely while collapsed, since
+     the browser doesn't render hidden <details> content at all. That left zero
+     gap between the masthead and Today's Harbor once collapsed-by-default
+     shipped. Putting the gap on .lime-info (the section, always rendered
+     regardless of open/closed state) instead fixes it in both states. Per Noal
+     2026-07-29, follow-up spacing report. */
+  .lime-info { padding-top: var(--space-12) !important; margin-bottom: var(--space-12) !important; }
   details.collapsible > summary .chev { color: var(--color-text-muted); transition: transform var(--transition-interactive); flex: 0 0 auto; }
   details.collapsible[open] > summary .chev { transform: rotate(180deg); }
   details.collapsible > summary:hover h2, details.collapsible > summary:hover h3, details.collapsible > summary:hover .chev { color: var(--color-primary); }
