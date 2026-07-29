@@ -245,12 +245,16 @@
      confirming directly in a session that can see this comment. */
   details.collapsible > summary h2, details.collapsible > summary h3,
   .sec-bar h2, .sec-bar h3 { font-size: var(--text-xl); margin: 0; text-align: center; font-family: var(--font-display); font-weight: 400; letter-spacing: -0.01em; text-transform: none; color: var(--color-text); }
-  /* Scoped to the homepage top heading only — does not affect .sec-bar globally. Added per Noal 2026-07-25. */
+  /* Applied to every section's .sec-bar (the accordion summary bar itself, not
+     just the h2) so every heading gets an equal, full-width glow ring matching
+     the .wrap content width — previously scoped to two headings via an
+     inline-block h2, which sized each ring to its own text and made widths
+     uneven. Per Noal 2026-07-29: every heading's spark should be full width. */
   @property --lime-glow-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
-  .sec-bar h2.heading-box-glow { position: relative; display: inline-block; padding: var(--space-1) var(--space-4); border-radius: var(--radius-md); background: var(--color-bg); }
-  .sec-bar h2.heading-box-glow::before { content: ""; position: absolute; z-index: -1; inset: -2px; padding: 2px; border-radius: inherit; background: conic-gradient(from var(--lime-glow-angle), var(--color-glow-blue), transparent 25%, transparent 75%, var(--color-glow-blue)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; animation: heading-glow-spin 3.5s linear infinite; }
+  .sec-bar.heading-box-glow { position: relative; border-radius: var(--radius-md); }
+  .sec-bar.heading-box-glow::before { content: ""; position: absolute; z-index: -1; inset: -2px; padding: 2px; border-radius: inherit; background: conic-gradient(from var(--lime-glow-angle), var(--color-glow-blue), transparent 25%, transparent 75%, var(--color-glow-blue)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; animation: heading-glow-spin 3.5s linear infinite; }
   @keyframes heading-glow-spin { to { --lime-glow-angle: 360deg; } }
-  @media (prefers-reduced-motion: reduce) { .sec-bar h2.heading-box-glow::before { animation: none; } }
+  @media (prefers-reduced-motion: reduce) { .sec-bar.heading-box-glow::before { animation: none; } }
   /* Reusable rotating-glow cell wrapper for grouped content blocks — mockup per Noal 2026-07-25.
      Reuses the --lime-glow-angle property and heading-glow-spin keyframes defined above. */
   .lime-glow-cell { position: relative; border-radius: var(--radius-lg); padding: var(--space-6); background: var(--color-bg); }
@@ -339,7 +343,7 @@
          "Lime Signalworks: A Financial Lighthouse". Noal directly confirmed this wording
          on 2026-07-25, superseding the prior "Lime Signalworks Financial Technologies"
          line (itself locked 2026-07-24). Do NOT revert or rewrite without Noal confirming directly. -->
-    <summary class="sec-bar"><h2 class="heading-box-glow">Lime Signalworks: A Financial Lighthouse</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+    <summary class="sec-bar heading-box-glow"><h2>Lime Signalworks: A Financial Lighthouse</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
     <div class="foot lime-glow-cell">
       <div>
         <p class="creed" data-i18n="creed">Different worlds, same problem: how to face market chaos without handing your life to a guru.</p>
@@ -371,7 +375,7 @@
            Noal 2026-07-25, mockup pass — not final until confirmed. -->
       <div class="lime-glow-cell">
       <details class="collapsible" id="hn-details">
-        <summary class="sec-bar"><h2 data-i18n="hn_h" class="hn-heading"><span class="hn-heading-label">Most recent harbor read</span> — <time class="hn-heading-date" datetime="2026-07-23">Thursday, July 23, 2026</time></h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <summary class="sec-bar heading-box-glow"><h2 data-i18n="hn_h" class="hn-heading"><span class="hn-heading-label">Most recent harbor read</span> — <time class="hn-heading-date" datetime="2026-07-23">Thursday, July 23, 2026</time></h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
         <div class="sec-body">
           <div class="hn-report">
             <p class="hn-stale-note" data-i18n="hn_stale" hidden>Showing the most recent completed harbor read — live market data may be newer.</p>
@@ -406,7 +410,7 @@
            rosy-way-img/caption physically relocated here from .hero, not duplicated. -->
       <div class="lime-glow-cell">
       <details class="collapsible" id="keeper-hero-card">
-        <summary class="sec-bar"><h2 data-i18n="promise_h">The one promise</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <summary class="sec-bar heading-box-glow"><h2 data-i18n="promise_h">The one promise</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
         <div class="sec-body">
           <div class="keeper-hero-inner">
             <div class="keeper-hero-text">
@@ -453,7 +457,7 @@
            so this cell's spacing rules keep working after the nesting change below. -->
       <div class="lime-glow-cell">
       <details class="collapsible" id="hero-details">
-        <summary class="sec-bar"><h2 data-i18n="kicker">The Rosy Way</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <summary class="sec-bar heading-box-glow"><h2 data-i18n="kicker">The Rosy Way</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
         <div class="sec-body">
           <div class="beacon" aria-hidden="true">
             <svg viewBox="0 0 180 120" fill="none">
@@ -468,7 +472,7 @@
         </div>
       </details>
       <details class="collapsible">
-        <summary class="sec-bar"><h2>Introduction to the 33-Day Fire Protocol</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <summary class="sec-bar heading-box-glow"><h2>Introduction to the 33-Day Fire Protocol</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
         <div class="sec-body">
           <p class="fp-sub">The Fire Spirit speaks one word a day for 33 days. Here is the shape of the whole arc, in three parts — open any of them now, or simply know they are here and come back to them.</p>
           <div class="fp-grid">
@@ -492,15 +496,27 @@
       </details>
       <!-- Fire Protocol message cell — always-visible text card. Copy from Noal's 2026-07-24
            dictation. Canonical 720px width (.fp-message) matches .rosy-way-img. -->
-      <div class="fp-message">
-        <h2>If you have lost hope for your trading and investing future</h2>
+      <!-- Converted to a collapsible accordion cell per Noal 2026-07-29 (was a
+           permanently-expanded block taking up too much page space). Follows
+           the same details.collapsible + .sec-bar + .sec-body pattern used by
+           every other section on this page, so it joins the existing
+           single-open-accordion behavior (main details.collapsible toggle
+           listener) rather than inventing a separate mechanism. Starts
+           collapsed by default -- explicit authorization for this one
+           collapsed-by-default change per this session, per Noal's request. -->
+      <details class="collapsible">
+        <summary class="sec-bar heading-box-glow"><h2>If you have lost hope for your trading and investing future</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="sec-body">
+        <div class="fp-message">
         <p>If you have lost hope for your trading and investing future, you are exactly who this is for. We invite you to explore the <strong>33-Day Fire Protocol</strong>. It may not look like financial intelligence at first — and that is on purpose. Its guidance runs deeper than the usual market commentary, because inner posture and clarity come before any signal.</p>
         <p>What you learn to apprehend here can help you shape the future you actually want and draw it into the present, one disciplined day at a time. Rosie sets a new bar for what an honest trading companion can be, and makes disciplined trading and investing far more accessible than it has ever been.</p>
         <p>The common opportunities in these markets are too often obscured — dressed up by institutions in language meant to keep them just out of reach. Here we explain, plainly, how they actually work. Rosie also moves beyond candlestick reading, an antique method, toward something steadier and more coherent.</p>
         <p>Together, Rosie and the 33-Day Protocol can support a genuine renaissance in your financial life. The Protocol is built to develop significance, posture, and discipline — not only for you, but for your mate, your family, and your community.</p>
         <p>The historical figures you meet along the way are not trading heroes. They are heroes of posture and disciplined guidance — reminders of how to stand before you act. Rosie herself emerged through serendipity, and she carries that same spirit forward.</p>
         <p>Think of the Wright brothers' first airplane set beside a modern F-22 — the same principle of flight, a different world of capability. That is the leap we are inviting you into. Try Rosie for 33 days. <strong>We cannot and do not promise profits or guaranteed returns — no honest system can</strong> — but we can offer clear teaching, honest tools, and a disciplined path worth walking.</p>
-      </div>
+        </div>
+        </div>
+      </details>
       </div>
     </div>
   </section>
@@ -508,7 +524,7 @@
   <section class="harbor">
     <div class="wrap">
       <details class="collapsible">
-        <summary class="sec-bar"><h2 data-i18n="doors_h" class="heading-box-glow">The Wicket Gate</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <summary class="sec-bar heading-box-glow"><h2 data-i18n="doors_h">The Wicket Gate</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
         <div class="sec-body">
           <p class="doors-sub" data-i18n="doors_sub">Nine doors. Start wherever fits you today.</p>
           <div class="grid">
