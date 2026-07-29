@@ -267,8 +267,14 @@
   @media (prefers-reduced-motion: reduce) { .lime-glow-cell::before { animation: none; } }
   /* Gap between cells so they read as distinct boxes, not one merged shape. Safe on all
      instances now: the CTA cells and Rosy Way image that used to need a zero-gap bottom
-     are physically inside the .keeper-hero cell itself, not sitting after it. */
-  .lime-glow-cell { margin-bottom: var(--space-10); }
+     are physically inside the .keeper-hero cell itself, not sitting after it.
+     Bumped 40px -> 48px per Noal 2026-07-29 (the One Promise -> Rosy Way gap read as
+     too tight against that cell's visual weight); applies uniformly to every cell so
+     every gap in the stack stays the same thickness, not just that one. Also now
+     applied above the very first cell (see .lime-info rule below) so the top of the
+     page gets the same gap instead of sitting flush under the header. */
+  .lime-glow-cell { margin-bottom: var(--space-12); }
+  .lime-info { padding-top: var(--space-12) !important; }
   details.collapsible > summary .chev { color: var(--color-text-muted); transition: transform var(--transition-interactive); flex: 0 0 auto; }
   details.collapsible[open] > summary .chev { transform: rotate(180deg); }
   details.collapsible > summary:hover h2, details.collapsible > summary:hover h3, details.collapsible > summary:hover .chev { color: var(--color-primary); }
@@ -306,9 +312,13 @@
   /* Zero inter-section gaps */
   section { margin-top: 0 !important; padding-top: 0 !important; }
   .sec-bar { margin-top: 0 !important; }
-  /* Continuous stack: One Promise -> Rosy Way image -> Rosy Way -> Wicket Gate.
-     Remove the residual blank band (section bottom padding + summary margin)
-     between these components while keeping each summary's own click padding. */
+  /* Continuous stack spacing: these classes zero each section's own bottom
+     padding so the .lime-glow-cell margin-bottom above is the single source of
+     gap between cells, keeping every gap the same thickness regardless of
+     which cells are adjacent. (Comment updated 2026-07-29 -- One Promise no
+     longer sits directly before Rosy Way; it was relocated to the end of the
+     page per Noal's instruction. The rules below still apply correctly by
+     class, independent of DOM order.) */
   .keeper-hero, .hero, .harbor-now { padding-bottom: 0 !important; }
   .keeper-hero > .wrap > .lime-glow-cell > details.collapsible:first-child > summary,
   #hero-details > summary { margin-bottom: 0; }
@@ -340,7 +350,12 @@
 <main>
   <section class="lime-info">
     <div class="wrap">
-      <details class="collapsible" open>
+      <!-- Collapsed by default per Noal 2026-07-29 (previously open on first load,
+           the only section that was; every other section, including The One
+           Promise below, already defaulted to collapsed with no `open` attribute).
+           The One Promise section itself is untouched -- Noal explicitly said to
+           leave it alone. -->
+      <details class="collapsible">
     <!-- Mockup: entire .foot block boxed as one cell, since it is the single body of
          text/content running from "Different worlds" to "...stays behind it." Added
          per Noal 2026-07-25, mockup pass — not final until confirmed. -->
@@ -404,49 +419,6 @@
           <a class="hn-all" href="harbor-now/index.html" data-i18n="hn_all">View all Harbor Nows →</a>
         </div>
       </details>
-      </div>
-    </div>
-  </section>
-
-  <section class="keeper-hero">
-    <div class="wrap">
-      <!-- Box extended per Noal 2026-07-25: The one promise + CTA cells + Rosy Way image +
-           caption, one cell, ending at "You've reached the end of the harbor — for now."
-           rosy-way-img/caption physically relocated here from .hero, not duplicated. -->
-      <div class="lime-glow-cell">
-      <details class="collapsible" id="keeper-hero-card">
-        <summary class="sec-bar heading-box-glow"><h2 data-i18n="promise_h">The one promise</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
-        <div class="sec-body">
-          <div class="keeper-hero-inner">
-            <div class="keeper-hero-text">
-              <div class="promise-card">
-                <p data-i18n="promise_p1">We cannot and do not guarantee profits or eliminate risk — <strong>no honest system can</strong>. Markets go up, down, and sideways, and your decisions and results are your own.</p>
-                <p class="muted" data-i18n="promise_p2">What we do promise is our best work: clear teaching, honest tools, and a solid system built to serve real families and real companies by leaning first toward loss prevention, then toward profit. If that does not feel true in your experience after ninety days, you do not pay for it.</p>
-              </div>
-            </div>
-            <div class="keeper-hero-col">
-              <div class="keeper-hero-portrait" id="kh-portrait" role="img" aria-label="Keeper portrait"></div>
-              <div class="keeper-hero-trait" id="kh-trait"></div>
-            </div>
-          </div>
-        </div>
-      </details>
-      <!-- CTA + Fire Protocol cells — inside promise section -->
-      <div class="rosie-cta-wrap" id="rosie-cta-wrap">
-        <div class="intro-cells">
-          <div class="intro-cell" id="intro-cell-1"><strong>The Setup</strong><br>The burdens you have actually been carrying — and the 33-day protocol designed to hand them over.</div>
-          <div class="intro-cell" id="intro-cell-2"><strong>The Mitigation</strong><br>Three returns in the morning. Six at midday. Nine at close. One word a day. This is the practice.</div>
-          <div class="intro-cell" id="intro-cell-3"><strong>The Conclusion</strong><br>Everything you have ever wanted is looking for a place to land. You are no longer the ship. You have become the shore.</div>
-        </div>
-      </div>
-      <img class="rosy-way-img" src="assets/bridge/rosy-way-bloom.webp" alt="A man and a woman beside a flowering rose tree, arms raised, gold dust around them, a path curving into the light">
-      <!-- Wrap-up cell restored verbatim from 8963fed (removed by a6d307f
-           "Reorder sections"); line breaks per Noal's 2026-07-19 dictation.
-           Re-restored 2026-07-23 after an unrelated baseline revert dropped it —
-           do not remove without Noal confirming directly. -->
-      <p class="rosy-way-caption">This is what happens along the Rosy Way. Life changes.<br>
-      Your true purpose finds you &mdash; and it amplifies you.<br>
-      You've reached the end of the harbor &mdash; for now.</p>
       </div>
     </div>
   </section>
@@ -548,6 +520,49 @@
       </details>
     </div>
   </section>
+  <section class="keeper-hero">
+    <div class="wrap">
+      <!-- Box extended per Noal 2026-07-25: The one promise + CTA cells + Rosy Way image +
+           caption, one cell, ending at "You've reached the end of the harbor — for now."
+           rosy-way-img/caption physically relocated here from .hero, not duplicated. -->
+      <div class="lime-glow-cell">
+      <details class="collapsible" id="keeper-hero-card">
+        <summary class="sec-bar heading-box-glow"><h2 data-i18n="promise_h">The one promise</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="sec-body">
+          <div class="keeper-hero-inner">
+            <div class="keeper-hero-text">
+              <div class="promise-card">
+                <p data-i18n="promise_p1">We cannot and do not guarantee profits or eliminate risk — <strong>no honest system can</strong>. Markets go up, down, and sideways, and your decisions and results are your own.</p>
+                <p class="muted" data-i18n="promise_p2">What we do promise is our best work: clear teaching, honest tools, and a solid system built to serve real families and real companies by leaning first toward loss prevention, then toward profit. If that does not feel true in your experience after ninety days, you do not pay for it.</p>
+              </div>
+            </div>
+            <div class="keeper-hero-col">
+              <div class="keeper-hero-portrait" id="kh-portrait" role="img" aria-label="Keeper portrait"></div>
+              <div class="keeper-hero-trait" id="kh-trait"></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <!-- CTA + Fire Protocol cells — inside promise section -->
+      <div class="rosie-cta-wrap" id="rosie-cta-wrap">
+        <div class="intro-cells">
+          <div class="intro-cell" id="intro-cell-1"><strong>The Setup</strong><br>The burdens you have actually been carrying — and the 33-day protocol designed to hand them over.</div>
+          <div class="intro-cell" id="intro-cell-2"><strong>The Mitigation</strong><br>Three returns in the morning. Six at midday. Nine at close. One word a day. This is the practice.</div>
+          <div class="intro-cell" id="intro-cell-3"><strong>The Conclusion</strong><br>Everything you have ever wanted is looking for a place to land. You are no longer the ship. You have become the shore.</div>
+        </div>
+      </div>
+      <img class="rosy-way-img" src="assets/bridge/rosy-way-bloom.webp" alt="A man and a woman beside a flowering rose tree, arms raised, gold dust around them, a path curving into the light">
+      <!-- Wrap-up cell restored verbatim from 8963fed (removed by a6d307f
+           "Reorder sections"); line breaks per Noal's 2026-07-19 dictation.
+           Re-restored 2026-07-23 after an unrelated baseline revert dropped it —
+           do not remove without Noal confirming directly. -->
+      <p class="rosy-way-caption">This is what happens along the Rosy Way. Life changes.<br>
+      Your true purpose finds you &mdash; and it amplifies you.<br>
+      You've reached the end of the harbor &mdash; for now.</p>
+      </div>
+    </div>
+  </section>
+
 
 </main>
 
