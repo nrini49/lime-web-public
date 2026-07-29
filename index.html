@@ -245,13 +245,18 @@
      confirming directly in a session that can see this comment. */
   details.collapsible > summary h2, details.collapsible > summary h3,
   .sec-bar h2, .sec-bar h3 { font-size: var(--text-xl); margin: 0; text-align: center; font-family: var(--font-display); font-weight: 400; letter-spacing: -0.01em; text-transform: none; color: var(--color-text); }
-  /* Applied to every section's .sec-bar (the accordion summary bar itself, not
-     just the h2) so every heading gets an equal, full-width glow ring matching
-     the .wrap content width — previously scoped to two headings via an
-     inline-block h2, which sized each ring to its own text and made widths
-     uneven. Per Noal 2026-07-29: every heading's spark should be full width. */
+  /* Applied to every section's .sec-bar so every heading gets an equal-size
+     glow ring — previously scoped to two headings via an inline-block h2,
+     which sized each ring to its own text and made widths uneven. A first
+     pass (2026-07-29) stretched this to the full .wrap width, but
+     conic-gradient's angle is measured against the box's real aspect ratio:
+     on a ~1080x50px bar almost the whole sweep lands on the two short
+     (left/right) edges, so the glow read as a sloppy blob in one corner
+     instead of an even ring. Fixed width here keeps every ring the same
+     size (still uniform, still equal) at a proportion the rotating conic
+     glow actually renders cleanly at — corrected same day per Noal. */
   @property --lime-glow-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
-  .sec-bar.heading-box-glow { position: relative; border-radius: var(--radius-md); }
+  .sec-bar.heading-box-glow { position: relative; border-radius: var(--radius-md); width: min(640px, 100%); margin: 0 auto; }
   .sec-bar.heading-box-glow::before { content: ""; position: absolute; z-index: -1; inset: -2px; padding: 2px; border-radius: inherit; background: conic-gradient(from var(--lime-glow-angle), var(--color-glow-blue), transparent 25%, transparent 75%, var(--color-glow-blue)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; animation: heading-glow-spin 3.5s linear infinite; }
   @keyframes heading-glow-spin { to { --lime-glow-angle: 360deg; } }
   @media (prefers-reduced-motion: reduce) { .sec-bar.heading-box-glow::before { animation: none; } }
