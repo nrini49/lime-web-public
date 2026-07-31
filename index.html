@@ -162,6 +162,16 @@
   .harbor-head p { color: var(--color-text-muted); margin: 0 auto; }
   .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
   @media (max-width: 860px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  /* When the Wicket Gate's 9 cards fall into the 2-column band (561-860px), 9 does not
+     divide evenly by 2, so the 9th card lands alone in a final row, flush-left, with an
+     empty second column beside it. :last-child:nth-child(odd) matches only when the card
+     count is odd (i.e. only when a card would otherwise be stranded alone) -- if the total
+     card count is ever even this rule simply never matches, so it stays correct without
+     hardcoding "card 9". Spans both tracks, then caps its own width back to one column's
+     share and centers it, so the lone card reads as centered instead of stuck in a void.
+     Scoped to the 561-860px band only; untouched at 3-column (>860px) and 1-column
+     (<=560px) widths. Per Noal 2026-07-31. */
+  @media (min-width: 561px) and (max-width: 860px) { .grid > .card:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: calc(50% - var(--space-5) / 2); margin-left: auto; margin-right: auto; } }
   @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
   .card { display: block; text-decoration: none; color: var(--color-text); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); position: relative; transition: transform var(--transition-interactive), border-color var(--transition-interactive), box-shadow var(--transition-interactive); }
   .keeper-name { text-align: center; font-size: var(--text-sm); color: var(--color-text-muted); margin: -2px 0 var(--space-3); letter-spacing: 0.02em; transition: opacity 0.3s; }
@@ -304,6 +314,11 @@
   .foot .meta { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; }
   .foot .meta a { color: var(--color-text-muted); text-decoration: none; border-bottom: 1px solid var(--color-border); }
   .foot .meta a:hover { color: var(--color-primary); border-color: var(--color-primary); }
+  /* Restores the reciprocal LIME Enterprise link (Site 1 -> Site 2) that the 2026-07-31
+     Rosy Way sync accidentally dropped while adding the LIME Leadership line -- Site 1 is
+     meant to carry both, per Noal 2026-07-31. inline-flex + min-height only so the tap
+     target clears 44px; it inherits .foot .meta a colors/underline. */
+  .foot .meta a.enterprise-link { display: inline-flex; align-items: center; min-height: 44px; }
   .foot .copy { font-size: var(--text-xs); color: var(--color-text-faint); margin-top: var(--space-6); }
   /* Canonical content width (720px) — matches .rosy-way-img. Applied to the new Fire
      Protocol message cell, the Rosy Way text cell, and the top info block so their
@@ -385,6 +400,7 @@
         </p>
         <p class="copy" data-i18n="copy">© 2026 Lime Signalworks LLC. Loss prevention first. Always.</p>
         <p class="meta"><a href="https://leadership.limesignalworks.com" rel="noopener noreferrer" data-sibling-site="library">LIME Leadership</a></p>
+        <p class="meta"><a class="enterprise-link" href="https://lime-enterprise-web.vercel.app/" target="_blank" rel="noopener">LIME Enterprise</a></p>
       </div>
       <div>
         <p class="meta">
