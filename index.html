@@ -176,7 +176,12 @@
   .fp-cell .chev { margin-left: auto; flex-shrink: 0; color: var(--color-text-faint); transition: transform var(--transition-interactive); }
   .fp-cell[open] summary .chev { transform: rotate(180deg); }
   .fp-num { font-family: var(--font-display); color: var(--color-primary); font-size: var(--text-lg); line-height: 1; flex-shrink: 0; }
-  .fp-title { font-weight: 600; }
+  /* Reserve a fixed 2-line height on every fp-title so all three Fire Protocol cells in
+     .fp-grid render the same closed-state height, whether their title text wraps to one
+     line or two. Scoped to .fp-title only -- does not touch .fp-grid's align-items or
+     any other cell/grid on the page. Fixes: bottom (3rd) cell was taller than the other
+     two because its longer title wrapped to a second line. Per Noal 2026-07-31. */
+  .fp-title { font-weight: 600; display: flex; align-items: center; min-height: calc(2 * 1.6em); }
   .fp-teaser { padding: 0 var(--space-5) var(--space-4); margin: 0; color: var(--color-text-muted); font-size: var(--text-sm); }
   .fp-cell[open] .fp-teaser { display: none; }
   .fp-body { padding: 0 var(--space-5) var(--space-5); margin: 0; color: var(--color-text); font-size: var(--text-sm); line-height: 1.6; display: none; }
