@@ -515,7 +515,14 @@
     </div>
   </section>
 
-  <div class="section-gap" aria-hidden="true" style="height:28vh;min-height:220px;"></div>
+  <!-- Section-gap spacer removed per Noal 2026-08-01: the previous 28vh (~220-300px)
+       inline spacer here made "The Rosy Way" cell read as detached from "The one
+       promise" cell above it, unlike every other adjacent cell pair on the page,
+       which relies solely on .lime-glow-cell's margin-bottom: var(--space-12) (48px)
+       for spacing. Removing this div lets that same standard 48px gap apply here too,
+       so the bottom cell now sits one normal space below the cell above it, consistent
+       with the rest of the page. Do not re-add a large fixed-height spacer without
+       Noal confirming directly -- this has been raised and reverted multiple times. -->
 
   <section class="hero">
     <div class="wrap">
