@@ -133,6 +133,23 @@
   .post-card .post-teaser{color:var(--color-text-muted);font-family:Helvetica,Arial,sans-serif;font-size:32px;}
   .post-card .d-body{padding:var(--space-2) var(--space-6) var(--space-6)}
 
+  /* Public blog comments -- added 2026-08-05. Publish-immediately moderation
+     (Noal's call): admin reviews and removes after the fact via the small
+     Admin link in the footer, not a pre-approval queue. */
+  .comments-section{padding:0 var(--space-6) var(--space-6);border-top:1px solid var(--color-border);margin-top:var(--space-2)}
+  .comments-heading{font-size:var(--text-sm);letter-spacing:0.06em;text-transform:uppercase;color:var(--color-text-muted);font-weight:700;margin:var(--space-5) 0 var(--space-3);}
+  .comment-list{display:flex;flex-direction:column;gap:var(--space-3);margin-bottom:var(--space-4);}
+  .comment-empty{color:var(--color-text-faint);font-size:var(--text-sm);}
+  .comment-item{background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);}
+  .comment-item .c-head{display:flex;align-items:baseline;gap:var(--space-2);flex-wrap:wrap;}
+  .comment-item .c-name{font-weight:700;color:var(--color-text);}
+  .comment-item .c-time{font-size:var(--text-xs);color:var(--color-text-faint);}
+  .comment-item .c-body{margin:var(--space-1) 0 0;color:var(--color-text);white-space:pre-wrap;word-break:break-word;}
+  .comment-item .c-delete{margin-left:auto;font-size:var(--text-xs);color:var(--color-text-faint);background:none;border:none;cursor:pointer;text-decoration:underline;padding:0;}
+  .hp-field{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
+  .comment-admin-bar{font-size:var(--text-xs);color:var(--color-text-faint);text-align:right;margin-top:var(--space-2);}
+  .comment-admin-bar button{background:none;border:none;color:var(--color-text-faint);text-decoration:underline;cursor:pointer;font-size:inherit;padding:0;}
+
   footer{border-top:1px solid var(--color-divider);padding:var(--space-12) 0;background:var(--color-surface)}
   .foot{text-align:center;font-size:var(--text-sm);color:var(--color-text-muted)}
   .foot a{color:var(--color-text-muted);text-decoration:none;border-bottom:1px solid var(--color-border)}
@@ -368,7 +385,7 @@
          <details class="post-card"> so new entries just get appended above
          this comment, newest first. -->
 
-    <details class="post-card" open>
+    <details class="post-card" open data-post-slug="learn-to-spot-a-teaser-before-it-spots-you">
       <summary>
         <span class="post-date">August 1, 2026</span>
         <span class="post-title">Learn to Spot a Teaser Before It Spots You <span class="chev">&#9656;</span></span>
@@ -379,9 +396,20 @@
         <p>We pulled both apart claim by claim against primary sources: what's actually verifiable, what's stretched, and what's simply invented. Not to name-call anyone — to show the pattern, because the pattern repeats. Anyone reading market-moving "secret" content owes it to their capital to run this same check before acting on it.</p>
         <p><a href="/assets/research/accelerated-ai-teaser-decoded.pdf" target="_blank" rel="noopener">Read the full brief (PDF)</a></p>
       </div>
+      <div class="comments-section" aria-label="Comments">
+        <h4 class="comments-heading">Comments</h4>
+        <div class="comment-list" data-comment-list><p class="comment-empty">Loading comments…</p></div>
+        <form class="comment-form form-card" data-comment-form novalidate>
+          <div><label>Name<input type="text" name="name" maxlength="80" required placeholder="Your name"></label></div>
+          <div><label>Comment<textarea name="text" maxlength="2000" required placeholder="Add to the discussion."></textarea></label></div>
+          <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn" type="submit">Post comment</button>
+          <p class="msg"></p>
+        </form>
+      </div>
     </details>
 
-    <details class="post-card">
+    <details class="post-card" data-post-slug="read-the-weather-before-you-touch-anything">
       <summary>
         <span class="post-date">July 19, 2026</span>
         <span class="post-title">Read the Weather Before You Touch Anything <span class="chev">&#9656;</span></span>
@@ -392,9 +420,20 @@
         <p>Harbor Now exists because conditions have a character on any given day, the same way the sea does, and that character is knowable before you ever put capital at risk. Skip the read and you're not being fast — you're just blind and moving. The market doesn't care how confident you feel walking in without checking the weather first.</p>
         <p>The discipline is simple to state and hard to keep: read first, then act, every single day, no exceptions for days that feel obvious. The days that feel most obvious are usually the ones the weather changes on.</p>
       </div>
+      <div class="comments-section" aria-label="Comments">
+        <h4 class="comments-heading">Comments</h4>
+        <div class="comment-list" data-comment-list><p class="comment-empty">Loading comments…</p></div>
+        <form class="comment-form form-card" data-comment-form novalidate>
+          <div><label>Name<input type="text" name="name" maxlength="80" required placeholder="Your name"></label></div>
+          <div><label>Comment<textarea name="text" maxlength="2000" required placeholder="Add to the discussion."></textarea></label></div>
+          <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn" type="submit">Post comment</button>
+          <p class="msg"></p>
+        </form>
+      </div>
     </details>
 
-    <details class="post-card">
+    <details class="post-card" data-post-slug="the-33-days">
       <summary>
         <span class="post-date">July 19, 2026</span>
         <span class="post-title">The 33 Days <span class="chev">&#9656;</span></span>
@@ -405,9 +444,20 @@
         <p>Three check-ins a day — morning, midday, close. Not to predict anything. To interrupt the reflex that wants to watch, chase, or react every time the tape moves. Do that daily for 33 days and the posture changes on its own. You stop hunting for a reason to act and start noticing when action is actually warranted.</p>
         <p>Nobody graduates the 33 days by being clever. They graduate by showing up on day 14 the same way they showed up on day 1.</p>
       </div>
+      <div class="comments-section" aria-label="Comments">
+        <h4 class="comments-heading">Comments</h4>
+        <div class="comment-list" data-comment-list><p class="comment-empty">Loading comments…</p></div>
+        <form class="comment-form form-card" data-comment-form novalidate>
+          <div><label>Name<input type="text" name="name" maxlength="80" required placeholder="Your name"></label></div>
+          <div><label>Comment<textarea name="text" maxlength="2000" required placeholder="Add to the discussion."></textarea></label></div>
+          <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn" type="submit">Post comment</button>
+          <p class="msg"></p>
+        </form>
+      </div>
     </details>
 
-    <details class="post-card">
+    <details class="post-card" data-post-slug="two-readers-one-door">
       <summary>
         <span class="post-date">July 19, 2026</span>
         <span class="post-title">Two Readers, One Door <span class="chev">&#9656;</span></span>
@@ -418,6 +468,17 @@
         <p>One reader thinks in scripture. Another thinks in energy, evidence, or neither. Both are welcome here, and both should be able to follow the same discipline to the same result — a calm account, a clear head, a system that doesn't ask for blind trust. Metaphor is what makes that possible: it's the carrier signal that lets meaning cross between frameworks without asking anyone to abandon their own.</p>
         <p>That's the whole design goal, honestly. Not conversion. Just one door, wide enough for however you happen to think.</p>
       </div>
+      <div class="comments-section" aria-label="Comments">
+        <h4 class="comments-heading">Comments</h4>
+        <div class="comment-list" data-comment-list><p class="comment-empty">Loading comments…</p></div>
+        <form class="comment-form form-card" data-comment-form novalidate>
+          <div><label>Name<input type="text" name="name" maxlength="80" required placeholder="Your name"></label></div>
+          <div><label>Comment<textarea name="text" maxlength="2000" required placeholder="Add to the discussion."></textarea></label></div>
+          <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn" type="submit">Post comment</button>
+          <p class="msg"></p>
+        </form>
+      </div>
     </details>
 
   </div>
@@ -425,6 +486,7 @@
 
 <footer><div class="wrap foot">
   <p>&copy; 2026 Lime Signalworks LLC. Loss prevention first. Always.</p>
+  <p class="comment-admin-bar"><button type="button" id="commentAdminToggle">Admin</button></p>
 </div></footer>
 
 <script>(function(){var tr=document.querySelector('[data-translate]');if(tr){tr.addEventListener('click',function(){var _tl=(navigator.language||navigator.userLanguage||'es').split('-')[0];window.open('https://translate.google.com/translate?sl=auto&tl='+_tl+'&u='+encodeURIComponent(window.location.href),'_blank','noopener');});}})();</script>
@@ -629,6 +691,141 @@
   sendHeartbeat(true);
   setInterval(function(){ sendHeartbeat(false); }, 15000);
   setInterval(pollStatus, 8000);
+})();
+</script>
+
+<script>
+(function(){
+  'use strict';
+  // Public read uses the anon key -- safe to expose client-side, that is
+  // what it is for. Row Level Security on the comments table only grants
+  // this key SELECT on non-deleted rows; it cannot write or delete.
+  var SUPABASE_URL = 'https://edjknkuhkhiqxvwadyfa.supabase.co';
+  var ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkamtua3Voa2hpcXh2d2FkeWZhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU5NjYyOTIsImV4cCI6MjEwMTU0MjI5Mn0.Ou5oS6n-K09hlRfn5Lm4c4ikrHD1yYO9x4-u1EQ-dV0';
+  var FN_BASE = SUPABASE_URL + '/functions/v1';
+  var ADMIN_KEY = 'limeBlogAdminSecret';
+
+  function esc(s){
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  function fmtTime(iso){
+    try{
+      var d = new Date(iso);
+      return d.toLocaleDateString(undefined, {month:'short', day:'numeric', year:'numeric'}) + ' \u00b7 ' +
+             d.toLocaleTimeString(undefined, {hour:'numeric', minute:'2-digit'});
+    }catch(e){ return ''; }
+  }
+
+  function isAdmin(){ return !!sessionStorage.getItem(ADMIN_KEY); }
+
+  function renderComments(container, slug, comments){
+    container.innerHTML = '';
+    if (!comments.length){
+      container.innerHTML = '<p class="comment-empty">No comments yet -- be the first.</p>';
+      return;
+    }
+    comments.forEach(function(c){
+      var item = document.createElement('div');
+      item.className = 'comment-item';
+      var delBtn = isAdmin() ? '<button type="button" class="c-delete" data-id="'+esc(c.id)+'">delete</button>' : '';
+      item.innerHTML =
+        '<div class="c-head"><span class="c-name">'+esc(c.name)+'</span>'+
+        '<span class="c-time">'+esc(fmtTime(c.created_at))+'</span>'+delBtn+'</div>'+
+        '<p class="c-body">'+esc(c.body)+'</p>';
+      container.appendChild(item);
+    });
+    if (isAdmin()){
+      container.querySelectorAll('.c-delete').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          deleteComment(btn.getAttribute('data-id'), container, slug);
+        });
+      });
+    }
+  }
+
+  function loadComments(container, slug){
+    var url = SUPABASE_URL + '/rest/v1/comments?post_slug=eq.' + encodeURIComponent(slug) +
+              '&select=id,name,body,created_at&order=created_at.asc';
+    fetch(url, { headers: { apikey: ANON_KEY, Authorization: 'Bearer ' + ANON_KEY } })
+      .then(function(r){ return r.json(); })
+      .then(function(data){ renderComments(container, slug, Array.isArray(data) ? data : []); })
+      .catch(function(){ container.innerHTML = '<p class="comment-empty">Comments are unavailable right now.</p>'; });
+  }
+
+  function deleteComment(id, container, slug){
+    var secret = sessionStorage.getItem(ADMIN_KEY) || '';
+    fetch(FN_BASE + '/delete-comment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-admin-secret': secret },
+      body: JSON.stringify({ id: id })
+    }).then(function(r){ return r.json(); }).then(function(res){
+      if (res.ok) { loadComments(container, slug); }
+      else { alert('Could not delete: ' + (res.error || 'unknown error')); }
+    }).catch(function(){ alert('Could not reach the comment service.'); });
+  }
+
+  function wirePost(details){
+    var slug = details.getAttribute('data-post-slug');
+    var list = details.querySelector('[data-comment-list]');
+    var form = details.querySelector('[data-comment-form]');
+    if (!slug || !list || !form) return;
+
+    loadComments(list, slug);
+
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var name = form.elements.name.value.trim();
+      var text = form.elements.text.value.trim();
+      var website = form.elements.website.value;
+      var msg = form.querySelector('.msg');
+      var btn = form.querySelector('button[type=submit]');
+      if (!name || !text){ return; }
+      btn.disabled = true;
+      msg.textContent = '';
+      msg.className = 'msg';
+      fetch(FN_BASE + '/post-comment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ post_slug: slug, name: name, text: text, website: website })
+      }).then(function(r){ return r.json(); }).then(function(res){
+        btn.disabled = false;
+        if (res.ok){
+          form.reset();
+          msg.textContent = 'Posted.';
+          msg.className = 'msg ok';
+          loadComments(list, slug);
+        } else {
+          msg.textContent = res.error || 'Could not post your comment.';
+        }
+      }).catch(function(){
+        btn.disabled = false;
+        msg.textContent = 'Could not reach the comment service.';
+      });
+    });
+  }
+
+  document.querySelectorAll('.post-card[data-post-slug]').forEach(wirePost);
+
+  var adminToggle = document.getElementById('commentAdminToggle');
+  if (adminToggle){
+    adminToggle.addEventListener('click', function(){
+      if (isAdmin()){
+        sessionStorage.removeItem(ADMIN_KEY);
+        alert('Admin mode off.');
+      } else {
+        var pw = prompt('Admin password:');
+        if (pw){ sessionStorage.setItem(ADMIN_KEY, pw); alert('Admin mode on for this session -- delete links will now show under comments.'); }
+      }
+      document.querySelectorAll('.post-card[data-post-slug]').forEach(function(details){
+        var slug = details.getAttribute('data-post-slug');
+        var list = details.querySelector('[data-comment-list]');
+        if (slug && list) loadComments(list, slug);
+      });
+    });
+  }
 })();
 </script>
 </body>
