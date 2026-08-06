@@ -326,6 +326,11 @@
      meant to carry both, per Noal 2026-07-31. inline-flex + min-height only so the tap
      target clears 44px; it inherits .foot .meta a colors/underline. */
   .foot .meta a.enterprise-link { display: inline-flex; align-items: center; min-height: 44px; }
+  /* Openhouse (FSBO) footer link -- same tap-target treatment as the LIME Enterprise
+     link above it. Added 2026-08-05 per Noal, current-session authorized. Note:
+     openhouse-fsbo.pplx.app is Organization-visibility only as of this commit --
+     Noal expects that flipped to public separately; this link will 401 until then. */
+  .foot .meta a.openhouse-link { display: inline-flex; align-items: center; min-height: 44px; }
   .foot .copy { font-size: var(--text-xs); color: var(--color-text-faint); margin-top: var(--space-6); }
   /* Canonical content width (720px) — matches .rosy-way-img. Applied to the new Fire
      Protocol message cell, the Rosy Way text cell, and the top info block so their
@@ -410,6 +415,7 @@
         <p class="copy" data-i18n="copy">© 2026 Lime Signalworks LLC. Loss prevention first. Always.</p>
         <p class="meta"><a href="https://leadership.limesignalworks.com" rel="noopener noreferrer" data-sibling-site="library">LIME Leadership</a></p>
         <p class="meta"><a class="enterprise-link" href="https://lime-enterprise-web.vercel.app/" target="_blank" rel="noopener">LIME Enterprise</a></p>
+        <p class="meta"><a class="openhouse-link" href="https://openhouse-fsbo.pplx.app/" target="_blank" rel="noopener">Openhouse</a></p>
       </div>
       <div>
         <p class="meta">
