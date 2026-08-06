@@ -357,13 +357,17 @@
   /* --- Companion widget CSS restored 2026-08-05, ported from gated nrini49/lime-web fix.
      overflow:hidden included from the start -- .cw-glow overflowed the viewport at desktop
      widths on the sibling repo's first submission; same fix applied here up front. --- */
-  .companion-widget { padding: var(--space-8) 0 0; overflow: hidden; }
-  /* Per Noal 2026-07-19 ~7:50pm: widget group matches the bottom-of-page
-     image's width exactly, at every screen size -- same technique as
-     .bridge-scene-anchor-width (padding-based, not a fixed max-width),
-     so the two stay in sync instead of drifting apart on resize. */
-  .companion-widget .wrap { padding: 0 150px 0 var(--space-6); }
-  @media (max-width: 900px) { .companion-widget .wrap { padding: 0 var(--space-6); } }
+  /* 2026-08-05: dropped the old asymmetric 150px right-padding override --
+     it made this section visibly narrower and off-center than every other
+     section on the page, which use the shared .wrap (1080px max-width,
+     symmetric padding) directly. This section now matches that convention
+     instead of a one-off width rule, per Noal's direct feedback that it
+     looked disconnected from the rest of the site. Also replaced the
+     45vh/340px .bottom-breathing-room spacer that used to sit right above
+     this section (the only place that class was ever used on the page) with
+     ordinary section padding, matching the gap used elsewhere (e.g.
+     .harbor-now's space-16/space-20). */
+  .companion-widget { padding: var(--space-16) 0 var(--space-16); overflow: hidden; }
   .companion-widget .wrap { display: flex; flex-direction: column; align-items: center; gap: var(--space-3); text-align: center; }
   /* Color -> green, explicit normal weight, per Noal 2026-07-21 ~2:43am
      ("not bold, but green"). Base h1/h2/h3 rule already sets font-weight:
@@ -705,8 +709,6 @@
       </div>
     </div>
   </section>
-
-  <div class="bottom-breathing-room" aria-hidden="true" style="height:45vh;min-height:340px;"></div>
 
   <!-- Companion Widget -- front-page blog teaser, per Noal 2026-07-19:
        circular AI-generated portrait, three thin gold rings turning on a
