@@ -156,9 +156,9 @@ def main():
     hero_pattern = re.compile(r"var LOCKED_KEEPER = \{ file: '[^']*', name: '[^']*' \};")
     hero_replacement = f"var LOCKED_KEEPER = {{ file: '{hero_keeper['file']}', name: '{hero_keeper['name']}' }};"
     if not hero_pattern.search(text):
-        print("WARNING: LOCKED_KEEPER line not found -- Part A hero portrait not updated.", file=sys.stderr)
-    else:
-        text = hero_pattern.sub(hero_replacement, text, count=1)
+        print("ERROR: LOCKED_KEEPER line not found. Aborting -- no changes made.", file=sys.stderr)
+        sys.exit(1)
+    text = hero_pattern.sub(hero_replacement, text, count=1)
 
     INDEX_HTML.write_text(text, encoding="utf-8")
 
