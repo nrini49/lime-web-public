@@ -97,11 +97,12 @@
   .hdr-tools { display: flex; align-items: center; gap: 0; }
   .icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: var(--radius-full); border: 1px solid var(--color-border); color: var(--color-text-muted); background: var(--color-surface); cursor: pointer; }
   .icon-btn:hover { color: var(--color-text); border-color: var(--color-primary); }
-  /* Blog nav link restored 2026-08-05 -- same restoration already gated and
-     pushed to nrini49/lime-web (PR #21). This repo's history never carried
-     the link or the companion widget at all, so there's nothing to diff
-     against here; applying the equivalent fix directly. Styled to match
-     the current .icon-btn sizing. */
+  /* Blog nav link restored 2026-08-05 -- silently dropped from the header
+     by an unrelated section-reorder commit on 2026-07-23 (a6d307fa). The
+     blog page itself was never removed and stayed live the whole time;
+     only this link vanished. Styled to match the current .icon-btn sizing
+     (38px height) instead of the old pre-2026-07-23 pill typography, since
+     the header's design language has moved on since then. */
   .blog-nav-link { display: inline-flex; align-items: center; justify-content: center; height: 38px; padding: 0 var(--space-4); border-radius: var(--radius-full); border: 1px solid var(--color-border); color: var(--color-text-muted); background: var(--color-surface); font-size: var(--text-sm); font-weight: 600; text-decoration: none; white-space: nowrap; }
   .blog-nav-link:hover { color: var(--color-text); border-color: var(--color-primary); }
   /* Breathing room around the wordmark (~2 characters, 2ch each side) and before the tools cluster.
@@ -169,22 +170,14 @@
   .harbor-head p { color: var(--color-text-muted); margin: 0 auto; }
   .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
   @media (max-width: 860px) { .grid { grid-template-columns: repeat(2, 1fr); } }
-  /* When the Wicket Gate's 9 cards fall into the 2-column band (561-860px), 9 does not
-     divide evenly by 2, so the 9th card lands alone in a final row, flush-left, with an
-     empty second column beside it. :last-child:nth-child(odd) matches only when the card
-     count is odd (i.e. only when a card would otherwise be stranded alone) -- if the total
-     card count is ever even this rule simply never matches, so it stays correct without
-     hardcoding "card 9". Spans both tracks, then caps its own width back to one column's
-     share and centers it, so the lone card reads as centered instead of stuck in a void.
-     Scoped to the 561-860px band only; untouched at 3-column (>860px) and 1-column
-     (<=560px) widths. Per Noal 2026-07-31. */
-  @media (min-width: 561px) and (max-width: 860px) { .grid > .card:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: calc(50% - var(--space-5) / 2); margin-left: auto; margin-right: auto; } }
   @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
   .card { display: block; text-decoration: none; color: var(--color-text); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); position: relative; transition: transform var(--transition-interactive), border-color var(--transition-interactive), box-shadow var(--transition-interactive); }
   .keeper-name { text-align: center; font-size: var(--text-sm); color: var(--color-text-muted); margin: -2px 0 var(--space-3); letter-spacing: 0.02em; transition: opacity 0.3s; }
   .sage-library-link { display: inline-block; margin-top: var(--space-5); font-size: var(--text-sm); color: var(--color-primary); text-decoration: none; }
   .sage-library-link:hover { text-decoration: underline; }
-  .fp-sub { color: var(--color-text-muted); margin-bottom: var(--space-6); }
+  /* Section intro leads: center the body block on the page/header axis, matching
+     the other centered section intros (.harbor-head p, .hero .lede). */
+  .fp-sub, .doors-sub { color: var(--color-text-muted); margin-bottom: var(--space-6); text-align: center; margin-inline: auto; }
   .fp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); align-items: start; }
   @media (max-width: 860px) { .fp-grid { grid-template-columns: 1fr; } }
   .fp-cell { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; }
@@ -193,12 +186,7 @@
   .fp-cell .chev { margin-left: auto; flex-shrink: 0; color: var(--color-text-faint); transition: transform var(--transition-interactive); }
   .fp-cell[open] summary .chev { transform: rotate(180deg); }
   .fp-num { font-family: var(--font-display); color: var(--color-primary); font-size: var(--text-lg); line-height: 1; flex-shrink: 0; }
-  /* Reserve a fixed 2-line height on every fp-title so all three Fire Protocol cells in
-     .fp-grid render the same closed-state height, whether their title text wraps to one
-     line or two. Scoped to .fp-title only -- does not touch .fp-grid's align-items or
-     any other cell/grid on the page. Fixes: bottom (3rd) cell was taller than the other
-     two because its longer title wrapped to a second line. Per Noal 2026-07-31. */
-  .fp-title { font-weight: 600; display: flex; align-items: center; min-height: calc(2 * 1.6em); }
+  .fp-title { font-weight: 600; }
   .fp-teaser { padding: 0 var(--space-5) var(--space-4); margin: 0; color: var(--color-text-muted); font-size: var(--text-sm); }
   .fp-cell[open] .fp-teaser { display: none; }
   .fp-body { padding: 0 var(--space-5) var(--space-5); margin: 0; color: var(--color-text); font-size: var(--text-sm); line-height: 1.6; display: none; }
@@ -321,14 +309,14 @@
   .foot .meta { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; }
   .foot .meta a { color: var(--color-text-muted); text-decoration: none; border-bottom: 1px solid var(--color-border); }
   .foot .meta a:hover { color: var(--color-primary); border-color: var(--color-primary); }
-  /* Restores the reciprocal LIME Enterprise link (Site 1 -> Site 2) that the 2026-07-31
-     Rosy Way sync accidentally dropped while adding the LIME Leadership line -- Site 1 is
-     meant to carry both, per Noal 2026-07-31. inline-flex + min-height only so the tap
-     target clears 44px; it inherits .foot .meta a colors/underline. */
+  /* Restores the reciprocal LIME Enterprise link (Site 1 -> Site 2) that had been dropped
+     from this working copy while lime-web-public carried it live. Reconciled 2026-08-07
+     per Noal, current-session authorized. inline-flex + min-height only so the tap
+     target clears 44px; inherits .foot .meta a colors/underline. */
   .foot .meta a.enterprise-link { display: inline-flex; align-items: center; min-height: 44px; }
   /* Openhouse (FSBO) footer link -- same tap-target treatment as the LIME Enterprise
-     link above it. Added 2026-08-05 per Noal, current-session authorized. Note:
-     openhouse-fsbo.pplx.app is Organization-visibility only as of this commit --
+     link above it. Ported from lime-web-public 2026-08-07, current-session authorized.
+     Note: openhouse-fsbo.pplx.app is Organization-visibility only as of this commit --
      Noal expects that flipped to public separately; this link will 401 until then. */
   .foot .meta a.openhouse-link { display: inline-flex; align-items: center; min-height: 44px; }
   .foot .copy { font-size: var(--text-xs); color: var(--color-text-faint); margin-top: var(--space-6); }
@@ -430,7 +418,7 @@
 
 
   <!-- Single rotating Keeper portrait + promise text — collapses as one card -->
-  <section id="harbor-now" class="harbor-now" data-harbor-asof="2026-08-13">
+  <section id="harbor-now" class="harbor-now" data-harbor-asof="2026-08-25">
     <div class="wrap">
       <!-- Mockup: Today's harbor + Past Harbor Nows grouped into one cell. Added per
            Noal 2026-07-25, mockup pass — not final until confirmed. -->
@@ -441,8 +429,8 @@
           <div class="hn-report">
             <p class="hn-stale-note" data-i18n="hn_stale" hidden>Showing the most recent completed harbor read — live market data may be newer.</p>
             <p class="hn-asof">As of last close</p>
-            <p class="hn-weather">Market weather: <strong>bullish</strong>. Posture: <strong>constructive, measured, no chase</strong>.</p>
-            <div class="hn-body"><p>Snapshot: SPY at $777.88 (+0.70%), DIA at $537.91 (+0.14%), QQQ at $732.07 (+1.16%), and IWM at $303.50 (+0.26%). QQQ led the four, SPY followed, and IWM and DIA gained more modestly. The 52-week highs are $779.37 for SPY, $748.65 for QQQ, $546.75 for DIA, and $305.05 for IWM. The VIX is 14.63, up 0.55%, so volatility edged higher even as the overall US market read stayed bullish. Recognizable earnings names on today's schedule included Applied Materials, Tapestry, Birkenstock, JD.com, and YETI; Nu Holdings remained upcoming after close, and Credicorp is scheduled tomorrow.</p><p><a href="harbor-now/archive/2026-08-13.html">Read the full Harbor Now →</a></p></div>
+            <p class="hn-weather">Market weather: <strong>cautiously risk-on</strong>. Posture: <strong>let breadth confirm, no chase</strong>.</p>
+            <div class="hn-body"><p>Snapshot: SPY at $765.91 (+0.32%), QQQ at $710.72 (+0.62%), DIA at $535.27 (+0.30%), and IWM at $299.28 (+0.44%). QQQ led; IWM followed, and all four funds closed higher. The 52-week highs are $779.37 for SPY, $748.65 for QQQ, $546.75 for DIA, and $305.18 for IWM. The VIX is 15.46, down 2.46% (-0.39 points), so volatility eased. Intuit, Zoom, and DICK'S Sporting Goods were marked reported today; NVIDIA, CrowdStrike, and Salesforce are scheduled tomorrow.</p><p><a href="harbor-now/archive/2026-08-25.html">Read the full Harbor Now →</a></p></div>
           </div>
         </div>
       </details>
@@ -450,6 +438,14 @@
         <summary class="sec-bar"><h3 data-i18n="hn_archive_h">Past Harbor Nows</h3><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
         <div class="sec-body">
           <ul class="hn-list">
+            <li><a href="harbor-now/archive/2026-08-25.html"><span class="date">Aug 25, 2026</span><span class="title">QQQ leads a broad green tape — volatility eases</span><span class="arr">&rarr;</span></a></li>
+            <li><a href="harbor-now/archive/2026-08-24.html"><span class="date">Aug 24, 2026</span><span class="title">DIA holds a split tape — QQQ and IWM lag as volatility rises</span><span class="arr">&rarr;</span></a></li>
+            <li><a href="harbor-now/archive/2026-08-21.html"><span class="date">Aug 21, 2026</span><span class="title">Broad green tape — DIA and IWM lead as volatility eases</span><span class="arr">&rarr;</span></a></li>
+            <li><a href="harbor-now/archive/2026-08-20.html"><span class="date">Aug 20, 2026</span><span class="title">Broad red tape — IWM and DIA lead lower as volatility rises</span><span class="arr">&rarr;</span></a></li>
+            <li><a href="harbor-now/archive/2026-08-19.html"><span class="date">Aug 19, 2026</span><span class="title">Small caps lead a mixed green tape — tech lags</span><span class="arr">&rarr;</span></a></li>
+            <li><a href="harbor-now/archive/2026-08-18.html"><span class="date">Aug 18, 2026</span><span class="title">Broad red tape — DIA holds best as tech and small caps lag</span><span class="arr">&rarr;</span></a></li>
+            <li><a href="harbor-now/archive/2026-08-17.html"><span class="date">Aug 17, 2026</span><span class="title">Broad red tape — volatility rises as QQQ holds up best</span><span class="arr">&rarr;</span></a></li>
+            <li><a href="harbor-now/archive/2026-08-14.html"><span class="date">Aug 14, 2026</span><span class="title">IWM stands alone — mixed tape, volatility eases</span><span class="arr">&rarr;</span></a></li>
             <li><a href="harbor-now/archive/2026-08-13.html"><span class="date">Aug 13, 2026</span><span class="title">QQQ leads a broad green tape — volatility ticks higher</span><span class="arr">&rarr;</span></a></li>
             <li><a href="harbor-now/archive/2026-08-12.html"><span class="date">Aug 12, 2026</span><span class="title">QQQ and small caps lead an upbeat close — volatility eases</span><span class="arr">&rarr;</span></a></li>
             <li><a href="harbor-now/archive/2026-08-11.html"><span class="date">Aug 11, 2026</span><span class="title">Small caps hold up while the tape stays uncertain</span><span class="arr">&rarr;</span></a></li>
@@ -481,15 +477,15 @@
         <div class="sec-body">
           <p class="doors-sub" data-i18n="doors_sub">Nine doors. Start wherever fits you today.</p>
           <div class="grid">
-        <a class="card" href="https://limesignalworks.pplx.app" target="_blank" rel="noopener"><div class="num">01</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Peter" style="background-image:url('assets/keepers/01_peter.webp')"></div><div class="keeper-name" data-slot="0">Peter</div><h3 data-i18n="d_gate_t">System Access</h3><p data-i18n="d_gate_d">Authorized? Unlock your personalized Rosie sandbox and Fire Spirit materials here.</p><p class="card-fire">Stood at the gate. Denied. Returned. Held the position anyway.</p></a>
-        <a class="card" href="seed/index.html"><div class="num">02</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Solomon" style="background-image:url('assets/keepers/02_solomon.webp')"></div><div class="keeper-name" data-slot="1">Solomon</div><h3 data-i18n="d_seed_t">What LIME Is</h3><p data-i18n="d_seed_d">LIME in plain language — the problem it solves and how it works.</p><p class="card-fire">Asked for wisdom when he could have asked for anything else.</p></a>
-        <a class="card" href="invite/index.html"><div class="num">03</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Mary Magdalene" style="background-image:url('assets/keepers/03_mary_magdalene.webp')"></div><div class="keeper-name" data-slot="2">Mary Magdalene</div><h3 data-i18n="d_invite_t">Bring Someone</h3><p data-i18n="d_invite_d">Bring someone you care about to the harbor. A personal welcome.</p><p class="card-fire">First to the tomb. First to carry the news. Carried the signal when no one else did.</p></a>
-        <a class="card" href="fire-spirit/index.html"><div class="num">04</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Mary of Bethany" style="background-image:url('assets/keepers/04_mary_of_bethany.webp')"></div><div class="keeper-name" data-slot="3">Mary of Bethany</div><h3 data-i18n="d_fire_t">Inner Rail</h3><p data-i18n="d_fire_d">The Fire Spirit — inner work that turns posture into disciplined action.</p><p class="card-fire">Chose the one thing. Sat at the feet when the room said get up and work.</p></a>
-        <div class="card"><div class="num">05</div><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Daniel" style="background-image:url('assets/keepers/05_daniel.webp')"></div><div class="keeper-name" data-slot="4">Daniel</div><h3 data-i18n="d_dash_t">Situation Report</h3><p data-i18n="d_dash_d">Today's market weather — regime, fidelity, condition. Read before you act.</p><p class="card-fire">Read the room correctly every time. Never once adjusted the report to please the audience.</p></div>
-        <a class="card" href="offer/index.html"><div class="num">06</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Esther" style="background-image:url('assets/keepers/06_esther.webp')"></div><div class="keeper-name" data-slot="5">Esther</div><h3 data-i18n="d_sub_t">The Offer</h3><p data-i18n="d_sub_d">What you get, what it costs, how to join. Loss-prevention-first AI assistance.</p><p class="card-fire">Held the position until the right moment. Did not move before the setup was clear.</p></a>
-        <a class="card" href="https://spy-pipeline-rosie.pplx.app" target="_blank" rel="noopener"><div class="num">07</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Ruth" style="background-image:url('assets/keepers/07_ruth.webp')"></div><div class="keeper-name" data-slot="6">Ruth</div><h3 data-i18n="d_spy_t">SPY Harbor Watch</h3><p data-i18n="d_spy_d">Live SPY tracking since Rosie's first trade — price, alerts, and the 90-day dashboard.</p><p class="card-fire">Stayed when leaving was the easier, more reasonable choice.</p></a>
-        <a class="card" href="laugh-lounge/index.html"><div class="num">08</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — David" style="background-image:url('assets/keepers/08_david.webp')"></div><div class="keeper-name" data-slot="7">David</div><h3 data-i18n="d_laugh_t">The Laugh Lounge</h3><p data-i18n="d_laugh_d">A lighter door. Harbor and lighthouse humor, and a library you can browse at your own pace.</p><p class="card-fire">Wrote songs in caves. Praised in the dark before the light arrived. Laughter in that frequency is not a distraction — it is praise.</p></a>
-        <a class="card" href="metaphor-gate/index.html"><div class="num">09</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Adam" style="background-image:url('assets/keepers/09_adam.webp')"></div><div class="keeper-name" data-slot="8">Adam</div><h3>The Metaphor Gate</h3><p>The teaching layer. Learn to hear what is actually being said — in markets, in leadership, in scripture.</p><p class="card-fire">Adam's fire was carrying a promise forward without any proof it would hold. That is the same posture this teaching layer asks of you — learn to trust the pattern before you can see how it resolves.</p></a>
+        <a class="card" href="https://limesignalworks.pplx.app" target="_blank" rel="noopener"><div class="num">01</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — David" style="background-image:url('assets/keepers/08_david.webp')"></div><div class="keeper-name" data-slot="0">David</div><h3>System Access</h3><p>Authorized? Unlock your personalized Rosie sandbox and Fire Spirit materials here.</p><p class="card-fire">David's fire burned in caves, in grief, in battle, and in celebration equally. He wrote songs in the dark before the light arrived. Laughter held in that same frequency is not a distraction — it is a form of praise.</p></a>
+        <a class="card" href="seed/index.html"><div class="num">02</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Adam" style="background-image:url('assets/keepers/09_adam.webp')"></div><div class="keeper-name" data-slot="1">Adam</div><h3>What LIME Is</h3><p>LIME in plain language — the problem it solves and how it works.</p><p class="card-fire">Adam's fire was carrying a promise forward without any proof it would hold. That is the same posture this teaching layer asks of you — learn to trust the pattern before you can see how it resolves.</p></a>
+        <a class="card" href="invite/index.html"><div class="num">03</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Mary of Bethany" style="background-image:url('assets/keepers/04_mary_of_bethany.webp')"></div><div class="keeper-name" data-slot="2">Mary of Bethany</div><h3>Bring Someone</h3><p>Bring someone you care about to the harbor. A personal welcome.</p><p class="card-fire">Mary of Bethany's fire was stillness chosen on purpose — sitting at the feet when the room demanded she get up. That deliberate quiet is the whole inner rail.</p></a>
+        <a class="card" href="fire-spirit/index.html"><div class="num">04</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Ruth" style="background-image:url('assets/keepers/07_ruth.webp')"></div><div class="keeper-name" data-slot="3">Ruth</div><h3>Inner Rail</h3><p>The Fire Spirit — inner work that turns posture into disciplined action.</p><p class="card-fire">Ruth's fire was loyal presence — she stayed on the field when leaving was the easier, more reasonable choice. This watch runs the same way: it does not leave the position.</p></a>
+        <div class="card"><div class="num">05</div><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Mary Magdalene" style="background-image:url('assets/keepers/03_mary_magdalene.webp')"></div><div class="keeper-name" data-slot="4">Mary Magdalene</div><h3>Situation Report</h3><p>Today's market weather — regime, fidelity, condition. Read before you act.</p><p class="card-fire">Mary Magdalene carried the signal before anyone else believed there was one to carry. Her fire is the courage to pass the word before the world confirms it.</p></div>
+        <a class="card" href="offer/index.html"><div class="num">06</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Solomon" style="background-image:url('assets/keepers/02_solomon.webp')"></div><div class="keeper-name" data-slot="5">Solomon</div><h3>The Offer</h3><p>What you get, what it costs, how to join. Loss-prevention-first AI assistance.</p><p class="card-fire">Solomon's fire was the audacity to ask for wisdom when he could have asked for anything else. That single ask is the spirit behind every honest explanation of what this system is built to do.</p></a>
+        <a class="card" href="https://spy-pipeline-rosie.pplx.app" target="_blank" rel="noopener"><div class="num">07</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Daniel" style="background-image:url('assets/keepers/05_daniel.webp')"></div><div class="keeper-name" data-slot="6">Daniel</div><h3>SPY Harbor Watch</h3><p>Live SPY tracking since Rosie's first trade — price, alerts, and the 90-day dashboard.</p><p class="card-fire">Daniel's fire was the refusal to adjust the report to please the room. He read what was there and said it plainly. That is the only acceptable posture for a situation report.</p></a>
+        <a class="card" href="laugh-lounge/index.html"><div class="num">08</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Esther" style="background-image:url('assets/keepers/06_esther.webp')"></div><div class="keeper-name" data-slot="7">Esther</div><h3>The Laugh Lounge</h3><p>A lighter door. Harbor and lighthouse humor, and a library you can browse at your own pace.</p><p class="card-fire">Esther's fire was timing — she held the position until the room was ready, then moved without hesitation. The offer stands the same way: not a pitch, a door opened at the right moment.</p></a>
+        <a class="card" href="metaphor-gate/index.html"><div class="num">09</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — Peter" style="background-image:url('assets/keepers/01_peter.webp')"></div><div class="keeper-name" data-slot="8">Peter</div><h3>The Metaphor Gate</h3><p>The teaching layer. Learn to hear what is actually being said — in markets, in leadership, in scripture.</p><p class="card-fire">Peter's fire was forged in failure. He carried the flame back from his worst moment and held the gate anyway — that is the spirit that opens this door.</p></a>
       </div>
       <a class="sage-library-link" href="fire-spirit/index.html#song">Explore the full Sage Missions Library →</a>
         </div>
@@ -622,6 +618,8 @@
       </div>
     </div>
   </section>
+
+  <div class="bottom-breathing-room" aria-hidden="true" style="height:45vh;min-height:340px;"></div>
 
 
 </main>
@@ -923,7 +921,7 @@
   if (!portrait) return;
   // Updated once per calendar day by rotate_keepers.py. Keep this exact
   // assignment shape: the automation treats it as a protected contract.
-  var LOCKED_KEEPER = { file: '01_peter.webp', name: 'Peter' };
+  var LOCKED_KEEPER = { file: '09_adam.webp', name: 'Adam' };
   function setPortrait(k) {
     portrait.style.backgroundImage = "url('assets/keepers/" + k.file + "')";
     portrait.setAttribute('aria-label', 'Keeper portrait \u2014 ' + k.name);
