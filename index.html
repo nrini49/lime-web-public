@@ -155,14 +155,12 @@
   .hdr-cta:hover { filter: brightness(1.08); }
   @media (max-width: 480px) { .hdr-cta { display: none; } }
   @media (max-width: 540px) { .keeper-hero-inner { flex-direction: column; } .keeper-hero-portrait { width: 100%; height: 220px; flex: none; } }
-  .promise { padding: var(--space-2) 0 var(--space-16); }
-  .promise-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: clamp(var(--space-8), 5vw, var(--space-12)); box-shadow: var(--shadow-md); position: relative; overflow: hidden; }
-  .promise-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: linear-gradient(in oklab, var(--color-primary), var(--color-beam)); }
-  .promise h2 { font-size: var(--text-xl); margin-bottom: var(--space-6); color: var(--color-text); }
-  .promise p { font-size: var(--text-lg); color: var(--color-text); margin-bottom: var(--space-5); }
-  .promise p:last-child { margin-bottom: 0; }
-  .promise .muted { color: var(--color-text-muted); }
-  .promise strong { color: var(--color-primary); font-weight: 600; }
+  /* .promise-card box chrome (border/background/shadow/accent-bar) removed per Noal,
+     homepage-unbox-sections; .promise-plain keeps only plain flowing paragraphs. */
+  .promise-plain p { font-size: var(--text-lg); color: var(--color-text); margin-bottom: var(--space-5); }
+  .promise-plain p:last-child { margin-bottom: 0; }
+  .promise-plain .muted { color: var(--color-text-muted); }
+  .promise-plain strong { color: var(--color-primary); font-weight: 600; }
 
   .harbor { padding: var(--space-8) 0 var(--space-10); }
   .harbor-head { text-align: center; margin-bottom: var(--space-12); }
@@ -224,11 +222,12 @@
   .harbor-now { padding: var(--space-16) 0 var(--space-20); }
   .harbor-now .kicker { text-align: center; margin-bottom: var(--space-4); }
   .harbor-now h2 { text-align: center; font-size: var(--text-2xl); margin-bottom: var(--space-10); }
-  .hn-report { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: clamp(var(--space-6),4vw,var(--space-10)); box-shadow: var(--shadow-md); max-width: 640px; margin: 0 auto var(--space-12); position: relative; overflow: hidden; }
-  .hn-report::before { content:""; position:absolute; inset:0 auto 0 0; width:3px; background:linear-gradient(in oklab,var(--color-primary),var(--color-beam,#e8b659)); }
+  /* .hn-report card chrome (border/background/shadow/accent-bar) removed per Noal,
+     homepage-unbox-sections; .hn-report-plain keeps only the plain-flow layout. */
+  .hn-report-plain { max-width: 640px; margin: 0 auto var(--space-12); }
   .hn-weather { font-size: var(--text-lg); color: var(--color-text); margin-bottom: var(--space-4); }
   .hn-weather strong { color: var(--color-primary); font-weight: 600; }
-  .hn-report p:last-child { color: var(--color-text-muted); margin-bottom: 0; }
+  .hn-report-plain p:last-child { color: var(--color-text-muted); margin-bottom: 0; }
   .hn-asof { font-size: var(--text-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); font-weight: 600; margin-bottom: var(--space-4); }
   .hn-asof time { text-transform: none; letter-spacing: normal; }
   .hn-stale-note { font-size: var(--text-sm); color: var(--color-text-muted); font-style: italic; margin-bottom: var(--space-3); }
@@ -248,57 +247,20 @@
   .hn-list a:hover .arr { color: var(--color-primary); transform: translateX(3px); }
   .hn-all { display: inline-block; font-size: var(--text-sm); font-weight: 600; color: var(--color-primary); text-decoration: none; }
   .hn-all:hover { color: var(--color-primary-hover); }
-  details.collapsible > summary { list-style: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: var(--space-4); padding: var(--space-4) 0; margin-bottom: 0; }
-  details.collapsible > summary::-webkit-details-marker { display: none; }
-  /* Uniform heading size across every homepage section header bar — locked per Noal 2026-07-23.
-     All .sec-bar h2/h3 render at the same size regardless of tag. Do not vary without Noal
-     confirming directly in a session that can see this comment. */
-  details.collapsible > summary h2, details.collapsible > summary h3,
-  .sec-bar h2, .sec-bar h3 { font-size: var(--text-xl); margin: 0; text-align: center; font-family: var(--font-display); font-weight: 400; letter-spacing: -0.01em; text-transform: none; color: var(--color-text); }
-  /* Applied to every section's .sec-bar so every heading gets an equal-size
-     glow ring — previously scoped to two headings via an inline-block h2,
-     which sized each ring to its own text and made widths uneven. A first
-     pass (2026-07-29) stretched this to the full .wrap width, but
-     conic-gradient's angle is measured against the box's real aspect ratio:
-     on a ~1080x50px bar almost the whole sweep lands on the two short
-     (left/right) edges, so the glow read as a sloppy blob in one corner
-     instead of an even ring. Fixed width here keeps every ring the same
-     size (still uniform, still equal) at a proportion the rotating conic
-     glow actually renders cleanly at — corrected same day per Noal. */
-  @property --lime-glow-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
-  .sec-bar.heading-box-glow { position: relative; border-radius: var(--radius-md); width: min(640px, 100%); margin: 0 auto; }
-  .sec-bar.heading-box-glow::before { content: ""; position: absolute; z-index: -1; inset: -2px; padding: 2px; border-radius: inherit; background: conic-gradient(from var(--lime-glow-angle), var(--color-glow-blue), transparent 25%, transparent 75%, var(--color-glow-blue)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; animation: heading-glow-spin 3.5s linear infinite; }
-  @keyframes heading-glow-spin { to { --lime-glow-angle: 360deg; } }
-  @media (prefers-reduced-motion: reduce) { .sec-bar.heading-box-glow::before { animation: none; } }
-  /* Reusable rotating-glow cell wrapper for grouped content blocks — mockup per Noal 2026-07-25.
-     Reuses the --lime-glow-angle property and heading-glow-spin keyframes defined above. */
-  .lime-glow-cell { position: relative; border-radius: var(--radius-lg); padding: var(--space-6); background: var(--color-bg); }
-  .lime-glow-cell::before { content: ""; position: absolute; z-index: -1; inset: -2px; padding: 2px; border-radius: inherit; background: conic-gradient(from var(--lime-glow-angle), var(--color-glow-blue), transparent 25%, transparent 75%, var(--color-glow-blue)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; animation: heading-glow-spin 3.5s linear infinite; }
-  @media (prefers-reduced-motion: reduce) { .lime-glow-cell::before { animation: none; } }
-  /* Gap between cells so they read as distinct boxes, not one merged shape. Safe on all
-     instances now: the CTA cells and Rosy Way image that used to need a zero-gap bottom
-     are physically inside the .keeper-hero cell itself, not sitting after it.
-     Bumped 40px -> 48px per Noal 2026-07-29 (the One Promise -> Rosy Way gap read as
-     too tight against that cell's visual weight); applies uniformly to every cell so
-     every gap in the stack stays the same thickness, not just that one. Also now
-     applied above the very first cell (see .lime-info rule below) so the top of the
-     page gets the same gap instead of sitting flush under the header. */
-  .lime-glow-cell { margin-bottom: var(--space-12); }
-  /* .lime-info is the one section where .lime-glow-cell IS the collapsible body
-     itself (nested inside <details>, not a wrapper around it like every other
-     section) -- so its margin-bottom disappears entirely while collapsed, since
-     the browser doesn't render hidden <details> content at all. That left zero
-     gap between the masthead and Today's Harbor once collapsed-by-default
-     shipped. Putting the gap on .lime-info (the section, always rendered
-     regardless of open/closed state) instead fixes it in both states. Per Noal
-     2026-07-29, follow-up spacing report. */
-  .lime-info { padding-top: var(--space-12) !important; margin-bottom: var(--space-12) !important; }
-  details.collapsible > summary .chev { color: var(--color-text-muted); transition: transform var(--transition-interactive); flex: 0 0 auto; }
-  details.collapsible[open] > summary .chev { transform: rotate(180deg); }
-  details.collapsible > summary:hover h2, details.collapsible > summary:hover h3, details.collapsible > summary:hover .chev { color: var(--color-primary); }
-  details.collapsible > .sec-body { padding-top: var(--space-8); animation: secOpen .25s ease; }
-  @keyframes secOpen { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
-  @media (prefers-reduced-motion: reduce) { details.collapsible > .sec-body { animation: none; } details.collapsible > summary .chev { transition: none; } }
+  /* Unboxed homepage sections (Noal, homepage-unbox-sections): every former
+     <details class="collapsible"><summary class="sec-bar heading-box-glow">...
+     is now a plain always-visible heading. Reuses the .harbor-head h2 look:
+     centered display type, no border/background/glow ring. .sec-bar stays as
+     the shared wrapper class so the scroll-driven ember/flame handler can still
+     find a heading to align to (it now queries .sec-bar instead of <summary>). */
+  .sec-bar { text-align: center; margin: 0 auto var(--space-8); }
+  .sec-bar h2, .sec-bar h3 { font-size: var(--text-2xl); margin: 0; text-align: center; font-family: var(--font-display); font-weight: 400; letter-spacing: -0.01em; text-transform: none; color: var(--color-text); }
+  .sec-bar h3 { font-size: var(--text-xl); }
+  /* Hairline wayfinding divider before each unboxed major section — a 1px top
+     border, not an enclosing box, so scroll rhythm stays legible without
+     reintroducing box/card chrome. Reuses --space-16/--space-20 spacing tokens. */
+  .sec-plain { border-top: 1px solid var(--color-divider); padding-top: var(--space-16); margin-top: var(--space-16); }
+  .sec-plain:first-child { border-top: none; padding-top: 0; margin-top: 0; }
   footer { padding: 0; background: var(--color-surface); }
   .foot { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-12); align-items: start; }
   @media (max-width: 700px) { .foot { grid-template-columns: 1fr; gap: var(--space-8); } }
@@ -323,30 +285,24 @@
   /* Canonical content width (720px) — matches .rosy-way-img. Applied to the new Fire
      Protocol message cell, the Rosy Way text cell, and the top info block so their
      left/right edges align across desktop and mobile. Per Noal 2026-07-24. */
-  .fp-message { max-width: 720px; margin: var(--space-8) auto 0; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: clamp(var(--space-6), 4vw, var(--space-10)); box-shadow: var(--shadow-md); position: relative; overflow: hidden; }
-  .fp-message::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: linear-gradient(in oklab, var(--color-primary), var(--color-beam)); }
-  .fp-message h2 { font-size: var(--text-xl); margin-bottom: var(--space-5); color: var(--color-text); font-family: var(--font-display); font-weight: 400; letter-spacing: -0.01em; text-align: left; }
-  .fp-message p { font-size: var(--text-base); color: var(--color-text); line-height: 1.7; margin-bottom: var(--space-5); max-width: none; }
-  .fp-message p:last-child { margin-bottom: 0; }
-  .fp-message strong { color: var(--color-primary); font-weight: 600; }
+  /* .fp-message box chrome (border/background/shadow/accent-bar) removed per Noal,
+     homepage-unbox-sections; .fp-message-plain keeps the canonical 720px reading
+     width (matches .rosy-way-img) as plain flowing paragraphs, no card. */
+  .fp-message-plain { max-width: 720px; margin: var(--space-8) auto 0; }
+  .fp-message-plain p { font-size: var(--text-base); color: var(--color-text); line-height: 1.7; margin-bottom: var(--space-5); max-width: none; }
+  .fp-message-plain p:last-child { margin-bottom: 0; }
+  .fp-message-plain strong { color: var(--color-primary); font-weight: 600; }
   #hero-details > .sec-body { max-width: 720px; margin-left: auto; margin-right: auto; }
   /* Top info block: single column at every width so its visible content/paragraph
      region spans the full 720px canonical edges (not the 1.4fr first column, which
      ended at ~392px). Base .foot 2-col grid is overridden here only. Per Noal 2026-07-24. */
   .lime-info .foot { max-width: 720px; margin-left: auto; margin-right: auto; grid-template-columns: 1fr; }
-  /* Zero inter-section gaps */
+  /* Zero inter-section gaps: vertical rhythm between the now permanently-
+     unboxed sections is governed entirely by .sec-plain's border-top +
+     padding-top/margin-top (set above), not by section-level padding, so
+     every gap in the stack stays the same thickness regardless of which
+     sections are adjacent. Per Noal, homepage-unbox-sections. */
   section { margin-top: 0 !important; padding-top: 0 !important; }
-  .sec-bar { margin-top: 0 !important; }
-  /* Continuous stack spacing: these classes zero each section's own bottom
-     padding so the .lime-glow-cell margin-bottom above is the single source of
-     gap between cells, keeping every gap the same thickness regardless of
-     which cells are adjacent. (Comment updated 2026-07-29 -- One Promise no
-     longer sits directly before Rosy Way; it was relocated to the end of the
-     page per Noal's instruction. The rules below still apply correctly by
-     class, independent of DOM order.) */
-  .keeper-hero, .hero, .harbor-now { padding-bottom: 0 !important; }
-  .keeper-hero > .wrap > .lime-glow-cell > details.collapsible:first-child > summary,
-  #hero-details > summary { margin-bottom: 0; }
 
 </style>
 </head>
@@ -375,23 +331,19 @@
 </header>
 
 <main>
-  <section class="lime-info">
+  <section class="lime-info sec-plain">
     <div class="wrap">
-      <!-- Collapsed by default per Noal 2026-07-29 (previously open on first load,
-           the only section that was; every other section, including The One
-           Promise below, already defaulted to collapsed with no `open` attribute).
-           The One Promise section itself is untouched -- Noal explicitly said to
-           leave it alone. -->
-      <details class="collapsible">
-    <!-- Mockup: entire .foot block boxed as one cell, since it is the single body of
-         text/content running from "Different worlds" to "...stays behind it." Added
-         per Noal 2026-07-25, mockup pass — not final until confirmed. -->
-    <!-- Homepage top heading — wording/line-break locked per Noal 2026-07-29 (updates
-         the 2026-07-25 lock). Must read on two lines, no colon: "Lime Signalworks"
-         then "A Financial Lighthouse". Do NOT revert or rewrite without Noal
-         confirming directly. -->
-    <summary class="sec-bar heading-box-glow"><h2>Lime Signalworks<br>A Financial Lighthouse</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
-    <div class="foot lime-glow-cell">
+      <!-- Unboxed per Noal, homepage-unbox-sections: this heading + the .foot block
+           below are now always-visible, no click-to-expand. -->
+      <!-- Mockup: entire .foot block boxed as one cell, since it is the single body of
+           text/content running from "Different worlds" to "...stays behind it." Added
+           per Noal 2026-07-25, mockup pass — not final until confirmed. -->
+      <!-- Homepage top heading — wording/line-break locked per Noal 2026-07-29 (updates
+           the 2026-07-25 lock). Must read on two lines, no colon: "Lime Signalworks"
+           then "A Financial Lighthouse". Do NOT revert or rewrite without Noal
+           confirming directly. -->
+    <div class="sec-bar"><h2>Lime Signalworks<br>A Financial Lighthouse</h2></div>
+    <div class="foot">
       <div>
         <p class="creed" data-i18n="creed">Different worlds, same problem: how to face market chaos without handing your life to a guru.</p>
         <p class="meta">
@@ -412,30 +364,28 @@
         </p>
       </div>
     </div>
-  </details>
     </div>
   </section>
 
 
   <!-- Single rotating Keeper portrait + promise text — collapses as one card -->
-  <section id="harbor-now" class="harbor-now" data-harbor-asof="2026-08-25">
+  <section id="harbor-now" class="harbor-now sec-plain" data-harbor-asof="2026-08-25">
     <div class="wrap">
-      <!-- Mockup: Today's harbor + Past Harbor Nows grouped into one cell. Added per
-           Noal 2026-07-25, mockup pass — not final until confirmed. -->
-      <div class="lime-glow-cell">
-      <details class="collapsible" id="hn-details">
-        <summary class="sec-bar heading-box-glow"><h2 class="hn-heading"><span class="hn-heading-label">Today's Harbor Weather</span></h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <!-- Unboxed per Noal, homepage-unbox-sections: both headings + bodies below are
+           now always-visible, no click-to-expand; outer .lime-glow-cell box removed. -->
+      <div id="hn-details">
+        <div class="sec-bar"><h2 class="hn-heading"><span class="hn-heading-label">Today's Harbor Weather</span></h2></div>
         <div class="sec-body">
-          <div class="hn-report">
+          <div class="hn-report-plain">
             <p class="hn-stale-note" data-i18n="hn_stale" hidden>Showing the most recent completed harbor read — live market data may be newer.</p>
             <p class="hn-asof">As of last close</p>
             <p class="hn-weather">Market weather: <strong>cautiously risk-on</strong>. Posture: <strong>let breadth confirm, no chase</strong>.</p>
             <div class="hn-body"><p>Snapshot: SPY at $765.91 (+0.32%), QQQ at $710.72 (+0.62%), DIA at $535.27 (+0.30%), and IWM at $299.28 (+0.44%). QQQ led; IWM followed, and all four funds closed higher. The 52-week highs are $779.37 for SPY, $748.65 for QQQ, $546.75 for DIA, and $305.18 for IWM. The VIX is 15.46, down 2.46% (-0.39 points), so volatility eased. Intuit, Zoom, and DICK'S Sporting Goods were marked reported today; NVIDIA, CrowdStrike, and Salesforce are scheduled tomorrow.</p><p><a href="harbor-now/archive/2026-08-25.html">Read the full Harbor Now →</a></p></div>
           </div>
         </div>
-      </details>
-      <details class="collapsible">
-        <summary class="sec-bar"><h3 data-i18n="hn_archive_h">Past Harbor Nows</h3><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      </div>
+      <div>
+        <div class="sec-bar"><h3 data-i18n="hn_archive_h">Past Harbor Nows</h3></div>
         <div class="sec-body">
           <ul class="hn-list">
             <li><a href="harbor-now/archive/2026-08-25.html"><span class="date">Aug 25, 2026</span><span class="title">QQQ leads a broad green tape — volatility eases</span><span class="arr">&rarr;</span></a></li>
@@ -465,16 +415,14 @@
           </ul>
           <a class="hn-all" href="harbor-now/index.html" data-i18n="hn_all">View all Harbor Nows →</a>
         </div>
-      </details>
       </div>
     </div>
   </section>
 
-  <section class="harbor">
+  <section class="harbor sec-plain">
     <div class="wrap">
-      <details class="collapsible">
-        <summary class="sec-bar heading-box-glow"><h2 data-i18n="doors_h">The Wicket Gate</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
-        <div class="sec-body">
+      <div class="sec-bar"><h2 data-i18n="doors_h">The Wicket Gate</h2></div>
+      <div class="sec-body">
           <p class="doors-sub" data-i18n="doors_sub">Nine doors. Start wherever fits you today.</p>
           <div class="grid">
         <a class="card" href="https://limesignalworks.pplx.app" target="_blank" rel="noopener"><div class="num">01</div><span class="arrow" aria-hidden="true">→</span><div class="keeper-portrait" role="img" aria-label="Keeper portrait — David" style="background-image:url('assets/keepers/08_david.webp')"></div><div class="keeper-name" data-slot="0">David</div><h3>System Access</h3><p>Authorized? Unlock your personalized Rosie sandbox and Fire Spirit materials here.</p><p class="card-fire">David's fire burned in caves, in grief, in battle, and in celebration equally. He wrote songs in the dark before the light arrived. Laughter held in that same frequency is not a distraction — it is a form of praise.</p></a>
@@ -489,21 +437,19 @@
       </div>
       <a class="sage-library-link" href="fire-spirit/index.html#song">Explore the full Sage Missions Library →</a>
         </div>
-      </details>
     </div>
   </section>
-  <section class="keeper-hero">
+  <section class="keeper-hero sec-plain">
     <div class="wrap">
-      <!-- Box extended per Noal 2026-07-25: The one promise + CTA cells + Rosy Way image +
-           caption, one cell, ending at "You've reached the end of the harbor — for now."
-           rosy-way-img/caption physically relocated here from .hero, not duplicated. -->
-      <div class="lime-glow-cell">
-      <details class="collapsible" id="keeper-hero-card">
-        <summary class="sec-bar heading-box-glow"><h2 data-i18n="promise_h">The one promise</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
-        <div class="sec-body">
+      <!-- Unboxed per Noal, homepage-unbox-sections: outer .lime-glow-cell box and the
+           details/summary wrapper are removed; heading + promise text now always-visible.
+           #rosie-cta-wrap, its .intro-cell children, the image, and the caption are
+           untouched and remain in the same order. -->
+      <div class="sec-bar"><h2 data-i18n="promise_h">The one promise</h2></div>
+      <div class="sec-body">
           <div class="keeper-hero-inner">
             <div class="keeper-hero-text">
-              <div class="promise-card">
+              <div class="promise-plain">
                 <p data-i18n="promise_p1">We cannot and do not guarantee profits or eliminate risk — <strong>no honest system can</strong>. Markets go up, down, and sideways, and your decisions and results are your own.</p>
                 <p class="muted" data-i18n="promise_p2">What we do promise is our best work: clear teaching, honest tools, and a solid system built to serve real families and real companies by leaning first toward loss prevention, then toward profit. If that does not feel true in your experience after ninety days, you do not pay for it.</p>
               </div>
@@ -513,8 +459,7 @@
               <div class="keeper-hero-trait" id="kh-trait"></div>
             </div>
           </div>
-        </div>
-      </details>
+      </div>
       <!-- CTA + Fire Protocol cells — inside promise section -->
       <div class="rosie-cta-wrap" id="rosie-cta-wrap">
         <div class="intro-cells">
@@ -531,7 +476,6 @@
       <p class="rosy-way-caption">This is what happens along the Rosy Way. Life changes.<br>
       Your true purpose finds you &mdash; and it amplifies you.<br>
       You've reached the end of the harbor &mdash; for now.</p>
-      </div>
     </div>
   </section>
 
@@ -544,18 +488,16 @@
        with the rest of the page. Do not re-add a large fixed-height spacer without
        Noal confirming directly -- this has been raised and reverted multiple times. -->
 
-  <section class="hero">
+  <section class="hero sec-plain">
     <div class="wrap">
-      <!-- Box added per Noal 2026-07-25: The Rosy Way heading + h1 + lede, extended through
-           the Introduction to the 33-Day Fire Protocol and the Fire Protocol message cell,
-           ending at "...disciplined path worth walking." Fire-protocol and
-           fire-protocol-message section content physically relocated here; the .fire-protocol
-           and .fire-protocol-message <section> wrappers are removed, not the content itself.
-           #hero-details replaces the old .hero > .wrap > details.collapsible selector target
-           so this cell's spacing rules keep working after the nesting change below. -->
-      <div class="lime-glow-cell">
-      <details class="collapsible" id="hero-details">
-        <summary class="sec-bar heading-box-glow"><h2 data-i18n="kicker">The Rosy Way</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <!-- Unboxed per Noal, homepage-unbox-sections: The Rosy Way heading + h1 + lede,
+           the Introduction to the 33-Day Fire Protocol, and the Fire Protocol message
+           are each now plain always-visible content, no click-to-expand, no outer
+           .lime-glow-cell box. The nested .fp-grid mini-accordion (Setup/Mitigation/
+           Conclusion) below is left completely untouched -- still its own
+           click-to-expand cards. -->
+      <div id="hero-details">
+        <div class="sec-bar"><h2 data-i18n="kicker">The Rosy Way</h2></div>
         <div class="sec-body">
           <div class="beacon" aria-hidden="true">
             <svg viewBox="0 0 180 120" fill="none">
@@ -568,9 +510,9 @@
           <h1 data-i18n="h1">Where inner posture meets disciplined action.</h1>
           <p class="lede" data-i18n="lede"><strong>A safety suit — not a cape.</strong> Loss-prevention-first AI trading assistance for real households and real companies — a clear environment for clarity, discipline, and wise decisions in markets and in life. Not a guru to follow.</p>
         </div>
-      </details>
-      <details class="collapsible">
-        <summary class="sec-bar heading-box-glow"><h2>Introduction to the 33-Day Fire Protocol</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      </div>
+      <div class="sec-plain">
+        <div class="sec-bar"><h2>Introduction to the 33-Day Fire Protocol</h2></div>
         <div class="sec-body">
           <p class="fp-sub">The Fire Spirit speaks one word a day for 33 days. Here is the shape of the whole arc, in three parts — open any of them now, or simply know they are here and come back to them.</p>
           <div class="fp-grid">
@@ -591,21 +533,16 @@
             </details>
           </div>
         </div>
-      </details>
-      <!-- Fire Protocol message cell — always-visible text card. Copy from Noal's 2026-07-24
-           dictation. Canonical 720px width (.fp-message) matches .rosy-way-img. -->
-      <!-- Converted to a collapsible accordion cell per Noal 2026-07-29 (was a
-           permanently-expanded block taking up too much page space). Follows
-           the same details.collapsible + .sec-bar + .sec-body pattern used by
-           every other section on this page, so it joins the existing
-           single-open-accordion behavior (main details.collapsible toggle
-           listener) rather than inventing a separate mechanism. Starts
-           collapsed by default -- explicit authorization for this one
-           collapsed-by-default change per this session, per Noal's request. -->
-      <details class="collapsible">
-        <summary class="sec-bar heading-box-glow"><h2>If you have lost hope for your trading and investing future</h2><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      </div>
+      <!-- Fire Protocol message cell — always-visible text. Copy from Noal's 2026-07-24
+           dictation. Canonical 720px width (.fp-message-plain) matches .rosy-way-img.
+           Unboxed per Noal, homepage-unbox-sections: no more click-to-expand, no card
+           chrome (border/background/shadow/accent-bar removed) -- plain flowing
+           paragraphs at a readable max-width. -->
+      <div class="sec-plain">
+        <div class="sec-bar"><h2>If you have lost hope for your trading and investing future</h2></div>
         <div class="sec-body">
-        <div class="fp-message">
+        <div class="fp-message-plain">
         <p>If you have lost hope for your trading and investing future, you are exactly who this is for. We invite you to explore the <strong>33-Day Fire Protocol</strong>. It may not look like financial intelligence at first — and that is on purpose. Its guidance runs deeper than the usual market commentary, because inner posture and clarity come before any signal.</p>
         <p>What you learn to apprehend here can help you shape the future you actually want and draw it into the present, one disciplined day at a time. Rosie sets a new bar for what an honest trading companion can be, and makes disciplined trading and investing far more accessible than it has ever been.</p>
         <p>The common opportunities in these markets are too often obscured — dressed up by institutions in language meant to keep them just out of reach. Here we explain, plainly, how they actually work. Rosie also moves beyond candlestick reading, an antique method, toward something steadier and more coherent.</p>
@@ -614,7 +551,6 @@
         <p>Think of the Wright brothers' first airplane set beside a modern F-22 — the same principle of flight, a different world of capability. That is the leap we are inviting you into. Try Rosie for 33 days. <strong>We cannot and do not promise profits or guaranteed returns — no honest system can</strong> — but we can offer clear teaching, honest tools, and a disciplined path worth walking.</p>
         </div>
         </div>
-      </details>
       </div>
     </div>
   </section>
@@ -641,12 +577,6 @@
   if (tr) { tr.addEventListener('click', function(){
     window.open('https://translate.google.com/translate?sl=auto&tl=auto&u=' + encodeURIComponent(window.location.href), '_blank', 'noopener');
   }); }
-})();
-</script>
-<script>
-(function(){
-  var cta=document.querySelector('.hero-cta .btn');
-  if(cta){cta.addEventListener('click',function(){var d=document.getElementById('hn-details');if(d){d.open=true;}});}
 })();
 </script>
 <script>
@@ -789,49 +719,15 @@
     ember.style.bottom = 'auto';
   }
 
-  // Accordion — close all other SECTION-level details when one opens
-  // Excludes fp-cell (inner cards) so they don't collapse the parent section
-  var allDetails = document.querySelectorAll('main details.collapsible');
-  allDetails.forEach(function(det) {
-    det.addEventListener('toggle', function() {
-      if (det.open) {
-        allDetails.forEach(function(other) {
-          if (other !== det && other.open) other.removeAttribute('open');
-        });
-      }
-    });
-  });
+  // Section-level <details>/<summary> accordion and its close-others +
+  // scroll-to-top-on-toggle handlers were removed per Noal, homepage-unbox-
+  // sections -- there are no more section-level <details class="collapsible">
+  // elements to toggle. (The nested .fp-cell mini-accordion still uses its own
+  // native <details>/<summary> behavior and needs no JS.)
 
-  // On any <details> toggle — scroll heading to top of viewport when expanding
-  document.querySelectorAll('main details').forEach(function(det) {
-    det.addEventListener('toggle', function() {
-      if (det.open) {
-        var summary = det.querySelector('summary');
-        if (summary) {
-          // Match section word
-          var section = det.closest('section');
-          if (section) {
-            var key = section.id || section.className.split(' ')[0];
-            var matched = '_default';
-            Object.keys(sectionWords).forEach(function(k){
-              if (key.indexOf(k) !== -1) matched = k;
-            });
-            currentWord = sectionWords[matched];
-          }
-          // Scroll summary to top of viewport, offset for sticky header
-          setTimeout(function() {
-            var headerH = (document.querySelector('header') || {offsetHeight: 0}).offsetHeight || 0;
-            var top = summary.getBoundingClientRect().top + window.scrollY - headerH - 8;
-            window.scrollTo({ top: top, behavior: 'smooth' });
-            moveToSummary(summary);
-          }, 30);
-          setTimeout(say, 150);
-        }
-      }
-    });
-  });
-
-  // Also track scroll for passive repositioning between clicks
+  // Track scroll for passive repositioning of the ember/flame companion.
+  // Every unboxed section heading keeps the shared .sec-bar class specifically
+  // so this handler still has something to align to now that <summary> is gone.
   var sections = document.querySelectorAll('main > section');
   window.addEventListener('scroll', function() {
     if (!shown) return;
@@ -848,7 +744,7 @@
         if (key.indexOf(k) !== -1) matched = k;
       });
       currentWord = sectionWords[matched];
-      var summary = best.querySelector('summary');
+      var summary = best.querySelector('.sec-bar');
       if (summary) moveToSummary(summary);
     }
   }, { passive: true });
@@ -925,7 +821,6 @@
 
   var portrait = document.getElementById('kh-portrait');
   var traitEl = document.getElementById('kh-trait');
-  var card = document.getElementById('keeper-hero-card');
   var ctaWrap = document.getElementById('rosie-cta-wrap');
   if (!portrait) return;
   // Updated once per calendar day by rotate_keepers.py. Keep this exact
@@ -941,12 +836,9 @@
     }
   }
   setPortrait(LOCKED_KEEPER);
-  // Show CTA only when card is open
-  if (card && ctaWrap) {
-    function syncCTA() { ctaWrap.style.display = card.open ? 'block' : 'none'; }
-    syncCTA();
-    card.addEventListener('toggle', syncCTA);
-  }
+  // #keeper-hero-card no longer exists (details/summary removed per Noal,
+  // homepage-unbox-sections) -- #rosie-cta-wrap is always visible now, unconditionally.
+  if (ctaWrap) { ctaWrap.style.display = 'block'; }
 })();
 </script>
 
