@@ -366,49 +366,90 @@
          written in the established site voice so the blog can go live now;
          swap in Noal's own posts as they're ready. Each post is its own
          <details class="post-card"> so new entries just get appended above
-         this comment, newest first. -->
+         this comment, newest first.
 
-    <details class="post-card" open>
-      <summary>
-        <span class="post-date">July 19, 2026</span>
-        <span class="post-title">Read the Weather Before You Touch Anything <span class="chev">&#9656;</span></span>
-        <span class="post-teaser">Why Harbor Now comes before every trade, not after it.</span>
-      </summary>
-      <div class="d-body prose">
-        <p>Most losses don't start with a bad trade. They start with skipping the read.</p>
-        <p>Harbor Now exists because conditions have a character on any given day, the same way the sea does, and that character is knowable before you ever put capital at risk. Skip the read and you're not being fast — you're just blind and moving. The market doesn't care how confident you feel walking in without checking the weather first.</p>
-        <p>The discipline is simple to state and hard to keep: read first, then act, every single day, no exceptions for days that feel obvious. The days that feel most obvious are usually the ones the weather changes on.</p>
-      </div>
-    </details>
+         2026-08-28: seed posts are no longer hardcoded here. They now live
+         in Supabase (table "posts") and are fetched + rendered client-side
+         into #posts-container below, newest post_date first, using the
+         exact same <details class="post-card"> markup as before. See the
+         script block right after this container. -->
 
-    <details class="post-card">
-      <summary>
-        <span class="post-date">July 19, 2026</span>
-        <span class="post-title">The 33 Days <span class="chev">&#9656;</span></span>
-        <span class="post-teaser">One word a day. Showing up is the practice.</span>
-      </summary>
-      <div class="d-body prose">
-        <p>The Fire Protocol isn't complicated. It's just consistent, which turns out to be the harder thing.</p>
-        <p>Three check-ins a day — morning, midday, close. Not to predict anything. To interrupt the reflex that wants to watch, chase, or react every time the tape moves. Do that daily for 33 days and the posture changes on its own. You stop hunting for a reason to act and start noticing when action is actually warranted.</p>
-        <p>Nobody graduates the 33 days by being clever. They graduate by showing up on day 14 the same way they showed up on day 1.</p>
-      </div>
-    </details>
-
-    <details class="post-card">
-      <summary>
-        <span class="post-date">July 19, 2026</span>
-        <span class="post-title">Two Readers, One Door <span class="chev">&#9656;</span></span>
-        <span class="post-teaser">Why this site is built to open the same door for scripture and evidence-minded readers alike.</span>
-      </summary>
-      <div class="d-body prose">
-        <p>This system was built so that two very different readers can arrive at the same conclusion without either one having to set down what they believe.</p>
-        <p>One reader thinks in scripture. Another thinks in energy, evidence, or neither. Both are welcome here, and both should be able to follow the same discipline to the same result — a calm account, a clear head, a system that doesn't ask for blind trust. Metaphor is what makes that possible: it's the carrier signal that lets meaning cross between frameworks without asking anyone to abandon their own.</p>
-        <p>That's the whole design goal, honestly. Not conversion. Just one door, wide enough for however you happen to think.</p>
-      </div>
-    </details>
+    <div id="posts-container"></div>
 
   </div>
 </main>
+<script>
+(function () {
+  var SUPABASE_URL = "https://jamuiibouonomruocwea.supabase.co";
+  var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImphbXVpaWJvdW9ub21ydW9jd2VhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU5NjQzMzYsImV4cCI6MjEwMTU0MDMzNn0.LGO_QMLNMpIqd3dCNQGYyBp91wm_7CtkyZcDk6zV-nA";
+
+  function escapeHtml(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  var MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  function formatPostDate(ymd) {
+    if (!ymd || typeof ymd !== "string") return "";
+    var parts = ymd.split("-");
+    if (parts.length !== 3) return ymd;
+    var y = parseInt(parts[0], 10), m = parseInt(parts[1], 10), d = parseInt(parts[2], 10);
+    if (!y || !m || !d) return ymd;
+    return MONTHS[m - 1] + " " + d + ", " + y;
+  }
+
+  function renderPosts(posts) {
+    var container = document.getElementById("posts-container");
+    if (!container) return;
+    if (!posts || !posts.length) {
+      container.innerHTML = "";
+      return;
+    }
+    var html = "";
+    posts.forEach(function (post, i) {
+      var dateLabel = formatPostDate(post.post_date);
+      var title = escapeHtml(post.title);
+      var teaser = escapeHtml(post.teaser);
+      var bodyHtml = post.body_html || "";
+      html += '<details class="post-card"' + (i === 0 ? " open" : "") + '>' +
+        "<summary>" +
+        '<span class="post-date">' + escapeHtml(dateLabel) + "</span>" +
+        '<span class="post-title">' + title + ' <span class="chev">&#9656;</span></span>' +
+        '<span class="post-teaser">' + teaser + "</span>" +
+        "</summary>" +
+        '<div class="d-body prose">' + bodyHtml + "</div>" +
+        "</details>";
+    });
+    container.innerHTML = html;
+  }
+
+  function showLoadError() {
+    var container = document.getElementById("posts-container");
+    if (!container) return;
+    container.innerHTML = '<p class="post-load-error" style="color:var(--color-text-muted);font-size:var(--text-sm);">Unable to load posts right now.</p>';
+  }
+
+  var url = SUPABASE_URL + "/rest/v1/posts?select=slug,title,post_date,teaser,body_html&published=eq.true&order=post_date.desc,created_at.desc";
+  fetch(url, {
+    headers: {
+      apikey: SUPABASE_ANON_KEY,
+      Authorization: "Bearer " + SUPABASE_ANON_KEY
+    }
+  })
+    .then(function (res) {
+      if (!res.ok) throw new Error("Fetch failed with status " + res.status);
+      return res.json();
+    })
+    .then(function (posts) {
+      renderPosts(posts);
+    })
+    .catch(function () {
+      showLoadError();
+    });
+})();
+</script>
 
 <footer><div class="wrap foot">
   <p>&copy; 2026 Lime Signalworks LLC. Loss prevention first. Always.</p>

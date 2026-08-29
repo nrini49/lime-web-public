@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--
+  Intentionally unlinked / unindexed page.
+  This is the internal create-post form for Lime Signalworks blog posts.
+  It is not linked from index.html, any nav menu, or the sitemap, and it
+  must only be reached by typing this URL directly. Do not add links to
+  this page anywhere on the public site.
+-->
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>New Post — Lime Signalworks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem); --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+    --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+    --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem); --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.25rem);
+    --space-2:0.5rem;--space-3:0.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;
+    --radius-sm:0.375rem;--radius-md:0.5rem;--radius-lg:0.75rem;--radius-xl:1rem;--radius-full:9999px;
+    --transition-interactive:180ms cubic-bezier(0.16,1,0.3,1);
+    --font-display:'Instrument Serif',Georgia,serif; --font-body:'General Sans','Helvetica Neue',sans-serif;
+  }
+  :root,[data-theme="dark"]{--color-bg:#0a131c;--color-surface:#0f1c28;--color-surface-2:#142433;--color-border:#1f3346;--color-divider:#1a2c3c;--color-text:#e6edf2;--color-text-muted:#8fa3b3;--color-text-faint:#5d7286;--color-primary:#9ad14a;--color-primary-hover:#b4e06a;--color-primary-soft:rgba(154,209,74,0.12);--color-beam:#e8b659;--shadow-md:0 4px 24px rgba(0,0,0,0.35);}
+  [data-theme="light"]{--color-bg:#e7e3dd;--color-surface:#ffffff;--color-surface-2:#f7faf8;--color-border:#dbe4dd;--color-divider:#e4ece6;--color-text:#15241c;--color-text-muted:#56685e;--color-text-faint:#8a9c92;--color-primary:#4f7a1f;--color-primary-hover:#3d6017;--color-primary-soft:rgba(79,122,31,0.10);--color-beam:#b07d1f;--shadow-md:0 4px 24px rgba(20,40,28,0.08);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;}
+  body{min-height:100dvh;line-height:1.65;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg);}
+  a,button{transition:color var(--transition-interactive),background var(--transition-interactive),border-color var(--transition-interactive),box-shadow var(--transition-interactive);}
+  a{color:var(--color-primary);text-decoration:none}
+  a:hover{text-decoration:underline;text-underline-offset:3px}
+  h1,h2,h3{text-wrap:balance;line-height:1.15;font-family:var(--font-display);font-weight:400;letter-spacing:-0.01em;}
+  p{text-wrap:pretty;max-width:70ch;}
+  :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm);}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 var(--space-6);}
+
+  header{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);background:color-mix(in oklab,var(--color-bg) 82%,transparent);}
+  .hdr{display:flex;align-items:center;justify-content:flex-start;padding:var(--space-4) 0;gap:var(--space-4);flex-wrap:wrap;}
+  .brand{display:flex;align-items:center;gap:var(--space-3);text-decoration:none;color:var(--color-text);}
+  .brand .word{font-family:var(--font-display);font-weight:400;font-size:var(--text-2xl);line-height:1.15;letter-spacing:0.01em;}
+  .brand .word b{font-weight:700;}
+  .brand:hover{color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;}
+
+  main{padding:var(--space-12) 0 var(--space-24);}
+  .kicker{font-family:var(--font-body);font-size:var(--text-xs);letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-faint);margin-bottom:var(--space-3);}
+  .page-title{font-size:var(--text-2xl);margin-bottom:var(--space-2);}
+  .subtitle{color:var(--color-text-muted);margin-bottom:var(--space-8);}
+
+  .form-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-5) var(--space-6);box-shadow:var(--shadow-md);position:relative;overflow:hidden;max-width:640px;}
+  .form-card::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(in oklab,var(--color-primary),var(--color-beam,#e8b659));}
+  .form-card form{display:grid;gap:var(--space-4);}
+  .form-card label{display:block;font-size:var(--text-xs);letter-spacing:0.06em;text-transform:uppercase;color:var(--color-text-muted);font-weight:600;margin-bottom:var(--space-2);}
+  .form-card input,.form-card textarea{width:100%;padding:var(--space-2) var(--space-3);border-radius:var(--radius-md);border:1px solid var(--color-border);background:var(--color-bg);color:var(--color-text);font-size:var(--text-base);font-family:var(--font-body);}
+  .form-card textarea{min-height:9rem;resize:vertical;line-height:1.5;}
+  .form-card input:focus,.form-card textarea:focus{outline:none;border-color:var(--color-primary);box-shadow:0 0 0 3px var(--color-primary-soft);}
+  .form-card .btn{display:inline-flex;align-items:center;justify-content:center;width:fit-content;justify-self:start;gap:var(--space-2);font-family:var(--font-body);font-weight:600;font-size:var(--text-base);text-decoration:none;color:var(--color-bg);background:var(--color-primary);padding:var(--space-2) var(--space-6);border-radius:var(--radius-full);border:1px solid var(--color-primary);cursor:pointer;box-shadow:var(--shadow-md);margin-top:0;}
+  .form-card .btn:hover{background:var(--color-primary-hover);border-color:var(--color-primary-hover);}
+  .form-card .btn:disabled{opacity:0.5;cursor:not-allowed;}
+  .form-card .fineprint{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-3);}
+
+  .status-area{margin-top:var(--space-4);font-size:var(--text-sm);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);display:none;}
+  .status-area.show{display:block;}
+  .status-area.ok{display:block;background:var(--color-primary-soft);color:var(--color-primary);border:1px solid var(--color-primary);}
+  .status-area.err{display:block;background:rgba(220,80,80,0.10);color:#e07a7a;border:1px solid #b23c3c;}
+  [data-theme="light"] .status-area.err{color:#a83232;}
+
+  footer{padding:var(--space-8) 0;color:var(--color-text-faint);font-size:var(--text-xs);}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap hdr">
+    <a class="brand" href="../index.html" aria-label="Lime Signalworks home">
+      <span class="word">Lime&nbsp;<b>Signalworks</b> LLC</span>
+    </a>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <p class="kicker">Lime Signalworks — Internal</p>
+    <h1 class="page-title">New Blog Post</h1>
+    <p class="subtitle">Unlinked internal tool. Passphrase required. Not part of the public blog navigation.</p>
+
+    <div class="form-card">
+      <form id="createPostForm" novalidate>
+        <div>
+          <label for="passphrase">Passphrase</label>
+          <input id="passphrase" name="passphrase" type="password" autocomplete="off" required>
+        </div>
+        <div>
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" placeholder="Post title" required>
+        </div>
+        <div>
+          <label for="postDate">Date</label>
+          <input id="postDate" name="postDate" type="date" required>
+        </div>
+        <div>
+          <label for="teaser">Teaser</label>
+          <input id="teaser" name="teaser" type="text" placeholder="One-line summary" required>
+        </div>
+        <div>
+          <label for="body">Body</label>
+          <textarea id="body" name="body" placeholder="Plain text. Each line/paragraph becomes its own paragraph." required></textarea>
+        </div>
+        <button class="btn" type="submit" id="submitBtn">Publish post</button>
+        <p class="fineprint">Body text is escaped and wrapped into paragraphs automatically. No HTML input accepted.</p>
+      </form>
+      <div id="statusArea" class="status-area" role="status" aria-live="polite"></div>
+    </div>
+  </div>
+</main>
+<footer><div class="wrap">
+  <p>&copy; 2026 Lime Signalworks LLC.</p>
+</div></footer>
+
+<script>
+(function () {
+  var SUPABASE_URL = "https://jamuiibouonomruocwea.supabase.co";
+  var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImphbXVpaWJvdW9ub21ydW9jd2VhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU5NjQzMzYsImV4cCI6MjEwMTU0MDMzNn0.LGO_QMLNMpIqd3dCNQGYyBp91wm_7CtkyZcDk6zV-nA";
+
+  var form = document.getElementById("createPostForm");
+  var submitBtn = document.getElementById("submitBtn");
+  var statusArea = document.getElementById("statusArea");
+
+  // Default the date field to today, local time.
+  var dateInput = document.getElementById("postDate");
+  (function setDefaultDate() {
+    var now = new Date();
+    var y = now.getFullYear();
+    var m = String(now.getMonth() + 1).padStart(2, "0");
+    var d = String(now.getDate()).padStart(2, "0");
+    dateInput.value = y + "-" + m + "-" + d;
+  })();
+
+  function escapeHtml(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  function bodyTextToHtml(text) {
+    var lines = String(text || "").split(/\r?\n/);
+    var html = "";
+    for (var i = 0; i < lines.length; i++) {
+      var line = lines[i].trim();
+      if (!line) continue;
+      html += "<p>" + escapeHtml(line) + "</p>";
+    }
+    return html;
+  }
+
+  function showStatus(kind, message) {
+    statusArea.className = "status-area show " + kind;
+    statusArea.textContent = message;
+  }
+
+  function clearStatus() {
+    statusArea.className = "status-area";
+    statusArea.textContent = "";
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    clearStatus();
+
+    var passphrase = document.getElementById("passphrase").value;
+    var title = document.getElementById("title").value.trim();
+    var postDate = document.getElementById("postDate").value;
+    var teaser = document.getElementById("teaser").value.trim();
+    var bodyRaw = document.getElementById("body").value;
+    var bodyHtml = bodyTextToHtml(bodyRaw);
+
+    if (!passphrase || !title || !postDate || !teaser || !bodyHtml) {
+      showStatus("err", "Please fill in every field before publishing.");
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Publishing…";
+
+    fetch(SUPABASE_URL + "/functions/v1/create-post", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": SUPABASE_ANON_KEY
+      },
+      body: JSON.stringify({
+        passphrase: passphrase,
+        title: title,
+        post_date: postDate,
+        teaser: teaser,
+        body_html: bodyHtml
+      })
+    })
+      .then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (data) {
+          return { ok: res.ok, status: res.status, data: data };
+        });
+      })
+      .then(function (result) {
+        if (result.ok && result.data && result.data.success) {
+          showStatus("ok", "Published. Slug: " + (result.data.post && result.data.post.slug));
+          form.reset();
+          (function setDefaultDate() {
+            var now = new Date();
+            var y = now.getFullYear();
+            var m = String(now.getMonth() + 1).padStart(2, "0");
+            var d = String(now.getDate()).padStart(2, "0");
+            dateInput.value = y + "-" + m + "-" + d;
+          })();
+        } else {
+          var msg = (result.data && (result.data.error || result.data.message)) ||
+            ("Request failed with status " + result.status + ".");
+          showStatus("err", msg);
+        }
+      })
+      .catch(function () {
+        showStatus("err", "Network error — could not reach the server. Please try again.");
+      })
+      .then(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Publish post";
+      });
+  });
+})();
+</script>
+</body>
+</html>
