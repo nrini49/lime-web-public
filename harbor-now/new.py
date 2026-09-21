@@ -272,6 +272,38 @@ def long_date(d: dt.date) -> str:
     return d.strftime("%A, %B %-d, %Y")
 
 
+def sub_once(pattern, repl, text, what, flags=0, expect=1):
+    """re.sub that REFUSES to silently do nothing.
+
+    This exists because of a real, two-month-long defect. patch_homepage kept the
+    visible date fresh with a regex over ``<time datetime=...>``. The homepage
+    markup later changed and lost its <time> stamps, so that substitution began
+    matching zero elements -- and said nothing, because re.sub returns the input
+    unchanged and reports success. The publisher went on printing "updated
+    homepage Harbor as-of" every day while updating nothing visible.
+
+    A rewrite that matches nothing is a failure, not a no-op. Every structural
+    substitution in this file goes through here so the publisher stops rather
+    than lying about what it did.
+
+    `expect=None` allows any number of matches (but still at least one).
+    """
+    new, n = re.subn(pattern, repl, text, flags=flags)
+    if n == 0:
+        raise SystemExit(
+            f"REFUSING TO PUBLISH: could not update {what} -- the pattern matched\n"
+            f"  nothing, which means the markup changed shape. Fix the template or\n"
+            f"  this pattern; do not ship a page whose date was never rewritten.\n"
+            f"  pattern: {pattern}"
+        )
+    if expect is not None and n != expect:
+        raise SystemExit(
+            f"REFUSING TO PUBLISH: {what} matched {n} times, expected {expect}.\n"
+            f"  Duplicate blocks mean one of them will be left stale."
+        )
+    return new
+
+
 def li(items):
     return "\n        ".join(f"<li>{html.escape(x)}</li>" for x in items)
 
@@ -316,38 +348,118 @@ def patch_homepage(home_path: pathlib.Path, d: dt.date, title: str) -> str:
     section = m.group(1)
 
     # Machine-readable as-of.
-    section = re.sub(r'(data-harbor-asof=")\d{4}-\d{2}-\d{2}(")', rf'\g<1>{iso}\g<2>', section)
-    # <time> stamps: datetime attribute + visible label.
-    section = re.sub(r'(<time[^>]*\bdatetime=")\d{4}-\d{2}-\d{2}("[^>]*>)[^<]*(</time>)',
-                     rf'\g<1>{iso}\g<2>{long_date(d)}\g<3>', section)
+    section = sub_once(r'(data-harbor-asof=")\d{4}-\d{2}-\d{2}(")', rf'\g<1>{iso}\g<2>',
+                       section, "homepage data-harbor-asof")
+    # <time> stamps: datetime attribute + visible label. There must be at least
+    # one: a Harbor read with no human-visible date is how the page came to sit
+    # on a two-month-old report without anyone noticing. expect=None because the
+    # section legitimately carries more than one stamp.
+    section = sub_once(r'(<time[^>]*\bdatetime=")\d{4}-\d{2}-\d{2}("[^>]*>)[^<]*(</time>)',
+                       rf'\g<1>{iso}\g<2>{long_date(d)}\g<3>',
+                       section, "homepage visible <time> date", expect=None)
     # "Read the full Harbor Now" link -> this edition's archive page.
-    section = re.sub(r'(<div class="hn-body"[^>]*>.*?href=")harbor-now/(?:index\.html|archive/\d{4}-\d{2}-\d{2}\.html)(")',
-                     rf'\g<1>harbor-now/archive/{iso}.html\g<2>', section, flags=re.S)
+    section = sub_once(r'(<div class="hn-body"[^>]*>.*?href=")harbor-now/(?:index\.html|archive/\d{4}-\d{2}-\d{2}\.html)(")',
+                       rf'\g<1>harbor-now/archive/{iso}.html\g<2>',
+                       section, "homepage 'Read the full Harbor Now' link", flags=re.S)
     # Prepend the latest entry to the Past Harbor Nows list.
     entry = (f'\n            <li><a href="harbor-now/archive/{iso}.html">'
              f'<span class="date">{short(d)}</span>'
              f'<span class="title">{html.escape(title)}</span>'
              f'<span class="arr">&rarr;</span></a></li>')
-    section = re.sub(r'(<ul class="hn-list">)', rf'\g<1>{entry}', section, count=1)
+    section = sub_once(r'(<ul class="hn-list">)', rf'\g<1>{entry}', section,
+                       "homepage Past Harbor Nows list")
 
     html_text = html_text[:m.start()] + section + html_text[m.end():]
     home_path.write_text(html_text, encoding="utf-8")
     return iso
 
 
-def prepend_index_entry(index_path: pathlib.Path, d: dt.date, title: str) -> bool:
-    """Prepend the latest edition to harbor-now/index.html's list, if present."""
+def featured_block(d: dt.date, day: dict) -> str:
+    """Build harbor-now/index.html's featured report block from the edition data.
+
+    Every value here comes out of the edition JSON. Nothing is hand-written, so
+    nothing can be left behind when the next edition publishes -- which is the
+    whole point. See patch_harbor_index for the defect this replaces.
+
+    The date is wrapped in <time datetime=...> so check_freshness.py can verify
+    it mechanically rather than by reading prose.
+    """
+    iso = d.isoformat()
+    wx = day.get("weather", {})
+    sentiment = (wx.get("sentiment") or {}).get("label", "")
+    tone = wx.get("tone", "")
+
+    weather_line = ""
+    if sentiment or tone:
+        parts = []
+        if sentiment:
+            parts.append(f'Market sentiment: <strong>{html.escape(sentiment)}</strong>.')
+        if tone:
+            parts.append(f'Today&rsquo;s language: <strong>{html.escape(tone)}</strong>.')
+        weather_line = f'\n      <p class="weather">{" ".join(parts)}</p>'
+
+    tag_line = ""
+    if day.get("tag"):
+        tag_line = f'\n      <p class="body">{html.escape(day["tag"])}</p>'
+
+    closing = html.escape(day["body_muted"]) + " " if day.get("body_muted") else ""
+
+    return (
+        '<div class="report">\n'
+        f'      <p class="meta">Latest &middot; '
+        f'<time datetime="{iso}">{pretty(d)}</time></p>\n'
+        f'      <h2>{html.escape(day["title"])}</h2>'
+        f'{weather_line}'
+        f'{tag_line}\n'
+        f'      <p class="body">{closing}'
+        f'<a href="archive/{iso}.html">Read the full Harbor Now &rarr;</a></p>\n'
+        '    </div>'
+    )
+
+
+def patch_harbor_index(index_path: pathlib.Path, d: dt.date, day: dict) -> bool:
+    """Update harbor-now/index.html: the featured report AND the archive list.
+
+    THE DEFECT THIS FIXES (found 2026-09-21, live for two months):
+
+    This function used to be called prepend_index_entry and did exactly one
+    thing -- insert an <li> into the "Past Harbor Nows" list. It never touched
+    the featured <div class="report"> block above that list. That block had been
+    hand-written once, in July, and was never rewritten again.
+
+    So every day the archive list grew a fresh entry while the featured report
+    stayed on July 23. The public page at signals.limesignalworks.com/harbor-now/
+    told visitors "Latest - July 23, 2026" for two months, directly above a list
+    whose newest entry was far newer. It was not a publishing outage: every
+    report existed and was correct. The index simply never pointed at them.
+
+    The featured block is now GENERATED from the same edition data that writes
+    the archive page, so "Latest" is true by construction rather than by someone
+    remembering to edit it. The old block's editorial prose is deliberately not
+    preserved -- prose that must be hand-updated is precisely what rotted.
+    """
     if not index_path.is_file():
         return False
     text = index_path.read_text(encoding="utf-8")
+
+    # 1. The featured report block -- the part that used to rot.
+    text = sub_once(r'<div class="report">.*?</div>', lambda _m: featured_block(d, day),
+                    text, "harbor-now/index.html featured report block", flags=re.S)
+
+    # 2. The archive list entry (what this function used to do, and all it did).
     entry = (f'      <li><a href="archive/{d.isoformat()}.html">'
              f'<span class="date">{short(d)}</span>'
-             f'<span class="title">{html.escape(title)}</span>'
+             f'<span class="title">{html.escape(day["title"])}</span>'
              f'<span class="arr">&rarr;</span></a></li>\n')
     m = re.search(r'(<ul[^>]*class="(?:[^"]*\b)?(?:list|hn-list)\b[^"]*"[^>]*>[ \t]*\n)', text)
     if not m:
-        return False
+        raise SystemExit(
+            "REFUSING TO PUBLISH: found the featured block but not the archive\n"
+            f"  <ul> list in {index_path}. Publishing one without the other is how\n"
+            "  the two drifted apart in the first place."
+        )
     text = text[:m.end()] + entry + text[m.end():]
+
     index_path.write_text(text, encoding="utf-8")
     return True
 
@@ -411,12 +523,12 @@ def main():
         iso = patch_homepage(pathlib.Path(args.homepage), d, title)
         print(f"updated homepage Harbor as-of -> {iso} ({args.homepage})")
 
-    # Prepend the edition to the Harbor Now index list.
+    # Rewrite the Harbor Now index: featured report AND archive list.
     if args.index:
-        if prepend_index_entry(pathlib.Path(args.index), d, title):
-            print(f"prepended edition to {args.index}")
+        if patch_harbor_index(pathlib.Path(args.index), d, day):
+            print(f"updated {args.index}: featured report -> {d.isoformat()}, entry prepended")
         else:
-            print(f"note: could not auto-update {args.index}; add the entry manually")
+            print(f"note: {args.index} not found; nothing to update")
 
     entry = (
         f'      <li><a href="archive/{d.isoformat()}.html">'
@@ -426,6 +538,8 @@ def main():
     )
     print("\n--- editorial paste: refresh the homepage weather/body prose by hand ---")
     print("    (dates, links and the latest marker were updated automatically above)")
+    print("    NOTE: harbor-now/index.html's featured block is fully generated --")
+    print("          do not hand-edit it; it is overwritten on every publish.")
     print("\n--- list entry (already applied to homepage + index if paths were writable) ---")
     print(entry)
 
