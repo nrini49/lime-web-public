@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <script>if ("scrollRestoration" in history) { history.scrollRestoration = "manual"; } window.scrollTo(0,0); window.addEventListener("load", function () { window.scrollTo(0,0); }); window.addEventListener("pageshow", function () { window.scrollTo(0,0); });</script>
 <meta charset="UTF-8">
@@ -250,9 +250,6 @@ footer a{color:var(--color-text-muted);text-decoration:none;border-bottom:1px so
            it untranslatable tells Google Translate to skip this element
            entirely, removing the conflict at the source. -->
       <!-- Icon doubled 18px -> 36px per Noal 2026-07-20 ~1:26pm. -->
-      <button class="icon-btn notranslate" translate="no" data-theme-toggle aria-label="Switch theme">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-      </button>
       <a class="blog-nav-link" href="../../blog/index.html" target="_blank" rel="noopener">Blog</a>
     </div>
     <!-- Rosie CTA pair only now -- theme toggle + Blog live in .hdr-utility
@@ -279,7 +276,6 @@ footer a{color:var(--color-text-muted);text-decoration:none;border-bottom:1px so
     </div>
   </div>
 </header>
-<script>(function(){var tr=document.querySelector("[data-translate]");if(tr){tr.addEventListener("click",function(){var _tl=(navigator.language||navigator.userLanguage||'es').split('-')[0];window.open('https://translate.google.com/translate?sl=auto&tl='+_tl+'&u='+encodeURIComponent(window.location.href),"_blank","noopener");});}})();</script>
 <main><div class="wrap">
   <p class="kicker">Harbor Now &middot; July 16, 2026</p>
   <div class="report">
@@ -415,22 +411,6 @@ footer a{color:var(--color-text-muted);text-decoration:none;border-bottom:1px so
 </style>
 <div id="wg-toast" class="wg-toast" role="status"></div>
 <canvas id="wg-sparkle-canvas" aria-hidden="true"></canvas>
-<script>
-
-(function () {
-  const t = document.querySelector('[data-theme-toggle]'), r = document.documentElement;
-  let d = 'dark';
-  r.setAttribute('data-theme', d);
-  function icon(dark){ return dark
-    ? '<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
-    : '<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'; }
-  if (t) { t.innerHTML = icon(d==='dark'); t.setAttribute('aria-label','Switch to '+(d==='dark'?'light':'dark')+' mode');
-    t.addEventListener('click', () => { d = d==='dark'?'light':'dark'; r.setAttribute('data-theme', d); t.innerHTML = icon(d==='dark'); t.setAttribute('aria-label','Switch to '+(d==='dark'?'light':'dark')+' mode'); });
-  }
-  // Header globe translate button + its translate.goog click handler
-  // removed per Noal, 2026-07-19 ~11:08pm (see header markup comment).
-})();
-</script>
 <script>
 (function(){
   var API_BASE = 'https://lime-presence.pplx.app';
