@@ -205,7 +205,7 @@ footer a{{color:var(--color-text-muted);text-decoration:none;border-bottom:1px s
   <a class="brand" href="../../index.html">Lime <b>Signalworks</b></a>
 </div></header>
 <main><div class="wrap">
-  <p class="kicker">Harbor Now &middot; {pretty}</p>
+  <p class="kicker">Harbor Now &middot; {pretty} close &middot; for the session of {fwd}</p>
   <div class="report">
     <h1>{title}</h1>
     <p class="tag">{tag}</p>
@@ -264,6 +264,26 @@ def short(d: dt.date) -> str:
 def long_date(d: dt.date) -> str:
     """Weekday + month + day + year, matching the homepage <time> text."""
     return d.strftime("%A, %B %-d, %Y")
+
+
+def next_session(d: dt.date) -> dt.date:
+    """The next trading session after ``d`` -- weekends skipped.
+
+    A Harbor Now edition reports the close of session ``d`` but is read before
+    the session that follows it, and its own copy says "Mission for today" and
+    lists tomorrow's catalysts. Naming both dates is what stops a reader from
+    having to guess which session the page is about.
+
+    KNOWN GAP: market holidays are not modelled here, and nothing else in this
+    directory models them either (``check_freshness.business_gap`` also only
+    skips weekends). On the session before a holiday this will name a date the
+    market is closed. Fix by giving both functions one shared holiday calendar,
+    not by special-casing either one.
+    """
+    nxt = d + dt.timedelta(days=1)
+    while nxt.weekday() >= 5:  # Sat=5, Sun=6
+        nxt += dt.timedelta(days=1)
+    return nxt
 
 
 def sub_once(pattern, repl, text, what, flags=0, expect=1):
@@ -351,6 +371,14 @@ def patch_homepage(home_path: pathlib.Path, d: dt.date, title: str) -> str:
     section = sub_once(r'(<time[^>]*\bdatetime=")\d{4}-\d{2}-\d{2}("[^>]*>)[^<]*(</time>)',
                        rf'\g<1>{iso}\g<2>{long_date(d)}\g<3>',
                        section, "homepage visible <time> date", expect=None)
+    # Forward-looking session line. Deliberately PLAIN TEXT, never a second
+    # <time> stamp: check_freshness requires every <time> in this section to
+    # equal data-harbor-asof, and this date is the NEXT session by design.
+    # Idempotent -- trailing text from a previous publish is replaced, not
+    # appended to, so republishing does not stack the phrase.
+    section = sub_once(r'(<p class="hn-asof">.*?</time>)[^<]*(</p>)',
+                       rf'\g<1> &middot; for the session of {short(next_session(d))}\g<2>',
+                       section, "homepage forward-session line", flags=re.S)
     # "Read the full Harbor Now" link -> this edition's archive page.
     section = sub_once(r'(<div class="hn-body"[^>]*>.*?href=")harbor-now/(?:index\.html|archive/\d{4}-\d{2}-\d{2}\.html)(")',
                        rf'\g<1>harbor-now/archive/{iso}.html\g<2>',
@@ -401,7 +429,8 @@ def featured_block(d: dt.date, day: dict) -> str:
     return (
         '<div class="report">\n'
         f'      <p class="meta">Latest &middot; '
-        f'<time datetime="{iso}">{pretty(d)}</time></p>\n'
+        f'<time datetime="{iso}">{pretty(d)}</time> close '
+        f'&middot; for the session of {short(next_session(d))}</p>\n'
         f'      <h2>{html.escape(day["title"])}</h2>'
         f'{weather_line}'
         f'{tag_line}\n'
@@ -487,7 +516,7 @@ def main():
         body_muted_html = f'<p class="body muted">{html.escape(day["body_muted"])}</p>'
 
     page = TEMPLATE.format(
-        pretty=pretty(d), short=short(d), date=d.isoformat(),
+        pretty=pretty(d), short=short(d), fwd=short(next_session(d)), date=d.isoformat(),
         title=html.escape(day["title"]),
         tag=html.escape(day["tag"]),
         sym_rows=sym_rows,
