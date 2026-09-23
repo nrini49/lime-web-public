@@ -90,7 +90,10 @@ DOOR_THEMES = [
     # nine-box grid geometry is unchanged.
     {"num": "05", "href": None, "target_attrs": "", "h3": "Situation Report", "p": "Today's market weather — regime, fidelity, condition. Read before you act."},
     {"num": "06", "href": "offer/index.html", "target_attrs": "", "h3": "The Offer", "p": "What you get, what it costs, how to join. Loss-prevention-first AI assistance."},
-    {"num": "07", "href": "https://spy-pipeline-rosie.pplx.app", "target_attrs": ' target="_blank" rel="noopener"', "h3": "SPY Harbor Watch", "p": "Live SPY tracking since Rosie's first trade — price, alerts, and the 90-day dashboard."},
+    # Door 07 pointed at the SPY Pipeline (backend down) and claimed tracking
+    # "since Rosie's first trade" -- Rosie has placed no trades. Repointed
+    # 2026-09-23 to Harbor Now, the verified daily report on this site.
+    {"num": "07", "href": "harbor-now/index.html", "target_attrs": "", "h3": "Harbor Now", "p": "The daily close in plain language — SPY, QQQ, DIA, IWM and the VIX, published each trading evening."},
     {"num": "08", "href": "laugh-lounge/index.html", "target_attrs": "", "h3": "The Laugh Lounge", "p": "A lighter door. Harbor and lighthouse humor, and a library you can browse at your own pace."},
     {"num": "09", "href": "metaphor-gate/index.html", "target_attrs": "", "h3": "The Metaphor Gate", "p": "The teaching layer. Learn to hear what is actually being said — in markets, in leadership, in scripture."},
 ]
