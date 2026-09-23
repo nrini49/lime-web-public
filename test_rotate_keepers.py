@@ -59,6 +59,20 @@ class RotateKeepersTests(unittest.TestCase):
         self.assertEqual(stdout, "")
         self.assertIn("LOCKED_KEEPER line not found", stderr)
 
+    def test_client_roster_carries_the_same_fire_as_keeper_units(self):
+        """The homepage JS swaps portrait+name every 5s; the fire sentence names
+        its Keeper, so it must swap with them. Every JS roster entry must match
+        KEEPER_UNITS exactly (file, name, fire), and the rotation must write
+        .card-fire. Regression for 2026-09-23 ("David" above Daniel's fire)."""
+        import json, re
+        html = Path("index.html").read_text(encoding="utf-8")
+        start = html.index("var MEN = [")
+        block = html[start:html.index("var slots = document.querySelectorAll('.keeper-portrait');")]
+        entries = re.findall(r"\{ file: '([^']+)', name: '([^']+)', fire: (\"(?:[^\"\\\\]|\\\\.)*\") \}", block)
+        js = {f: (n, json.loads(fire)) for f, n, fire in entries}
+        units = {k["file"]: (k["name"], k["fire"]) for k in rotate_keepers.KEEPER_UNITS}
+        self.assertEqual(js, units)
+        self.assertIn("fireEl.textContent = k.fire", html)
 
 if __name__ == "__main__":
     unittest.main()
