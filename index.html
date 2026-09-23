@@ -929,6 +929,27 @@
     });
   }
 
+  // Quotes differ in length, so swapping them would change card and page
+  // height every 5s. Reserve the tallest quote's height per card, and
+  // re-measure on resize.
+  function reserveFireHeight() {
+    var all = MEN.concat(WOMEN);
+    fires.forEach(function (el) {
+      var keep = el.textContent, tallest = 0;
+      el.style.minHeight = '';
+      all.forEach(function (k) { el.textContent = k.fire; tallest = Math.max(tallest, el.offsetHeight); });
+      el.textContent = keep;
+      el.style.minHeight = tallest + 'px';
+    });
+  }
+  reserveFireHeight();
+  var fireResizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(fireResizeTimer);
+    fireResizeTimer = setTimeout(reserveFireHeight, 150);
+  });
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(reserveFireHeight); }
+
   rotate(true); // balance the grid immediately, don't wait for the first 5s tick
   setInterval(rotate, 5000);
 })();
