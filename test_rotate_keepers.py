@@ -30,7 +30,7 @@ class RotateKeepersTests(unittest.TestCase):
                     exit_code = int(exc.code)
             return exit_code, index_path.read_text(encoding="utf-8"), stdout.getvalue(), stderr.getvalue()
 
-    def test_updates_nine_cards_and_part_a_hero_deterministically(self):
+    def test_updates_eight_cards_and_part_a_hero_deterministically(self):
         original = Path("index.html").read_text(encoding="utf-8")
         date_str = "2026-08-12"
 
@@ -45,8 +45,8 @@ class RotateKeepersTests(unittest.TestCase):
         self.assertEqual(stderr, "")
         self.assertIn(expected_line, updated)
         self.assertIn(f"Part A hero: {expected_hero['name']}", stdout)
-        self.assertEqual(updated.count('class="keeper-portrait"'), 9)
-        self.assertEqual(updated.count('class="keeper-name"'), 9)
+        self.assertEqual(updated.count('class="keeper-portrait"'), 8)
+        self.assertEqual(updated.count('class="keeper-name"'), 8)
 
     def test_missing_hero_contract_aborts_without_writing_partial_card_changes(self):
         original = Path("index.html").read_text(encoding="utf-8")
