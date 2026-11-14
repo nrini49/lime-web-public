@@ -142,7 +142,7 @@
       .nav-cta{padding:0.45rem 0.75rem;font-size:0.72rem;white-space:nowrap;flex:none}
     }
 
-    /* ============ FIRE SPIRIT COMPANION (fixed) ============ */
+    /* ============ Ember companion (fixed) ============ */
     .ember{position:fixed;bottom:var(--space-6);right:var(--space-6);z-index:55;width:54px;height:74px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity 600ms ease;transform:translateY(8px)}
     .ember.shown{opacity:1;pointer-events:auto;transform:none}
     .ember.shown svg{animation:emberFadeIn 1.2s ease forwards}
@@ -298,24 +298,6 @@
     .calm-item .check{flex:none;width:22px;height:22px;border-radius:50%;background:var(--lime-soft);border:1px solid var(--border-strong);display:grid;place-items:center;color:var(--lime);margin-top:1px}
     .calm-item .check svg{width:13px;height:13px}
     .calm-item p{font-size:var(--text-sm);color:var(--text)}
-
-    /* ============ FIRE SPIRIT SECTION ============ */
-    .spirit{position:relative;overflow:hidden}
-    .spirit-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(255,120,0,0.10),transparent 60%);pointer-events:none}
-    .spirit-inner{display:grid;grid-template-columns:0.9fr 1.1fr;gap:var(--space-12);align-items:center;position:relative}
-    @media (max-width:860px){.spirit-inner{grid-template-columns:1fr}}
-    .spirit-flame{max-width:300px;margin:0 auto;position:relative}
-    .spirit-flame svg{width:100%;height:auto;filter:drop-shadow(0 0 24px rgba(255,120,0,0.4))}
-    .spirit-flame .big-flame{transform-origin:center bottom;animation:flicker 3.2s ease-in-out infinite}
-    .spirit-flame .big-glow{transform-origin:center bottom;animation:flickerGlow 4s ease-in-out infinite}
-    .spirit-flame .big-eye{animation:wink 7s ease-in-out infinite}
-    .spirit-copy h2{font-size:var(--text-2xl);font-weight:800;letter-spacing:-0.02em}
-    .spirit-copy .lead{font-size:var(--text-lg);color:var(--text-muted);margin-top:var(--space-4)}
-    .spirit-cards{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-top:var(--space-6)}
-    @media (max-width:560px){.spirit-cards{grid-template-columns:1fr}}
-    .spirit-card{padding:var(--space-4);border:1px solid var(--border);border-radius:var(--radius-lg);background:rgba(255,69,0,0.04);display:flex;flex-direction:column}
-    .spirit-card .sc-lbl{font-size:var(--text-xs);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#ff8a4a}
-    .spirit-card p{font-size:var(--text-sm);color:var(--text);margin-top:var(--space-2)}
 
     /* ============ ARTIFACTS ============ */
     .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5)}
@@ -474,7 +456,7 @@
   </div>
 </header>
 
-<!-- ===== FIRE SPIRIT COMPANION (fixed, whimsical) ===== -->
+<!-- ===== Ember companion (fixed, whimsical) ===== -->
 <div class="ember" id="ember" role="button" tabindex="0" aria-label="Say hello to Ember, the harbor's little flame">
   <svg viewBox="0 0 54 74" fill="none" aria-hidden="true">
     <ellipse class="flame-glow" cx="27" cy="60" rx="22" ry="8" fill="#FF4500" opacity="0.25"/>
@@ -638,20 +620,15 @@
   </div>
 </header>
 
-<!-- ===== WHAT LIME IS (mission statement) — Door 02 landing copy.
-     Governing statement (locked 2026-07-16): Fire Spirit is interior,
-     governing doctrine; Rosie Interactive is exterior, stewardship
-     mechanism; causality — the operator's condition sets the operation's
-     quality. Written for both readers: the neo-Christian reader and the
-     energy/frequency reader, per the Two Readers, One Door bridge. ===== -->
+<!-- ===== WHAT LIME IS (mission statement) — Door 02 landing copy. ===== -->
 <section id="what-lime-is">
   <div class="wrap" style="max-width:760px;">
     <span class="kicker">What LIME Is</span>
-    <h2 style="margin-top:var(--space-3);font-size:var(--text-2xl);font-weight:800;letter-spacing:-0.02em;">Two things, one name.</h2>
+    <h2 style="margin-top:var(--space-3);font-size:var(--text-2xl);font-weight:800;letter-spacing:-0.02em;">A calm way to work the market.</h2>
     <div style="margin-top:var(--space-5);display:flex;flex-direction:column;gap:var(--space-4);font-size:var(--text-lg);color:var(--text-muted);line-height:1.7;">
-      <p>LIME is two things wearing one name. An inner discipline, and an outer tool. The inner one is called Fire Spirit &mdash; it's not a doctrine you join, it's the condition you're in before you touch a chart. The outer one is Rosie &mdash; four instruments that watch the market so you don't have to watch it with a hunter's eyes.</p>
+      <p>LIME is the name on the door. Rosie is the tool &mdash; four instruments that watch the market so you don't have to watch it with a hunter's eyes.</p>
       <p>Here's the part most systems skip: the state you bring into the market is the actual variable. Not the signal. Not the setup. You. A calm operator running a good plan gets a different result than an anxious operator running the same plan &mdash; same tools, same market, different outcome, because the outcome was never only about the tools. Frequency, if that's your word for it. Peace, if that's yours. Same behavior, two names for it &mdash; steady instead of hunting, received instead of grabbed at.</p>
-      <p>That's why LIME doesn't start with the trade. It starts with the person placing it. Three returns in the morning, six at midday, nine at close &mdash; not a magic number, a rhythm that trains the reflex out of chasing and into watching. Ruth stayed when leaving was reasonable. Daniel read the room without flinching. Different centuries, same discipline: hold the line, move at the right moment, don't force the harvest.</p>
+      <p>That's why LIME doesn't start with the trade. It starts with the person placing it. Ruth stayed when leaving was reasonable. Daniel read the room without flinching. Different centuries, same discipline: hold the line, move at the right moment, don't force the harvest.</p>
       <p>Rosie is what that discipline looks like once it has hands. Four tools &mdash; Color Weather, Navigation, the Ark, Exhaustion &mdash; reading the market against itself continuously, so the practice runs even on the days your own attention doesn't. Approval-based. Nothing armed until you say so. Size matched to weather, never to hope.</p>
       <p>We cannot and do not guarantee profits &mdash; no honest system can. What we can make is a calm account with a defined stop and an operator who isn't white-knuckling the screen. Loss prevention first, then profit. P&amp;L is downstream of that. A steady person running a steady system &mdash; that's the whole offer.</p>
     </div>
@@ -857,15 +834,7 @@
                 <span class="art-cta featured">Daily journal &mdash; in the library</span>
               </div>
 
-              <div class="art-card reveal">
-                <svg class="art-mark fire" viewBox="0 0 40 40" fill="none"><path d="M20 4 C14 14 10 20 10 28 a10 10 0 0 0 20 0 c0-7-4-12-7-18 -2 5-4 5-4 1 0-3 1-5 1-8 z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="16" cy="26" r="1.8" fill="currentColor"/><circle cx="24" cy="26" r="1.8" fill="currentColor"/></svg>
-                <div class="art-from">from the LIME library</div>
-                <h3>Fire Spirit</h3>
-                <p>The warm ember that keeps the harbor company &mdash; a quiet companion of warmth and light, never solemn, never preachy. Just a friendly flame that flickers when good work is afoot.</p>
-                <span class="art-cta featured">Companion &mdash; in the library</span>
-              </div>
-
-              <div class="art-card reveal">
+<div class="art-card reveal">
                 <svg class="art-mark" viewBox="0 0 40 40" fill="none"><path d="M8 28 a12 12 0 0 1 24 0" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="14" r="4" stroke="currentColor" stroke-width="2.5"/><path d="M4 32 H36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                 <div class="art-from">from the LIME library</div>
                 <h3>LIME Tools Canon</h3>
@@ -897,44 +866,6 @@
 
 </div>
 
-<!-- ===== FIRE SPIRIT (whimsical, subtle — outside the accordion) ===== -->
-<section class="spirit" id="spirit">
-  <div class="spirit-glow"></div>
-  <div class="wrap">
-    <div class="spirit-inner">
-      <div class="spirit-flame reveal">
-        <svg viewBox="0 0 300 360" fill="none" aria-hidden="true">
-          <ellipse class="big-glow" cx="150" cy="300" rx="120" ry="40" fill="#FF4500" opacity="0.18"/>
-          <path class="big-flame" d="M150 30 C100 110 60 160 60 230 a90 90 0 0 0 180 0 c0-60-30-110-60-170 -14 36-34 42-34 14 0-22 4-44 4-74 z" fill="url(#bigFlameGrad)"/>
-          <ellipse cx="118" cy="250" r="11" fill="#0A1428" class="big-eye"/>
-          <ellipse cx="182" cy="250" r="11" fill="#0A1428" class="big-eye"/>
-          <circle cx="122" cy="246" r="3.5" fill="#FFD27A"/>
-          <circle cx="186" cy="246" r="3.5" fill="#FFD27A"/>
-          <path d="M130 286 Q150 304 170 286" stroke="#0A1428" stroke-width="6" stroke-linecap="round" fill="none"/>
-          <circle cx="100" cy="278" r="8" fill="#FF4500" opacity="0.3"/>
-          <circle cx="200" cy="278" r="8" fill="#FF4500" opacity="0.3"/>
-          <defs>
-            <linearGradient id="bigFlameGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#FFD27A"/>
-              <stop offset="0.45" stop-color="#FF8A2A"/>
-              <stop offset="1" stop-color="#FF4500"/>
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-      <div class="spirit-copy reveal">
-        <span class="kicker" style="color:#ff8a4a">A little warmth in the harbor</span>
-        <h2 style="margin-top:var(--space-3)">Meet the harbor's small flame.</h2>
-        <p class="lead">He's not a doctrine and not a sermon. He's a friendly ember who keeps the lighthouse company &mdash; a warm little glow that flickers when good work is being done and dozes off when the harbor is calm. Kids wave at him. Grandmas nod along.</p>
-        <div class="spirit-cards">
-          <div class="spirit-card"><div class="sc-lbl">When the work is clean</div><p>He burns steady and bright, like a candle someone set down on purpose.</p></div>
-          <div class="spirit-card"><div class="sc-lbl">When the wind picks up</div><p>He ducks behind the lantern and waits it out with you. Quiet counts.</p></div>
-        </div>
-        <p style="margin-top:var(--space-5);font-size:var(--text-sm);color:var(--text-muted)">Good work is a quiet blessing. That's the whole of it. Nothing to join, nothing to argue &mdash; just warmth, light, and a sense that the day was spent well.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ===== CTA ===== -->
 <section class="cta" id="cta">

@@ -3,7 +3,7 @@
 Daily Keeper portrait rotation for lime-web/index.html.
 
 Runs once a day as a step inside the existing Harbor Now cron (fba558d0).
-Rotates WHICH of the 9 real Keepers appears at each of the 9 Wicket Gate
+Rotates WHICH of the 9 real Keepers appears at each of the 8 Wicket Gate
 door cards, and which one anchors the Part A hero portrait -- but each
 Keeper's portrait file, name, and card-fire sentence always travel together
 as a single fixed unit, so there is never a name/sentence/portrait mismatch.
@@ -81,21 +81,19 @@ KEEPER_UNITS = [
 
 # Fixed door themes, in on-page order (num, href, h3, p). Never rotated.
 DOOR_THEMES = [
-    {"num": "01", "href": "https://limesignalworks.pplx.app", "target_attrs": ' target="_blank" rel="noopener"', "h3": "System Access", "p": "Authorized? Unlock your personalized Rosie sandbox and Fire Spirit materials here."},
+    {"num": "01", "href": "https://limesignalworks.pplx.app", "target_attrs": ' target="_blank" rel="noopener"', "h3": "System Access", "p": "Authorized? Unlock your personalized Rosie sandbox here."},
     {"num": "02", "href": "seed/index.html", "target_attrs": "", "h3": "What LIME Is", "p": "LIME in plain language — the problem it solves and how it works."},
     {"num": "03", "href": "invite/index.html", "target_attrs": "", "h3": "Bring Someone", "p": "Bring someone you care about to the harbor. A personal welcome."},
-    {"num": "04", "href": "fire-spirit/index.html", "target_attrs": "", "h3": "Inner Rail", "p": "The Fire Spirit — inner work that turns posture into disciplined action."},
     # href=None renders a non-navigating card: the Situation Report route was
-    # withdrawn from public publication, but the door keeps its slot so the
-    # nine-box grid geometry is unchanged.
-    {"num": "05", "href": None, "target_attrs": "", "h3": "Situation Report", "p": "Today's market weather — regime, fidelity, condition. Read before you act."},
-    {"num": "06", "href": "offer/index.html", "target_attrs": "", "h3": "The Offer", "p": "What you get, what it costs, how to join. Loss-prevention-first AI assistance."},
-    # Door 07 pointed at the SPY Pipeline (backend down) and claimed tracking
+    # withdrawn from public publication, but the door keeps its slot.
+    {"num": "04", "href": None, "target_attrs": "", "h3": "Situation Report", "p": "Today's market weather — regime, fidelity, condition. Read before you act."},
+    {"num": "05", "href": "offer/index.html", "target_attrs": "", "h3": "The Offer", "p": "What you get, what it costs, how to join. Loss-prevention-first AI assistance."},
+    # This door pointed at the SPY Pipeline (backend down) and claimed tracking
     # "since Rosie's first trade" -- Rosie has placed no trades. Repointed
     # 2026-09-23 to Harbor Now, the verified daily report on this site.
-    {"num": "07", "href": "harbor-now/index.html", "target_attrs": "", "h3": "Harbor Now", "p": "The daily close in plain language — SPY, QQQ, DIA, IWM and the VIX, published each trading evening."},
-    {"num": "08", "href": "laugh-lounge/index.html", "target_attrs": "", "h3": "The Laugh Lounge", "p": "A lighter door. Harbor and lighthouse humor, and a library you can browse at your own pace."},
-    {"num": "09", "href": "metaphor-gate/index.html", "target_attrs": "", "h3": "The Metaphor Gate", "p": "The teaching layer. Learn to hear what is actually being said — in markets, in leadership, in scripture."},
+    {"num": "06", "href": "harbor-now/index.html", "target_attrs": "", "h3": "Harbor Now", "p": "The daily close in plain language — SPY, QQQ, DIA, IWM and the VIX, published each trading evening."},
+    {"num": "07", "href": "laugh-lounge/index.html", "target_attrs": "", "h3": "The Laugh Lounge", "p": "A lighter door. Harbor and lighthouse humor, and a library you can browse at your own pace."},
+    {"num": "08", "href": "metaphor-gate/index.html", "target_attrs": "", "h3": "The Metaphor Gate", "p": "The teaching layer. Learn to hear what is actually being said — in markets, in leadership, in scripture."},
 ]
 
 
@@ -147,11 +145,11 @@ def main():
         r'|<div class="card">.*?</div>(?=\s*(?:<a class="card"|</div>))'
     )
     cards = card_pattern.findall(text)
-    if len(cards) != 9:
-        print(f"ERROR: expected 9 door cards, found {len(cards)}. Aborting -- no changes made.", file=sys.stderr)
+    if len(cards) != 8:
+        print(f"ERROR: expected 8 door cards, found {len(cards)}. Aborting -- no changes made.", file=sys.stderr)
         sys.exit(1)
 
-    new_cards = [build_card_html(DOOR_THEMES[i], door_order[i], i) for i in range(9)]
+    new_cards = [build_card_html(DOOR_THEMES[i], door_order[i], i) for i in range(8)]
 
     for old, new in zip(cards, new_cards):
         text = text.replace(old, new, 1)
@@ -165,7 +163,7 @@ def main():
 
     INDEX_HTML.write_text(text, encoding="utf-8")
 
-    order_summary = ", ".join(f"{DOOR_THEMES[i]['num']}={door_order[i]['name']}" for i in range(9))
+    order_summary = ", ".join(f"{DOOR_THEMES[i]['num']}={door_order[i]['name']}" for i in range(8))
     print(f"Rotated for {date_str}: {order_summary}")
     print(f"Part A hero: {hero_keeper['name']}")
 
